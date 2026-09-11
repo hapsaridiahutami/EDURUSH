@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Pilih Materi — EduRush</title>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="setup-page">
+
+  <!-- HEADER -->
+  <header class="setup-header">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">✦</span>
+      <span>EduRush</span>
+    </a>
+
+    <a href="index.html" class="back-button">
+      ← Kembali
+    </a>
+  </header>
+
+
+  <!-- MAIN -->
+  <main class="setup-container">
+
+    <!-- INTRO -->
+    <section class="setup-intro">
+      <div class="setup-badge">
+        ✨ Siap bermain?
+      </div>
+
+      <h1>
+        Pilih Materi<br>
+        <span>Belajarmu!</span>
+      </h1>
+
+      <p>
+        Pilih materi yang ingin kamu pelajari,
+        lalu mulai tantangan serunya!
+      </p>
+    </section>
+
+
+    <!-- MATERI -->
+    <section class="materi-section">
+
+      <div class="section-label">
+        PILIH MATERI
+      </div>
+
+      <div class="materi-grid" id="materi-grid">
+
+        <!-- LITERASI -->
+        <button
+          type="button"
+          class="materi-card"
+          data-materi="literasi"
+        >
+          <div class="materi-icon literasi-icon">
+            📚
+          </div>
+
+          <div class="materi-content">
+            <h2>Literasi</h2>
+
+            <p>
+              Yuk asah kemampuan membaca,
+              memahami cerita, dan menemukan informasi!
+            </p>
+
+            <span class="materi-action">
+              Pilih Literasi →
+            </span>
+          </div>
+
+          <div class="materi-check">
+            ✓
+          </div>
+        </button>
+
+
+        <!-- NUMERASI -->
+        <button
+          type="button"
+          class="materi-card"
+          data-materi="numerasi"
+        >
+          <div class="materi-icon numerasi-icon">
+            🔢
+          </div>
+
+          <div class="materi-content">
+            <h2>Numerasi</h2>
+
+            <p>
+              Latih kemampuan berhitung,
+              mengenal angka, dan memecahkan masalah!
+            </p>
+
+            <span class="materi-action">
+              Pilih Numerasi →
+            </span>
+          </div>
+
+          <div class="materi-check">
+            ✓
+          </div>
+        </button>
+
+      </div>
+    </section>
+
+
+    <!-- INFO -->
+    <section class="setup-info">
+      <div class="info-icon">
+        💡
+      </div>
+
+      <div>
+        <strong>Belajar sambil bermain</strong>
+
+        <p>
+          Setiap tantangan akan memberikan poin
+          dan membantu kamu mengasah kemampuan.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- CONTINUE -->
+    <button
+      type="button"
+      id="continue-btn"
+      class="setup-continue"
+      disabled
+    >
+      <span>Mulai Belajar</span>
+      <span>→</span>
+    </button>
+
+  </main>
+
+
+  <script>
+    const materiCards = document.querySelectorAll(".materi-card");
+    const continueBtn = document.getElementById("continue-btn");
+
+    let selectedMateri = null;
+
+
+    materiCards.forEach(card => {
+
+      card.addEventListener("click", () => {
+
+        materiCards.forEach(item => {
+          item.classList.remove("selected");
+        });
+
+        card.classList.add("selected");
+
+        selectedMateri = card.dataset.materi;
+
+        continueBtn.disabled = false;
+        continueBtn.classList.add("active");
+
+      });
+
+    });
+
+
+    continueBtn.addEventListener("click", () => {
+
+      if (!selectedMateri) return;
+
+      localStorage.setItem(
+        "edurush_materi",
+        selectedMateri
+      );
+
+      /*
+        Setelah materi dipilih,
+        pengguna diarahkan ke halaman game.
+      */
+
+      window.location.href = "game.html";
+
+    });
+  </script>
+
+</body>
+</html>
