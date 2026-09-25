@@ -1,565 +1,1074 @@
-
 /* =========================================================
    EDURUSH — MATERI PECAHAN
-   ========================================================= */
+   Design mengikuti Materi 1 — Operasi Hitung
+========================================================= */
 
-.fraction-hero {
-  padding: 55px 24px 70px;
-  background: linear-gradient(
-    135deg,
-    var(--green-deep),
-    var(--green-dark)
-  );
-  color: white;
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.lesson-header {
+  padding: 48px 24px 62px;
+  border-bottom: 1px solid var(--border);
 }
 
-.fraction-hero-content {
-  width: min(100%, 1050px);
+.lesson-header-inner {
+  width: min(1050px, 92%);
   margin: auto;
 }
 
 .back-link {
-  display: inline-block;
-  margin-bottom: 35px;
-  color: rgba(255,255,255,.8);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-bottom: 42px;
+
+  color: var(--green);
   text-decoration: none;
-  font-weight: 600;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  transition: transform .2s ease;
 }
 
 .back-link:hover {
-  color: white;
+  transform: translateX(-4px);
 }
 
-.material-label {
-  display: inline-block;
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: var(--yellow);
-  color: var(--green-deep);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: .08em;
-}
-
-.fraction-hero h1 {
-  max-width: 700px;
-  margin: 18px 0 12px;
-  font-size: clamp(42px, 6vw, 72px);
-  line-height: .98;
-  letter-spacing: -.04em;
-}
-
-.fraction-hero h1 span {
-  display: block;
-  color: var(--yellow);
-}
-
-.fraction-hero-content > p {
-  max-width: 600px;
-  margin: 0;
-  color: rgba(255,255,255,.78);
-  font-size: 18px;
-  line-height: 1.7;
-}
-
-
-/* =========================================================
-   PROGRESS
-   ========================================================= */
-
-.fraction-progress {
-  width: min(100% - 48px, 1050px);
-  margin: 35px auto 0;
-}
-
-.progress-info {
+.lesson-top {
   display: flex;
+  align-items: flex-end;
   justify-content: space-between;
-  margin-bottom: 10px;
+  gap: 40px;
+}
+
+.lesson-header .section-label {
+  margin-bottom: 13px;
+
+  color: var(--orange);
+
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+.lesson-header h1 {
+  margin: 0;
+
+  color: var(--green-deep);
+
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: clamp(50px, 7vw, 78px);
+  line-height: .95;
+  letter-spacing: -4px;
+}
+
+.lesson-description {
+  max-width: 570px;
+  margin: 22px 0 0;
+
+  color: var(--muted);
+
   font-size: 14px;
-}
-
-.progress-info strong {
-  color: var(--green);
-}
-
-.progress-bar {
-  width: 100%;
-  height: 9px;
-  overflow: hidden;
-  border-radius: 999px;
-  background: #e4ebe6;
-}
-
-.progress-fill {
-  width: 100%;
-  height: 100%;
-  border-radius: inherit;
-  background: var(--green);
-}
-
-
-/* =========================================================
-   CONTENT
-   ========================================================= */
-
-.fraction-content {
-  width: min(100% - 48px, 900px);
-  margin: 45px auto 80px;
-}
-
-.lesson-card {
-  display: grid;
-  grid-template-columns: 70px 1fr;
-  gap: 22px;
-  padding: 35px;
-  margin-bottom: 22px;
-  border: 1px solid var(--border);
-  border-radius: 24px;
-  background: white;
-  box-shadow: 0 12px 35px rgba(7,61,40,.06);
+  line-height: 1.7;
 }
 
 .lesson-number {
-  display: grid;
-  place-items: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 15px;
-  background: var(--green);
-  color: white;
+  flex-shrink: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 94px;
+  height: 94px;
+
+  background: var(--yellow);
+  border-radius: 10px;
+
+  color: var(--green-dark);
+}
+
+.lesson-number span {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 27px;
   font-weight: 800;
+  line-height: 1;
 }
 
-.lesson-body {
-  min-width: 0;
-}
+.lesson-number small {
+  margin-top: 5px;
 
-.lesson-tag {
-  display: inline-block;
-  margin-bottom: 8px;
-  color: var(--green);
-  font-size: 12px;
+  font-size: 8px;
   font-weight: 800;
-  letter-spacing: .08em;
-}
-
-.lesson-body h2 {
-  margin: 0 0 10px;
-  color: var(--text);
-  font-size: clamp(25px, 4vw, 34px);
-  line-height: 1.1;
-}
-
-.lesson-body > p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 17px;
-  line-height: 1.65;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 
 /* =========================================================
-   PIZZA
-   ========================================================= */
+   MAIN
+========================================================= */
 
-.pizza-example {
+.lesson-content {
+  padding: 78px 24px 105px;
+}
+
+.lesson-container {
+  width: min(1050px, 92%);
+  margin: auto;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.lesson-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+
+  align-items: end;
+
+  margin-bottom: 45px;
+}
+
+.lesson-label {
+  margin-bottom: 12px;
+
+  color: var(--orange);
+
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 1.1px;
+}
+
+.lesson-intro h2,
+.practice-heading h2 {
+  margin: 0;
+
+  color: var(--green-deep);
+
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 38px;
+  line-height: 1.05;
+  letter-spacing: -1.8px;
+}
+
+.lesson-intro > p {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   MATERIAL GRID
+========================================================= */
+
+.operation-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.operation-card {
+  position: relative;
+
+  min-height: 355px;
+  padding: 25px;
+
+  overflow: hidden;
+
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+.operation-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  right: -65px;
+  bottom: -80px;
+
+  background: var(--yellow-soft);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.operation-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 16px 35px rgba(7, 61, 40, .08);
+}
+
+.card-top {
+  position: relative;
+  z-index: 1;
+
   display: flex;
   align-items: center;
-  gap: 35px;
-  margin-top: 28px;
-  padding: 25px;
-  border-radius: 20px;
-  background: var(--cream);
+  justify-content: space-between;
 }
 
-.pizza-small {
+.operation-tag {
+  display: grid;
+  place-items: center;
+
+  width: 30px;
+  height: 30px;
+
+  background: #f0f3f1;
+  border-radius: 8px;
+
+  color: var(--muted);
+
+  font-size: 9px;
+  font-weight: 900;
+}
+
+.operation-symbol {
+  display: grid;
+  place-items: center;
+
+  width: 58px;
+  height: 58px;
+
+  background: var(--yellow);
+  border-radius: 13px;
+
+  color: var(--green-dark);
+
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 29px;
+  font-weight: 800;
+}
+
+.fraction-symbol {
+  font-size: 18px;
+}
+
+.operation-info {
   position: relative;
-  flex: 0 0 auto;
-  width: 145px;
-  height: 145px;
-  overflow: hidden;
-  border: 8px solid #e89a24;
-  border-radius: 50%;
-  background: #ffc928;
+  z-index: 1;
+
+  margin-top: 22px;
 }
 
-.small-slice {
+.operation-info h3 {
+  margin: 0 0 9px;
+
+  color: var(--green-deep);
+
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 25px;
+  line-height: 1.05;
+  letter-spacing: -.8px;
+}
+
+.operation-info p {
+  max-width: 500px;
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   VISUAL BOX
+========================================================= */
+
+.visual-box {
+  position: relative;
+  z-index: 1;
+
+  margin-top: 22px;
+  padding: 18px;
+
+  background: #f5f8f5;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.visual-title {
+  margin-bottom: 14px;
+
+  color: var(--green-dark);
+
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   PIZZA VISUAL
+========================================================= */
+
+.pizza-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.pizza {
+  position: relative;
+
+  width: 105px;
+  height: 105px;
+
+  overflow: hidden;
+
+  border: 5px solid #e9a73a;
+  border-radius: 50%;
+
+  background: #f7c75b;
+}
+
+.pizza-piece {
   position: absolute;
+
   width: 50%;
   height: 50%;
-  background: #ffc928;
+
+  background: #f7c75b;
+
+  border: 1px solid rgba(120, 78, 20, .18);
 }
 
-.small-slice:nth-child(1) {
-  top: 0;
+.pizza-piece.active {
+  background: var(--orange);
+}
+
+.pizza-fourths .pizza-piece:nth-child(1),
+.pizza-practice .pizza-piece:nth-child(1) {
   left: 0;
-}
-
-.small-slice:nth-child(2) {
   top: 0;
-  right: 0;
 }
 
-.small-slice:nth-child(3) {
-  bottom: 0;
+.pizza-fourths .pizza-piece:nth-child(2),
+.pizza-practice .pizza-piece:nth-child(2) {
+  right: 0;
+  top: 0;
+}
+
+.pizza-fourths .pizza-piece:nth-child(3),
+.pizza-practice .pizza-piece:nth-child(3) {
   left: 0;
-}
-
-.small-slice:nth-child(4) {
-  right: 0;
   bottom: 0;
 }
 
-.small-slice.active {
-  background: var(--green);
-}
-
-.small-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 3;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #f58220;
-  transform: translate(-50%, -50%);
+.pizza-fourths .pizza-piece:nth-child(4),
+.pizza-practice .pizza-piece:nth-child(4) {
+  right: 0;
+  bottom: 0;
 }
 
 .pizza-text {
-  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
 }
 
-.pizza-text > strong {
-  color: var(--text);
-  font-size: 20px;
+.pizza-text strong {
+  color: var(--green-deep);
+
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 25px;
 }
 
-.pizza-text p {
+.pizza-text span {
   color: var(--muted);
-  line-height: 1.6;
-}
-
-.mini-answer {
-  display: inline-block;
-  margin-top: 5px;
-  padding: 10px 14px;
-  border-radius: 12px;
-  background: white;
-  color: var(--text);
-}
-
-.mini-answer strong {
-  margin-left: 5px;
-  color: var(--green);
-  font-size: 20px;
+  font-size: 11px;
 }
 
 
 /* =========================================================
-   FRACTION BIG
-   ========================================================= */
+   FRACTION DISPLAY
+========================================================= */
 
-.fraction-big {
-  width: fit-content;
-  margin: 30px auto;
-  text-align: center;
-}
-
-.fraction-top,
-.fraction-bottom {
+.fraction-display {
   display: flex;
   align-items: center;
-  gap: 15px;
-  color: var(--green);
-  font-size: 44px;
+  justify-content: center;
+  gap: 28px;
+}
+
+.fraction-big {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  min-width: 55px;
+
+  color: var(--green-deep);
+
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 26px;
   font-weight: 800;
 }
 
-.fraction-top span,
-.fraction-bottom span {
-  color: var(--muted);
-  font-size: 14px;
-  font-weight: 600;
-}
+.fraction-big i {
+  display: block;
 
-.fraction-top span {
-  order: 2;
-}
+  width: 48px;
+  height: 3px;
 
-.fraction-line {
-  width: 75px;
-  height: 5px;
-  margin: 6px auto;
+  margin: 3px 0;
+
+  background: var(--green-dark);
+
   border-radius: 5px;
-  background: var(--text);
 }
 
-.simple-note {
-  margin-top: 20px;
-  padding: 18px 20px;
-  border-left: 5px solid var(--yellow);
-  border-radius: 12px;
-  background: #fff9df;
-  color: var(--text);
-  line-height: 1.7;
+.fraction-notes {
+  display: flex;
+  gap: 14px;
+}
+
+.fraction-notes div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.fraction-notes strong {
+  color: var(--green);
+  font-size: 15px;
+}
+
+.fraction-notes span {
+  color: var(--muted);
+  font-size: 9px;
 }
 
 
 /* =========================================================
-   FRACTION LIST
-   ========================================================= */
+   FRACTION EXAMPLES
+========================================================= */
 
-.fraction-list {
+.fraction-examples {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-  margin-top: 25px;
+  gap: 9px;
 }
 
-.fraction-item {
-  padding: 20px;
-  border-radius: 18px;
-  background: var(--cream);
-  text-align: center;
+.example-fraction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 70px;
+
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 9px;
 }
 
-.fraction-item strong {
-  display: block;
-  margin-bottom: 8px;
-  color: var(--green);
-  font-size: 30px;
+.example-fraction strong {
+  color: var(--green-deep);
+
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 18px;
 }
 
-.fraction-item span {
+.example-fraction span {
+  margin-top: 3px;
+
   color: var(--muted);
-  font-size: 14px;
-}
 
-.remember-box {
-  margin-top: 22px;
-  padding: 20px;
-  border-radius: 18px;
-  background: #eef8f2;
-}
-
-.remember-box strong {
-  color: var(--green);
-}
-
-.remember-box p {
-  margin-bottom: 0;
-  color: var(--text);
-  line-height: 1.7;
+  font-size: 8px;
 }
 
 
 /* =========================================================
    COMPARISON
-   ========================================================= */
-
-.compare-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-  margin: 30px 0;
-  padding: 25px;
-  border-radius: 20px;
-  background: var(--cream);
-}
+========================================================= */
 
 .compare-fraction {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  color: var(--green);
-  font-size: 35px;
-  font-weight: 800;
+  justify-content: center;
+  gap: 20px;
+}
+
+.compare-fraction strong {
+  color: var(--green-deep);
+
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 26px;
 }
 
 .compare-fraction span {
-  width: 55px;
-  height: 4px;
-  margin: 4px 0;
-  border-radius: 5px;
-  background: var(--text);
+  color: var(--orange);
+
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 25px;
+  font-weight: 900;
 }
 
-.compare-symbol {
-  color: var(--orange);
-  font-size: 35px;
-  font-weight: 900;
+.visual-caption {
+  margin: 10px 0 0;
+
+  text-align: center;
+
+  color: var(--muted);
+  font-size: 9px;
 }
 
 
 /* =========================================================
-   OPERATION
-   ========================================================= */
+   FRACTION EQUATION
+========================================================= */
 
-.operation-box {
+.fraction-equation {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 18px;
-  margin: 30px 0;
-  padding: 25px;
-  border-radius: 20px;
-  background: var(--cream);
+  gap: 17px;
 }
 
-.operation-fraction {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: var(--green);
-  font-size: 32px;
-  font-weight: 800;
+.fraction-equation strong {
+  color: var(--green-deep);
+
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 24px;
 }
 
-.operation-fraction span {
-  width: 48px;
-  height: 4px;
-  margin: 3px 0;
-  border-radius: 5px;
-  background: var(--text);
-}
-
-.operation-symbol {
+.fraction-equation > span {
   color: var(--orange);
-  font-size: 30px;
+
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 22px;
   font-weight: 900;
 }
 
-.operation-fraction.result {
-  padding: 10px 15px;
-  border-radius: 15px;
-  background: #eaf7ef;
+.fraction-equation .answer-fraction {
+  padding: 7px 13px;
+
+  background: var(--yellow);
+  border-radius: 8px;
 }
 
 
 /* =========================================================
-   READY
-   ========================================================= */
+   WIDE CARD
+========================================================= */
 
-.ready-card {
+.fraction-card-wide {
+  grid-column: 1 / -1;
+}
+
+
+/* =========================================================
+   PRACTICE
+========================================================= */
+
+.practice-section {
+  margin-top: 90px;
+}
+
+.practice-heading {
   display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  margin-bottom: 22px;
+}
+
+.practice-heading h2 {
+  font-size: 36px;
+}
+
+.practice-card {
+  display: grid;
+  grid-template-columns: 1.3fr .7fr;
+  gap: 30px;
+
   align-items: center;
-  gap: 22px;
+
   padding: 30px;
-  border-radius: 24px;
+
   background: var(--green-deep);
+  border-radius: 17px;
+
   color: white;
 }
 
-.ready-icon {
+.practice-question {
+  max-width: 570px;
+}
+
+.question-label {
+  margin-bottom: 12px;
+
+  color: var(--yellow);
+
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 1.1px;
+}
+
+.practice-question h3 {
+  margin: 0;
+
+  color: white;
+
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 29px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.practice-question p {
+  margin: 13px 0 0;
+
+  color: rgba(255, 255, 255, .75);
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.practice-fraction-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  padding: 23px;
+
+  background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 13px;
+}
+
+.pizza-practice {
+  width: 90px;
+  height: 90px;
+
+  flex-shrink: 0;
+}
+
+.practice-answer {
+  padding: 10px 15px;
+
+  background: var(--yellow);
+  border-radius: 9px;
+
+  color: var(--green-dark);
+
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.summary-section {
+  margin-top: 90px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  margin-top: 23px;
+
+  overflow: hidden;
+
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.summary-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  min-height: 125px;
+  padding: 22px;
+
+  border-right: 1px solid var(--border);
+}
+
+.summary-item:last-child {
+  border-right: none;
+}
+
+.summary-symbol {
   display: grid;
   place-items: center;
-  flex: 0 0 auto;
-  width: 65px;
-  height: 65px;
-  border-radius: 18px;
-  background: var(--yellow);
-  font-size: 30px;
-}
 
-.ready-content {
-  flex: 1;
-}
+  width: 46px;
+  height: 46px;
 
-.ready-content > span {
-  color: var(--yellow);
-  font-size: 12px;
+  flex-shrink: 0;
+
+  background: var(--yellow-soft);
+  border-radius: 10px;
+
+  color: var(--green-dark);
+
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 18px;
   font-weight: 800;
-  letter-spacing: .08em;
 }
 
-.ready-content h2 {
-  margin: 5px 0;
-  font-size: 25px;
-}
+.summary-item strong {
+  display: block;
 
-.ready-content p {
-  margin: 0;
-  color: rgba(255,255,255,.7);
-}
-
-.ready-button {
-  flex: 0 0 auto;
-  padding: 14px 20px;
-  border-radius: 13px;
-  background: var(--yellow);
   color: var(--green-deep);
-  text-decoration: none;
-  font-weight: 800;
-  transition: .2s ease;
+
+  font-size: 12px;
 }
 
-.ready-button:hover {
-  transform: translateY(-2px);
-}
+.summary-item small {
+  display: block;
 
+  margin-top: 4px;
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-.footer {
-  padding: 30px 24px;
-  text-align: center;
   color: var(--muted);
-  font-size: 14px;
+
+  font-size: 10px;
+  line-height: 1.5;
 }
 
 
 /* =========================================================
-   RESPONSIVE
-   ========================================================= */
+   NEXT
+========================================================= */
 
-@media (max-width: 700px) {
+.lesson-next {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
 
-  .fraction-hero {
-    padding: 40px 20px 55px;
+  width: min(1000px, 92%);
+
+  margin: 80px auto 100px;
+  padding: 32px 35px;
+
+  background: var(--green-deep);
+  border-radius: 16px;
+}
+
+.lesson-next .section-label {
+  margin-bottom: 10px;
+
+  color: var(--yellow);
+
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 1.1px;
+}
+
+.lesson-next h2 {
+  margin: 0;
+
+  color: white;
+
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: clamp(25px, 4vw, 36px);
+  line-height: 1;
+  letter-spacing: -1.3px;
+}
+
+.lesson-next p {
+  max-width: 530px;
+  margin: 10px 0 0;
+
+  color: rgba(255, 255, 255, .72);
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.next-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  padding: 14px 20px;
+
+  background: var(--yellow);
+  border-radius: 8px;
+
+  color: var(--green-dark);
+
+  text-decoration: none;
+
+  font-size: 12px;
+  font-weight: 900;
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.next-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .lesson-top {
+    align-items: flex-start;
   }
 
-  .fraction-progress,
-  .fraction-content {
-    width: min(100% - 32px, 900px);
-  }
-
-  .lesson-card {
+  .lesson-intro {
     grid-template-columns: 1fr;
-    padding: 25px;
-  }
-
-  .lesson-number {
-    width: 45px;
-    height: 45px;
-  }
-
-  .pizza-example {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .fraction-list {
-    grid-template-columns: 1fr;
-  }
-
-  .compare-box {
     gap: 20px;
   }
 
-  .ready-card {
+  .summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .summary-item:nth-child(2) {
+    border-right: none;
+  }
+
+  .summary-item:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .lesson-next {
+    align-items: flex-start;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .lesson-header {
+    padding: 40px 20px 50px;
+  }
+
+  .lesson-header-inner {
+    width: 100%;
+  }
+
+  .back-link {
+    margin-bottom: 32px;
+  }
+
+  .lesson-top {
+    display: block;
+  }
+
+  .lesson-header h1 {
+    font-size: 49px;
+    letter-spacing: -2.7px;
+  }
+
+  .lesson-description {
+    font-size: 13px;
+  }
+
+  .lesson-number {
+    width: 76px;
+    height: 76px;
+
+    margin-top: 25px;
+  }
+
+  .lesson-number span {
+    font-size: 23px;
+  }
+
+  .lesson-content {
+    padding: 58px 20px 75px;
+  }
+
+  .lesson-container {
+    width: 100%;
+  }
+
+  .lesson-intro {
+    margin-bottom: 32px;
+  }
+
+  .lesson-intro h2,
+  .practice-heading h2 {
+    font-size: 31px;
+  }
+
+  .operation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fraction-card-wide {
+    grid-column: auto;
+  }
+
+  .operation-card {
+    min-height: auto;
+    padding: 20px;
+  }
+
+  .visual-box {
+    padding: 14px;
+  }
+
+  .pizza-area {
+    gap: 15px;
+  }
+
+  .pizza {
+    width: 85px;
+    height: 85px;
+  }
+
+  .fraction-display {
+    gap: 18px;
+  }
+
+  .fraction-notes {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .fraction-equation {
+    gap: 10px;
+  }
+
+  .fraction-equation strong {
+    font-size: 19px;
+  }
+
+  .fraction-equation > span {
+    font-size: 18px;
+  }
+
+  .practice-section,
+  .summary-section {
+    margin-top: 65px;
+  }
+
+  .practice-heading {
+    display: block;
+  }
+
+  .practice-card {
+    grid-template-columns: 1fr;
+
+    padding: 22px;
+  }
+
+  .practice-question h3 {
+    font-size: 25px;
+  }
+
+  .practice-fraction-visual {
+    padding: 18px;
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-item {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .summary-item:last-child {
+    border-bottom: none;
+  }
+
+  .summary-item:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .lesson-next {
+    width: calc(100% - 40px);
+
+    margin: 60px auto 70px;
+
+    padding: 28px 23px;
+
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .ready-button {
+  .next-button {
     width: 100%;
-    text-align: center;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .lesson-header h1 {
+    font-size: 43px;
+  }
+
+  .operation-card {
+    padding: 19px;
+  }
+
+  .visual-box {
+    padding: 13px;
+  }
+
+  .pizza-area {
+    flex-direction: column;
+  }
+
+  .fraction-examples {
+    gap: 6px;
+  }
+
+  .example-fraction strong {
+    font-size: 16px;
   }
 
 }
