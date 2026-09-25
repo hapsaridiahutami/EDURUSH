@@ -17,6 +17,10 @@ const MAX_LIVES = 3;
 
 const quizQuestions = [
 
+  /* =====================================================
+     1. PENJUMLAHAN
+     ===================================================== */
+
   {
     type: "operation",
 
@@ -53,6 +57,10 @@ const quizQuestions = [
       "Coba hitung mulai dari 4, lalu tambah 2. Urutannya 5, lalu 6."
   },
 
+
+  /* =====================================================
+     2. PENGURANGAN
+     ===================================================== */
 
   {
     type: "operation",
@@ -91,6 +99,10 @@ const quizQuestions = [
   },
 
 
+  /* =====================================================
+     3. PERKALIAN
+     ===================================================== */
+
   {
     type: "operation",
 
@@ -128,70 +140,44 @@ const quizQuestions = [
   },
 
 
-  {
-    type: "fraction",
+  /* =====================================================
+     4. PEMBAGIAN
+     ===================================================== */
 
-    tag: "🟨 PECAHAN",
+  {
+    type: "operation",
+
+    tag: "⚡ HITUNG CEPAT",
 
     visual: `
-      <div class="fraction-visual">
-        <span class="filled"></span>
-        <span class="filled"></span>
-        <span></span>
-        <span></span>
+      <div class="math-visual-equation">
+        <strong>12</strong>
+        <span>÷</span>
+        <strong>3</strong>
+        <span>=</span>
+        <b>?</b>
       </div>
     `,
 
-    label: "LIHAT GAMBAR",
+    label: "PEMBAGIAN",
 
     question:
-      "Pecahan bagian yang berwarna adalah...",
+      "Berapakah hasil dari 12 ÷ 3?",
 
     options: [
-      "1/4",
-      "1/2",
-      "2/3",
-      "3/4"
+      "3",
+      "4",
+      "5",
+      "6"
     ],
 
-    answer: "1/2",
+    answer: "4",
 
     correctFeedback:
-      "Ada 4 bagian seluruhnya dan 2 bagian berwarna. Jadi 2/4, yang sama dengan 1/2.",
+      "12 ÷ 3 berarti 12 dibagi menjadi 3 kelompok yang sama. Setiap kelompok berisi 4.",
 
     wrongFeedback:
-      "Hitung dulu semua bagian, lalu hitung bagian yang berwarna."
-  },
-
-
-  {
-    type: "shape",
-
-    tag: "🔍 DETEKTIF BENTUK",
-
-    visual: `
-      <div class="shape-visual triangle-shape"></div>
-    `,
-
-    label: "TEBAK BENTUK",
-
-    question:
-      "Berapa jumlah sisi pada segitiga?",
-
-    options: [
-      "2 sisi",
-      "3 sisi",
-      "4 sisi",
-      "5 sisi"
-    ],
-
-    answer: "3 sisi",
-
-    correctFeedback:
-      "Segitiga mempunyai 3 sisi. Coba hitung garis pada bagian tepinya.",
-
-    wrongFeedback:
-      "Perhatikan garis yang membentuk tepi segitiga. Ada 3 garis."
+      "Coba pikirkan: angka berapa yang jika dikalikan 3 hasilnya 12?"
   }
 
 ];
@@ -337,9 +323,12 @@ const finalStreak =
 questionTotal.textContent =
   quizQuestions.length;
 
-gameScreen.style.display = "none";
+gameScreen.style.display =
+  "none";
 
-resultScreen.classList.remove("show");
+resultScreen.classList.remove(
+  "show"
+);
 
 updateStats();
 
@@ -397,7 +386,9 @@ function startGame() {
 
 function loadQuestion() {
 
-  clearInterval(timerInterval);
+  clearInterval(
+    timerInterval
+  );
 
   answered = false;
 
@@ -405,20 +396,14 @@ function loadQuestion() {
     quizQuestions[currentQuestion];
 
 
-  /* Nomor */
-
   questionNumber.textContent =
     String(currentQuestion + 1)
       .padStart(2, "0");
 
 
-  /* Progress */
-
   progressFill.style.width =
     `${((currentQuestion + 1) / quizQuestions.length) * 100}%`;
 
-
-  /* Isi */
 
   challengeType.textContent =
     question.tag;
@@ -433,16 +418,13 @@ function loadQuestion() {
     question.question;
 
 
-  /* Feedback */
-
   feedback.classList.remove(
     "show"
   );
 
 
-  /* Tombol berikutnya */
-
   nextButton.disabled = true;
+
 
   if (
     currentQuestion ===
@@ -460,14 +442,10 @@ function loadQuestion() {
   }
 
 
-  /* Jawaban */
-
   createAnswerButtons(
     question
   );
 
-
-  /* Timer */
 
   startTimer();
 
@@ -488,7 +466,8 @@ function createAnswerButtons(question) {
       const button =
         document.createElement("button");
 
-      button.type = "button";
+      button.type =
+        "button";
 
       button.textContent =
         option;
@@ -636,8 +615,15 @@ function showCorrect(question) {
 
   streak++;
 
-  if (streak > bestStreak) {
-    bestStreak = streak;
+
+  if (
+    streak >
+    bestStreak
+  ) {
+
+    bestStreak =
+      streak;
+
   }
 
 
@@ -682,15 +668,18 @@ function showCorrect(question) {
   xpElement.animate(
     [
       {
-        transform: "scale(1)"
+        transform:
+          "scale(1)"
       },
 
       {
-        transform: "scale(1.35)"
+        transform:
+          "scale(1.35)"
       },
 
       {
-        transform: "scale(1)"
+        transform:
+          "scale(1)"
       }
     ],
     {
@@ -713,8 +702,13 @@ function showWrong(question) {
 
   lives--;
 
-  if (lives < 0) {
+
+  if (
+    lives < 0
+  ) {
+
     lives = 0;
+
   }
 
 
@@ -810,7 +804,8 @@ function updateStats() {
 
 function startTimer() {
 
-  timer = MAX_TIME;
+  timer =
+    MAX_TIME;
 
   updateTimer();
 
@@ -834,7 +829,9 @@ function startTimer() {
         }
 
 
-        if (timer <= 0) {
+        if (
+          timer <= 0
+        ) {
 
           clearInterval(
             timerInterval
@@ -878,7 +875,9 @@ function updateTimer() {
     offset;
 
 
-  if (timer <= 5) {
+  if (
+    timer <= 5
+  ) {
 
     timerElement.style.color =
       "var(--orange)";
@@ -984,12 +983,6 @@ function goToNext() {
   playClick();
 
 
-  /*
-    PENTING:
-    Jangan pernah menambah currentQuestion
-    kalau sudah berada di soal terakhir.
-  */
-
   if (
     currentQuestion <
     quizQuestions.length - 1
@@ -1018,11 +1011,6 @@ function finishGame() {
     timerInterval
   );
 
-
-  /*
-    Pastikan tidak ada kemungkinan
-    soal berikutnya dibuka.
-  */
 
   currentQuestion =
     quizQuestions.length;
@@ -1057,9 +1045,12 @@ function finishGame() {
     "edurush_last_quiz",
     JSON.stringify({
       xp,
-      correct: correctAnswers,
-      wrong: wrongAnswers,
-      streak: bestStreak,
+      correct:
+        correctAnswers,
+      wrong:
+        wrongAnswers,
+      streak:
+        bestStreak,
       date:
         new Date().toISOString()
     })
@@ -1067,7 +1058,8 @@ function finishGame() {
 
 
   resultScreen.scrollIntoView({
-    behavior: "smooth"
+    behavior:
+      "smooth"
   });
 
 }
@@ -1095,6 +1087,7 @@ function getAudio() {
       window.AudioContext ||
       window.webkitAudioContext;
 
+
     if (AudioContext) {
 
       audioContext =
@@ -1118,8 +1111,10 @@ function tone(
 
   if (!soundEnabled) return;
 
+
   const ctx =
     getAudio();
+
 
   if (!ctx) return;
 
@@ -1161,12 +1156,17 @@ function tone(
   );
 
 
-  oscillator.connect(gain);
+  oscillator.connect(
+    gain
+  );
 
-  gain.connect(ctx.destination);
+  gain.connect(
+    ctx.destination
+  );
 
 
   oscillator.start();
+
 
   oscillator.stop(
     ctx.currentTime +
@@ -1307,7 +1307,9 @@ soundToggle.addEventListener(
     );
 
 
-    if (soundEnabled) {
+    if (
+      soundEnabled
+    ) {
 
       playClick();
 
