@@ -2,155 +2,62 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <title>EduRush — Media Pembelajaran Matematika</title>
 
-  <title>EduRush — Belajar Jadi Menyenangkan</title>
-
-  <!-- CSS UTAMA -->
   <link rel="stylesheet" href="css/style.css">
-
-  <!-- GOOGLE FONT -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  >
 </head>
 
 <body>
 
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-container">
 
-  <!-- =====================================================
-       NAVBAR
-       ===================================================== -->
-
-  <header>
-
-    <nav class="navbar">
-
-      <!-- LOGO -->
       <a href="index.html" class="logo">
-
-        <span class="logo-icon">E</span>
-
-        <span>EduRush</span>
-
+        <div class="logo-mark">ER</div>
+        <span>Edu<span>Rush</span></span>
       </a>
 
-
-      <!-- MENU -->
-      <div class="nav-links">
-
+      <nav class="nav-menu">
+        <a href="index.html" class="active">Beranda</a>
         <a href="#tentang">Tentang</a>
+      </nav>
 
-        <a href="#belajar">Belajar</a>
-
-        <a href="#fitur">Fitur</a>
-
-        <a href="#testimoni">Testimoni</a>
-
-      </div>
-
-
-      <!-- BUTTON -->
-      <a href="setup.html" class="nav-button">
-        Mulai 
-      </a>
-
-
-      <!-- MOBILE MENU -->
-      <button
-        class="menu-toggle"
-        aria-label="Buka menu"
-      >
-        ☰
-      </button>
-
-    </nav>
-
+    </div>
   </header>
 
 
-
-  <!-- =====================================================
-       HERO
-       ===================================================== -->
-
+  <!-- MAIN -->
   <main>
 
-    <section class="hero" id="tentang">
+    <!-- HERO -->
+    <section class="hero">
 
-      <div class="hero-container">
+      <div class="hero-inner">
 
-
-        <!-- TEXT HERO -->
-
-        <div class="hero-content">
-
-          <div class="hero-badge">
-            ✦ Belajar seru untuk anak SD
-          </div>
-
-
-          <h1>
-            Belajar nggak harus
-            <span>membosankan.</span>
-          </h1>
-
-
-          <p>
-            Menemani anak belajar literasi dan numerasi
-            dengan cara yang lebih menyenangkan,
-            sederhana, dan mudah dipahami.
-          </p>
-
-
-          <div class="hero-buttons">
-
-            <a
-              href="setup.html"
-              class="btn-primary"
-            >
-              Mulai Petualangan
-            </a>
-
-
-            <a
-              href="#belajar"
-              class="btn-secondary"
-            >
-              Pelajari Program
-            </a>
-
-          </div>
-
+        <div class="hero-badge">
+          MEDIA PEMBELAJARAN MATEMATIKA
         </div>
 
+        <h1>
+          Belajar Matematika
+          <br>
+          Jadi Lebih Seru!
+        </h1>
 
+        <p class="hero-description">
+          Pelajari matematika melalui materi yang sederhana,
+          visual, dan latihan interaktif bersama EduRush.
+        </p>
 
-        <!-- VISUAL HERO -->
+        <div class="hero-actions">
 
-        <div class="hero-visual">
-
-          <div class="hero-card">
-
-            <!--
-              GANTI GAMBAR INI DENGAN GAMBAR
-              DARI DESAIN / ASSET KAMU
-            -->
-
-            <img
-              src="assets/hero-edurush.png"
-              alt="Anak-anak belajar bersama EduRush"
-            >
-
-          </div>
+          <a href="materi.html" class="btn-primary">
+            Mulai Belajar
+            <span>→</span>
+          </a>
 
         </div>
 
@@ -159,293 +66,24 @@
     </section>
 
 
+    <!-- TENTANG EDURUSH -->
+    <section class="about" id="tentang">
 
-    <!-- =====================================================
-         METODE BELAJAR
-         ===================================================== -->
+      <div class="about-inner">
 
-    <section
-      class="features-section"
-      id="belajar"
-    >
-
-      <div class="section-container">
-
-
-        <!-- JUDUL -->
-
-        <div class="section-heading">
-
-          <div class="section-label">
-            Metode Belajar
-          </div>
-
-          <h2>
-            Kurikulum menyenangkan
-            untuk semua anak
-          </h2>
-
-          <p>
-            Materi dibuat sederhana dan dikemas
-            dalam aktivitas yang membuat anak
-            lebih tertarik untuk belajar.
-          </p>
-
-        </div>
-
-
-
-        <!-- CARDS -->
-
-        <div class="features-grid">
-
-
-          <!-- LITERASI -->
-
-          <article class="feature-card">
-
-            <div class="feature-icon">
-              📖
-            </div>
-
-            <h3>
-              Literasi Kreatif
-            </h3>
-
-            <p>
-              Membantu anak memahami bacaan,
-              mengenal kata, dan melatih kemampuan
-              memahami informasi.
-            </p>
-
-          </article>
-
-
-
-          <!-- NUMERASI -->
-
-          <article class="feature-card">
-
-            <div class="feature-icon">
-              🔢
-            </div>
-
-            <h3>
-              Numerasi Seru
-            </h3>
-
-            <p>
-              Belajar angka, operasi hitung,
-              dan pemecahan masalah melalui
-              aktivitas yang menyenangkan.
-            </p>
-
-          </article>
-
-
-
-          <!-- EKSPLORASI -->
-
-          <article class="feature-card">
-
-            <div class="feature-icon">
-              ⭐
-            </div>
-
-            <h3>
-              Eksplorasi Soal
-            </h3>
-
-            <p>
-              Anak dapat mencoba berbagai
-              tantangan soal sesuai kemampuan
-              sambil belajar dengan santai.
-            </p>
-
-          </article>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         PROGRAM
-         ===================================================== -->
-
-    <section
-      class="program-section"
-      id="fitur"
-    >
-
-      <div class="section-container">
-
-
-        <div class="section-heading">
-
-          <div class="section-label">
-            Program EduRush
-          </div>
-
-          <h2>
-            Belajar lewat tantangan kecil
-          </h2>
-
-          <p>
-            Anak tidak hanya membaca materi,
-            tetapi juga langsung mencoba dan
-            mendapatkan pengalaman belajar.
-          </p>
-
-        </div>
-
-
-
-        <div class="program-grid">
-
-
-          <!-- PROGRAM 1 -->
-
-          <article class="program-card">
-
-            <div class="program-image">
-
-              <img
-                src="assets/literasi.png"
-                alt="Program literasi EduRush"
-              >
-
-            </div>
-
-            <div class="program-content">
-
-              <span class="program-tag">
-                Literasi
-              </span>
-
-              <h3>
-                Baca & Pahami
-              </h3>
-
-              <p>
-                Anak membaca materi singkat
-                kemudian menjawab pertanyaan
-                untuk menguji pemahamannya.
-              </p>
-
-            </div>
-
-          </article>
-
-
-
-          <!-- PROGRAM 2 -->
-
-          <article class="program-card">
-
-            <div class="program-image">
-
-              <img
-                src="assets/numerasi.png"
-                alt="Program numerasi EduRush"
-              >
-
-            </div>
-
-            <div class="program-content">
-
-              <span class="program-tag">
-                Numerasi
-              </span>
-
-              <h3>
-                Hitung & Tantang
-              </h3>
-
-              <p>
-                Latihan berhitung dibuat menjadi
-                tantangan singkat agar anak
-                tidak cepat bosan.
-              </p>
-
-            </div>
-
-          </article>
-
-
-
-          <!-- PROGRAM 3 -->
-
-          <article class="program-card">
-
-            <div class="program-image">
-
-              <img
-                src="assets/quiz.png"
-                alt="Kuis EduRush"
-              >
-
-            </div>
-
-            <div class="program-content">
-
-              <span class="program-tag">
-                Kuis
-              </span>
-
-              <h3>
-                Quiz Rush
-              </h3>
-
-              <p>
-                Uji kemampuan melalui kuis
-                interaktif dengan sistem skor
-                yang sederhana dan menyenangkan.
-              </p>
-
-            </div>
-
-          </article>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         TESTIMONI / INFO
-         ===================================================== -->
-
-    <section
-      class="cta-section"
-      id="testimoni"
-    >
-
-      <div class="cta-box">
+        <p class="section-label">
+          TENTANG EDURUSH
+        </p>
 
         <h2>
-          Yuk, mulai petualangan belajarmu!
+          Belajar Matematika dengan Cara yang Lebih Interaktif
         </h2>
 
         <p>
-          Pilih aktivitas belajar dan mulai
-          tantangan pertama bersama EduRush.
+          EduRush merupakan media pembelajaran interaktif yang dirancang
+          untuk membantu siswa Tunarunngu belajar matematika melalui materi yang
+          sederhana, visual, dan latihan yang menarik.
         </p>
-
-        <a
-          href="setup.html"
-          class="btn-primary"
-        >
-          Mulai Sekarang
-        </a>
 
       </div>
 
@@ -454,158 +92,27 @@
   </main>
 
 
+  <!-- FOOTER -->
+  <footer class="footer">
 
-  <!-- =====================================================
-       FOOTER
-       ===================================================== -->
+    <div class="footer-left">
 
-  <footer>
-
-    <div class="footer-container">
-
-
-      <!-- BRAND -->
-
-      <div>
-
-        <div class="footer-logo">
-
-          <span class="logo-icon">E</span>
-
-          <span>EduRush</span>
-
-        </div>
-
-        <p class="footer-description">
-          Platform belajar interaktif yang membantu
-          anak SD belajar literasi dan numerasi
-          dengan cara yang lebih menyenangkan.
-        </p>
-
+      <div class="footer-logo">
+        <div class="logo-mark">ER</div>
+        <span>Edu<span>Rush</span></span>
       </div>
 
-
-
-      <!-- PROGRAM -->
-
-      <div class="footer-column">
-
-        <h4>
-          Program
-        </h4>
-
-        <a href="#belajar">
-          Literasi SD
-        </a>
-
-        <a href="#belajar">
-          Numerasi SD
-        </a>
-
-        <a href="#fitur">
-          Quiz Rush
-        </a>
-
-      </div>
-
-
-
-      <!-- DUKUNGAN -->
-
-      <div class="footer-column">
-
-        <h4>
-          Dukungan
-        </h4>
-
-        <a href="#tentang">
-          Tentang EduRush
-        </a>
-
-        <a href="#fitur">
-          Fitur
-        </a>
-
-        <a href="#testimoni">
-          Testimoni
-        </a>
-
-      </div>
-
+      <p>
+        Media Pembelajaran Interaktif Matematika
+      </p>
 
     </div>
 
-
-
-    <!-- FOOTER BOTTOM -->
-
-    <div class="footer-bottom">
-
-      <span>
-        © 2026 EduRush. Hak Cipta Dilindungi.
-      </span>
-
-      <span>
-        Belajar • Bermain • Berkembang
-      </span>
-
-    </div>
+    <p class="copyright">
+      © 2026 EduRush
+    </p>
 
   </footer>
-
-
-
-  <!-- =====================================================
-       JAVASCRIPT
-       ===================================================== -->
-
-  <script>
-
-    const menuToggle =
-      document.querySelector(".menu-toggle");
-
-    const navLinks =
-      document.querySelector(".nav-links");
-
-
-    if (menuToggle) {
-
-      menuToggle.addEventListener("click", () => {
-
-        if (navLinks.style.display === "flex") {
-
-          navLinks.style.display = "none";
-
-        } else {
-
-          navLinks.style.display = "flex";
-
-          navLinks.style.flexDirection = "column";
-
-          navLinks.style.position = "absolute";
-
-          navLinks.style.top = "68px";
-
-          navLinks.style.left = "5%";
-
-          navLinks.style.right = "5%";
-
-          navLinks.style.padding = "20px";
-
-          navLinks.style.background = "#ffffff";
-
-          navLinks.style.borderRadius = "16px";
-
-          navLinks.style.boxShadow =
-            "0 15px 35px rgba(20,95,66,0.12)";
-
-        }
-
-      });
-
-    }
-
-  </script>
 
 </body>
 </html>

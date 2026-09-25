@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Quiz Rush — EduRush</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/quiz.css">
+</head>
+
+<body>
+
+  <header class="navbar">
+
+    <div class="nav-container">
+
+      <a href="index.html" class="logo">
+        <span class="logo-mark">+</span>
+
+        <span>
+          Edu<span>Rush</span>
+        </span>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="index.html">Beranda</a>
+        <a href="index.html#tentang">Tentang</a>
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <!-- =====================================================
+         START
+         ===================================================== -->
+
+    <section class="rush-start" id="rush-start">
+
+      <div class="start-shape shape-one">+</div>
+      <div class="start-shape shape-two">×</div>
+      <div class="start-shape shape-three">÷</div>
+
+      <div class="start-content">
+
+        <div class="rush-label">
+          <span>⚡</span>
+          QUIZ RUSH
+        </div>
+
+        <h1>
+          Siap hadapi<br>
+          <span>tantangannya?</span>
+        </h1>
+
+        <p id="start-description">
+          Jawab 5 tantangan matematika dan kumpulkan XP sebanyak mungkin.
+        </p>
+
+        <div class="start-info">
+
+          <div>
+            <strong>05</strong>
+            <span>Tantangan</span>
+          </div>
+
+          <div>
+            <strong>20s</strong>
+            <span>Per tantangan</span>
+          </div>
+
+          <div>
+            <strong>+10</strong>
+            <span>XP dasar</span>
+          </div>
+
+        </div>
+
+        <button
+          type="button"
+          class="start-button"
+          id="start-button">
+
+          <span>Mulai Quiz Rush</span>
+          <b>→</b>
+
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         GAME
+         ===================================================== -->
+
+    <section class="rush-game" id="rush-game">
+
+      <div class="game-card">
+
+        <!-- TOP -->
+
+        <div class="game-top">
+
+          <div class="challenge-counter">
+
+            <small>TANTANGAN</small>
+
+            <strong id="question-number">
+              01
+            </strong>
+
+            <span>
+              /
+              <span id="question-total">05</span>
+            </span>
+
+          </div>
+
+
+          <div class="game-stats">
+
+            <div
+              class="life-display"
+              id="life-display"
+              aria-label="Nyawa">
+              ♥♥♥
+            </div>
+
+            <div class="mini-stat">
+
+              <span>🔥</span>
+
+              <div>
+                <small>STREAK</small>
+                <strong id="streak">0</strong>
+              </div>
+
+            </div>
+
+            <div class="mini-stat">
+
+              <span>⭐</span>
+
+              <div>
+                <small>XP</small>
+                <strong id="xp">0</strong>
+              </div>
+
+            </div>
+
+            <button
+              type="button"
+              class="sound-toggle"
+              id="sound-toggle"
+              aria-label="Matikan suara">
+              🔊
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- PROGRESS -->
+
+        <div class="rush-progress">
+
+          <div class="rush-progress-track">
+            <span id="progress-fill"></span>
+          </div>
+
+        </div>
+
+
+        <!-- TIMER -->
+
+        <div class="timer-box">
+
+          <div
+            class="timer-circle"
+            id="timer-circle">
+
+            <svg viewBox="0 0 50 50">
+
+              <circle
+                class="timer-background"
+                cx="25"
+                cy="25"
+                r="21">
+              </circle>
+
+              <circle
+                class="timer-progress"
+                id="timer-progress"
+                cx="25"
+                cy="25"
+                r="21">
+              </circle>
+
+            </svg>
+
+            <strong id="timer">
+              20
+            </strong>
+
+          </div>
+
+          <div>
+
+            <span>WAKTU</span>
+
+            <p>
+              Jawab sebelum waktunya habis
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- CHALLENGE -->
+
+        <div class="challenge">
+
+          <div
+            class="challenge-type"
+            id="challenge-type">
+            ⚡ QUICK TAP
+          </div>
+
+          <div
+            class="challenge-visual"
+            id="challenge-visual">
+          </div>
+
+        </div>
+
+
+        <!-- QUESTION -->
+
+        <div class="question-box">
+
+          <span id="question-label">
+            PILIH JAWABAN
+          </span>
+
+          <h2 id="question-text">
+            Soal
+          </h2>
+
+        </div>
+
+
+        <!-- OPTIONS -->
+
+        <div
+          class="answer-grid"
+          id="answer-grid">
+        </div>
+
+
+        <!-- FEEDBACK -->
+
+        <div
+          class="answer-feedback"
+          id="answer-feedback">
+
+          <div
+            class="feedback-icon"
+            id="feedback-icon">
+            ✓
+          </div>
+
+          <div>
+
+            <strong id="feedback-title">
+              Mantap!
+            </strong>
+
+            <p id="feedback-text"></p>
+
+          </div>
+
+        </div>
+
+
+        <!-- NEXT -->
+
+        <button
+          type="button"
+          class="next-button"
+          id="next-button"
+          disabled>
+
+          <span id="next-text">
+            Tantangan Berikutnya
+          </span>
+
+          <b>→</b>
+
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         RESULT
+         ===================================================== -->
+
+    <section
+      class="rush-result"
+      id="rush-result">
+
+      <div class="result-card">
+
+        <div class="result-decoration">
+          ✦
+        </div>
+
+        <div class="trophy">
+          🏆
+        </div>
+
+        <span class="result-label">
+          QUIZ RUSH SELESAI
+        </span>
+
+        <h2>
+          Tantangan selesai!
+        </h2>
+
+        <p>
+          Ini hasil permainanmu.
+        </p>
+
+
+        <div class="total-xp">
+
+          <span>TOTAL XP</span>
+
+          <strong id="final-xp">
+            0
+          </strong>
+
+          <small>XP</small>
+
+        </div>
+
+
+        <div class="result-grid">
+
+          <div>
+            <strong id="final-correct">0</strong>
+            <span>Benar</span>
+          </div>
+
+          <div>
+            <strong id="final-wrong">0</strong>
+            <span>Salah</span>
+          </div>
+
+          <div>
+            <strong id="final-streak">0</strong>
+            <span>Streak</span>
+          </div>
+
+        </div>
+
+
+        <div class="result-buttons">
+
+          <button
+            type="button"
+            id="retry-button"
+            class="retry-button">
+            Main Lagi ↻
+          </button>
+
+          <a
+            href="materi.html"
+            class="material-button">
+            Pilih Materi
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+
+    <p>
+      © 2026 EduRush
+    </p>
+
+  </footer>
+
+
+  <script src="js/quiz.js"></script>
+
+</body>
+
+</html>

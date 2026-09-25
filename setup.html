@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,188 +10,317 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="setup-page">
+<body>
 
-  <!-- HEADER -->
-  <header class="setup-header">
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header class="navbar">
+
     <a href="index.html" class="logo">
+
       <span class="logo-icon">✦</span>
-      <span>EduRush</span>
+
+      <span>
+        EduRush
+      </span>
+
     </a>
 
-    <a href="index.html" class="back-button">
-      ← Kembali
-    </a>
+    <nav class="nav-menu">
+
+      <a href="index.html">
+        Beranda
+      </a>
+
+      <a href="index.html#tentang">
+        Tentang
+      </a>
+
+    </nav>
+
   </header>
 
 
-  <!-- MAIN -->
-  <main class="setup-container">
+  <!-- =========================
+       MAIN
+  ========================== -->
 
-    <!-- INTRO -->
-    <section class="setup-intro">
-      <div class="setup-badge">
-        ✨ Siap bermain?
-      </div>
+  <main class="setup-page">
 
-      <h1>
-        Pilih Materi<br>
-        <span>Belajarmu!</span>
-      </h1>
-
-      <p>
-        Pilih materi yang ingin kamu pelajari,
-        lalu mulai tantangan serunya!
-      </p>
-    </section>
+    <section class="setup-container">
 
 
-    <!-- MATERI -->
-    <section class="materi-section">
+      <!-- =========================
+           HEADING
+      ========================== -->
 
-      <div class="section-label">
-        PILIH MATERI
-      </div>
+      <div class="setup-heading">
 
-      <div class="materi-grid" id="materi-grid">
+        <div class="setup-label">
+          ✦ MATEMATIKA
+        </div>
 
-        <!-- LITERASI -->
-        <button
-          type="button"
-          class="materi-card"
-          data-materi="literasi"
-        >
-          <div class="materi-icon literasi-icon">
-            📚
-          </div>
-
-          <div class="materi-content">
-            <h2>Literasi</h2>
-
-            <p>
-              Yuk asah kemampuan membaca,
-              memahami cerita, dan menemukan informasi!
-            </p>
-
-            <span class="materi-action">
-              Pilih Literasi →
-            </span>
-          </div>
-
-          <div class="materi-check">
-            ✓
-          </div>
-        </button>
-
-
-        <!-- NUMERASI -->
-        <button
-          type="button"
-          class="materi-card"
-          data-materi="numerasi"
-        >
-          <div class="materi-icon numerasi-icon">
-            🔢
-          </div>
-
-          <div class="materi-content">
-            <h2>Numerasi</h2>
-
-            <p>
-              Latih kemampuan berhitung,
-              mengenal angka, dan memecahkan masalah!
-            </p>
-
-            <span class="materi-action">
-              Pilih Numerasi →
-            </span>
-          </div>
-
-          <div class="materi-check">
-            ✓
-          </div>
-        </button>
-
-      </div>
-    </section>
-
-
-    <!-- INFO -->
-    <section class="setup-info">
-      <div class="info-icon">
-        💡
-      </div>
-
-      <div>
-        <strong>Belajar sambil bermain</strong>
+        <h1>
+          Pilih materi
+          <span>belajarmu.</span>
+        </h1>
 
         <p>
-          Setiap tantangan akan memberikan poin
-          dan membantu kamu mengasah kemampuan.
+          Pilih materi Matematika yang ingin kamu pelajari,
+          lalu lanjutkan ke pembelajaran.
         </p>
+
+       </div>
+
+
+      <!-- =========================
+           MATERIAL BOX
+      ========================== -->
+
+      <div class="setup-box">
+
+        <div class="setup-box-title">
+
+          <span class="number">
+            01
+          </span>
+
+          <div>
+
+            <h2>
+              Materi Matematika
+            </h2>
+
+            <p>
+              Pilih salah satu materi untuk mulai belajar.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- =========================
+             MATERIAL LIST
+        ========================== -->
+
+        <div class="material-list">
+
+
+          <!-- MATERI 1 -->
+
+          <button
+            class="material-card active"
+            type="button"
+            data-material="Bilangan"
+          >
+
+            <div class="material-icon">
+              1
+            </div>
+
+            <div class="material-info">
+
+              <h3>
+                Bilangan
+              </h3>
+
+              <p>
+                Mengenal bilangan dan konsep dasarnya.
+              </p>
+
+            </div>
+
+            <span class="material-arrow">
+              →
+            </span>
+
+          </button>
+
+
+          <!-- MATERI 2 -->
+
+          <button
+            class="material-card"
+            type="button"
+            data-material="Operasi Hitung"
+          >
+
+            <div class="material-icon">
+              +
+            </div>
+
+            <div class="material-info">
+
+              <h3>
+                Operasi Hitung
+              </h3>
+
+              <p>
+                Mengenal penjumlahan, pengurangan,
+                perkalian, dan pembagian.
+              </p>
+
+            </div>
+
+            <span class="material-arrow">
+              →
+            </span>
+
+          </button>
+
+
+          <!-- MATERI 3 -->
+
+          <button
+            class="material-card"
+            type="button"
+            data-material="Bangun Datar"
+          >
+
+            <div class="material-icon">
+              □
+            </div>
+
+            <div class="material-info">
+
+              <h3>
+                Bangun Datar
+              </h3>
+
+              <p>
+                Mengenal bentuk dan ciri-ciri
+                bangun datar.
+              </p>
+
+            </div>
+
+            <span class="material-arrow">
+              →
+            </span>
+
+          </button>
+
+
+        </div>
+
+
+        <!-- =========================
+             BUTTON
+        ========================== -->
+
+        <button
+          class="setup-button"
+          id="continueButton"
+          type="button"
+        >
+
+          Mulai Belajar
+
+          <span>
+            →
+          </span>
+
+        </button>
+
       </div>
+
+
+      <!-- =========================
+           NOTE
+      ========================== -->
+
+      <div class="setup-note">
+
+        <span>
+          ✦
+        </span>
+
+        <p>
+          Pilihan materi dapat disesuaikan dengan
+          kebutuhan pembelajaran.
+        </p>
+
+      </div>
+
     </section>
-
-
-    <!-- CONTINUE -->
-    <button
-      type="button"
-      id="continue-btn"
-      class="setup-continue"
-      disabled
-    >
-      <span>Mulai Belajar</span>
-      <span>→</span>
-    </button>
 
   </main>
 
 
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <p>
+      © 2026 EduRush
+    </p>
+
+  </footer>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
   <script>
-    const materiCards = document.querySelectorAll(".materi-card");
-    const continueBtn = document.getElementById("continue-btn");
 
-    let selectedMateri = null;
+    const materialCards =
+      document.querySelectorAll(".material-card");
+
+    const continueButton =
+      document.getElementById("continueButton");
 
 
-    materiCards.forEach(card => {
+    let selectedMaterial = "Bilangan";
+
+
+    /* =========================
+       PILIH MATERI
+    ========================== */
+
+    materialCards.forEach(card => {
 
       card.addEventListener("click", () => {
 
-        materiCards.forEach(item => {
-          item.classList.remove("selected");
+        materialCards.forEach(item => {
+
+          item.classList.remove("active");
+
         });
 
-        card.classList.add("selected");
+        card.classList.add("active");
 
-        selectedMateri = card.dataset.materi;
-
-        continueBtn.disabled = false;
-        continueBtn.classList.add("active");
+        selectedMaterial =
+          card.dataset.material;
 
       });
 
     });
 
 
-    continueBtn.addEventListener("click", () => {
+    /* =========================
+       MULAI BELAJAR
+    ========================== */
 
-      if (!selectedMateri) return;
+    continueButton.addEventListener("click", () => {
 
       localStorage.setItem(
-        "edurush_materi",
-        selectedMateri
+        "edurush_material",
+        selectedMaterial
       );
 
-      /*
-        Setelah materi dipilih,
-        pengguna diarahkan ke halaman game.
-      */
-
-      window.location.href = "game.html";
+      window.location.href =
+        "belajar.html";
 
     });
+
   </script>
 
 </body>
+
 </html>
