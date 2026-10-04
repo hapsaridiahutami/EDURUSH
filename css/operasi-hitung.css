@@ -1,146 +1,104 @@
-/* =========================================================
-   EDURUSH — OPERASI HITUNG
-   PAGE SPECIFIC STYLE
-   ========================================================= */
-
-
-/* =========================
-   LESSON HEADER
-   ========================= */
+/* =====================================================
+   OPERASI HITUNG — EDURUSH
+===================================================== */
 
 .lesson-header {
-  padding: 48px 24px 62px;
-  border-bottom: 1px solid var(--border);
+  padding: 70px 24px 75px;
+  background: var(--green-deep);
+  color: var(--white);
 }
 
 .lesson-header-inner {
-  width: min(1050px, 92%);
+  width: min(1100px, 90%);
   margin: auto;
 }
 
 .back-link {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  margin-bottom: 42px;
-  color: var(--green);
-  font-size: 12px;
-  font-weight: 700;
+  margin-bottom: 45px;
+  color: rgba(255,255,255,.72);
+  font-size: 13px;
+  font-weight: 600;
   transition: .2s ease;
 }
 
 .back-link:hover {
-  color: var(--green-dark);
+  color: var(--yellow);
   transform: translateX(-3px);
 }
 
 .lesson-top {
   display: flex;
-  align-items: flex-end;
   justify-content: space-between;
-  gap: 40px;
+  align-items: flex-end;
+  gap: 30px;
 }
 
-.lesson-header .section-label {
-  margin-bottom: 12px;
+.lesson-header .section-label,
+.lesson-label {
   color: var(--orange);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 800;
-  letter-spacing: 1.2px;
+  letter-spacing: 1.5px;
 }
 
 .lesson-header h1 {
+  margin-top: 13px;
+  color: var(--cream);
   font-family: "Bricolage Grotesque", sans-serif;
-  font-size: clamp(50px, 7vw, 78px);
+  font-size: clamp(50px, 7vw, 80px);
   line-height: .95;
-  letter-spacing: -4px;
-  color: var(--green-deep);
+  letter-spacing: -3px;
 }
 
 .lesson-description {
-  max-width: 570px;
-  margin-top: 20px;
-  color: var(--muted);
-  font-size: 14px;
+  max-width: 600px;
+  margin-top: 22px;
+  color: rgba(255,255,255,.72);
+  font-size: 15px;
   line-height: 1.7;
 }
 
-.lesson-number {
-  display: flex;
-  align-items: baseline;
-  gap: 5px;
-  padding: 15px 18px;
-  background: var(--yellow);
-  border-radius: 10px;
-  color: var(--green-dark);
-  flex-shrink: 0;
-}
-
-.lesson-number span {
-  font-family: "Bricolage Grotesque", sans-serif;
-  font-size: 27px;
-  font-weight: 800;
-}
-
-.lesson-number small {
-  font-size: 11px;
-  font-weight: 700;
-}
-
-
-/* =========================
-   MAIN CONTENT
-   ========================= */
+/* CONTENT */
 
 .lesson-content {
-  padding: 78px 24px 105px;
+  padding: 80px 24px;
+  background: var(--cream);
 }
 
 .lesson-container {
-  width: min(1050px, 92%);
+  width: min(1100px, 90%);
   margin: auto;
 }
-
-
-/* =========================
-   INTRO
-   ========================= */
 
 .lesson-intro {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: end;
-  margin-bottom: 45px;
+  margin-bottom: 55px;
 }
 
-.lesson-label {
-  margin-bottom: 10px;
-  color: var(--orange);
-  font-size: 8px;
-  font-weight: 800;
-  letter-spacing: 1.1px;
-}
-
-.lesson-intro h2 {
-  max-width: 500px;
+.lesson-intro h2,
+.practice-heading h2,
+.summary-section h2,
+.lesson-next h2 {
+  margin-top: 10px;
   font-family: "Bricolage Grotesque", sans-serif;
-  font-size: 38px;
+  color: var(--green-deep);
+  font-size: clamp(30px, 4vw, 46px);
   line-height: 1.05;
   letter-spacing: -1.8px;
-  color: var(--green-deep);
 }
 
 .lesson-intro > p {
   color: var(--muted);
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.8;
 }
 
-
-/* =========================
-   OPERATION GRID
-   ========================= */
+/* OPERATION CARDS */
 
 .operation-grid {
   display: grid;
@@ -149,124 +107,80 @@
 }
 
 .operation-card {
-  position: relative;
-  min-height: 355px;
-  padding: 25px;
-  overflow: hidden;
-  background: var(--white);
+  padding: 28px;
   border: 1px solid var(--border);
-  border-radius: 16px;
-  transition:
-    transform .2s ease,
-    border-color .2s ease,
-    box-shadow .2s ease;
-}
-
-.operation-card::after {
-  content: "";
-  position: absolute;
-  width: 110px;
-  height: 110px;
-  right: -35px;
-  top: -35px;
-  border-radius: 50%;
-  background: var(--yellow-soft);
-  z-index: 0;
+  border-radius: 20px;
+  background: var(--white);
+  box-shadow: 0 8px 25px rgba(7,61,40,.045);
+  transition: .2s ease;
 }
 
 .operation-card:hover {
-  transform: translateY(-5px);
-  border-color: #b9ccc1;
-  box-shadow: 8px 8px 0 rgba(5, 91, 53, .07);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(7,61,40,.08);
 }
-
-.card-top,
-.operation-info,
-.visual-box {
-  position: relative;
-  z-index: 1;
-}
-
-
-/* =========================
-   CARD TOP
-   ========================= */
 
 .card-top {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 }
 
 .operation-tag {
-  width: 30px;
-  height: 30px;
+  width: 34px;
+  height: 34px;
   display: grid;
   place-items: center;
-  background: #f1f5f2;
-  border-radius: 7px;
-  color: var(--muted);
-  font-size: 9px;
+  border-radius: 9px;
+  background: var(--yellow-soft);
+  color: var(--green-dark);
+  font-size: 11px;
   font-weight: 800;
 }
 
 .operation-symbol {
-  width: 58px;
-  height: 58px;
+  width: 50px;
+  height: 50px;
   display: grid;
   place-items: center;
-  background: var(--yellow);
-  border-radius: 13px;
-  color: var(--green-dark);
+  border-radius: 14px;
+  background: var(--green);
+  color: var(--white);
   font-family: "Bricolage Grotesque", sans-serif;
-  font-size: 29px;
+  font-size: 28px;
   font-weight: 800;
-  box-shadow: 4px 4px 0 rgba(5, 91, 53, .12);
 }
-
-
-/* =========================
-   CARD TEXT
-   ========================= */
 
 .operation-info {
   margin-top: 22px;
 }
 
 .operation-info h3 {
-  font-family: "Bricolage Grotesque", sans-serif;
-  font-size: 25px;
-  line-height: 1.05;
   color: var(--green-deep);
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 24px;
 }
 
 .operation-info p {
-  max-width: 410px;
-  margin-top: 9px;
+  margin-top: 8px;
   color: var(--muted);
-  font-size: 14px;
-  line-height: 1.7;
+  font-size: 13px;
+  line-height: 1.65;
 }
 
-
-/* =========================
-   VISUAL BOX
-   ========================= */
-
 .visual-box {
-  margin-top: 22px;
-  padding: 18px;
-  background: #f5f8f5;
-  border: 1px solid #e4ebe6;
-  border-radius: 12px;
+  margin-top: 25px;
+  padding: 20px;
+  border-radius: 15px;
+  background: #f3f7f4;
 }
 
 .visual-title {
   margin-bottom: 15px;
-  color: var(--green-dark);
+  color: var(--orange);
   font-size: 9px;
   font-weight: 800;
-  letter-spacing: .8px;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
 }
 
@@ -275,118 +189,76 @@
   align-items: center;
   justify-content: center;
   gap: 13px;
-  min-height: 48px;
+  min-height: 55px;
 }
 
 .object-group {
   display: flex;
-  align-items: center;
   gap: 5px;
-  padding: 8px 10px;
-  background: var(--white);
-  border: 1px solid #dce6df;
-  border-radius: 9px;
-}
-
-.object-group span {
-  color: var(--green);
-  font-size: 19px;
-  line-height: 1;
-}
-
-.objects-row > strong {
   color: var(--orange);
-  font-family: "Bricolage Grotesque", sans-serif;
   font-size: 19px;
+}
+
+.object-group.result-group {
+  color: var(--green);
+}
+
+.objects-row strong {
+  color: var(--green-deep);
+  font-size: 20px;
 }
 
 .arrow {
-  color: var(--muted) !important;
-  font-size: 19px !important;
-}
-
-.result-group {
-  background: var(--yellow-soft);
-  border-color: #ead46c;
-}
-
-.removed-group {
-  opacity: .4;
-  text-decoration: line-through;
+  color: var(--muted);
+  font-size: 20px;
 }
 
 .equation {
-  margin-top: 13px;
+  margin-top: 15px;
   text-align: center;
   color: var(--green-deep);
-  font-family: "Bricolage Grotesque", sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
 }
 
 .equation strong {
-  color: var(--green);
-  font-size: 24px;
+  color: var(--orange);
 }
-
-
-/* =========================
-   MULTIPLICATION VISUAL
-   ========================= */
 
 .multiply-groups {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 9px;
-  min-height: 48px;
+  gap: 12px;
 }
 
 .mini-group {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 4px;
-  padding: 10px 12px;
-  background: var(--white);
-  border: 1px solid #dce6df;
+  padding: 9px;
   border-radius: 9px;
-}
-
-.mini-group span {
+  background: var(--white);
   color: var(--green);
-  font-size: 17px;
+  font-size: 16px;
 }
-
-
-/* =========================
-   DIVISION VISUAL
-   ========================= */
 
 .division-groups {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 13px;
-  min-height: 48px;
+  gap: 12px;
 }
 
 .division-box {
   display: flex;
-  gap: 5px;
-  padding: 10px 13px;
+  gap: 4px;
+  padding: 10px 14px;
+  border-radius: 10px;
   background: var(--white);
-  border: 1px solid #dce6df;
-  border-radius: 9px;
-}
-
-.division-box span {
   color: var(--green);
-  font-size: 17px;
+  font-size: 16px;
 }
 
-
-/* =========================
-   PRACTICE
-   ========================= */
+/* PRACTICE */
 
 .practice-section {
   margin-top: 90px;
@@ -394,237 +266,182 @@
 
 .practice-heading {
   display: flex;
-  align-items: flex-end;
   justify-content: space-between;
-  gap: 25px;
-  margin-bottom: 22px;
-}
-
-.practice-heading h2,
-.summary-section h2 {
-  font-family: "Bricolage Grotesque", sans-serif;
-  font-size: 36px;
-  line-height: 1.05;
-  letter-spacing: -1.7px;
-  color: var(--green-deep);
+  align-items: flex-end;
+  margin-bottom: 25px;
 }
 
 .practice-badge {
-  padding: 8px 12px;
+  padding: 8px 13px;
+  border-radius: 999px;
   background: var(--yellow-soft);
-  border: 1px solid #ead46c;
-  border-radius: 7px;
   color: var(--green-dark);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 800;
 }
-
-
-/* =========================
-   PRACTICE CARD
-   ========================= */
 
 .practice-card {
-  padding: 30px;
-  background: var(--green);
-  border-radius: 17px;
-  color: var(--white);
-  overflow: hidden;
-}
-
-.practice-question {
-  max-width: 570px;
-}
-
-.question-label {
-  display: inline-block;
-  margin-bottom: 12px;
-  color: var(--yellow);
-  font-size: 8px;
-  font-weight: 800;
-  letter-spacing: 1px;
+  padding: 35px;
+  border-radius: 22px;
+  background: var(--white);
+  border: 1px solid var(--border);
 }
 
 .practice-question h3 {
+  margin-top: 8px;
+  color: var(--green-deep);
   font-family: "Bricolage Grotesque", sans-serif;
-  font-size: 29px;
+  font-size: 28px;
 }
 
 .practice-question p {
-  margin-top: 7px;
-  color: rgba(255, 255, 255, .75);
-  font-size: 13px;
-  line-height: 1.6;
+  max-width: 650px;
+  margin-top: 8px;
+  color: var(--muted);
+  line-height: 1.7;
 }
-
-
-/* =========================
-   APPLE VISUAL
-   ========================= */
 
 .apple-visual {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 15px;
-  margin-top: 30px;
-  padding: 23px;
-  background: rgba(255, 255, 255, .08);
-  border: 1px solid rgba(255, 255, 255, .12);
-  border-radius: 13px;
+  margin: 35px 0 20px;
 }
 
 .apple-group {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  max-width: 120px;
-  gap: 4px;
-  font-size: 27px;
-  line-height: 1;
+  gap: 3px;
+  font-size: 28px;
 }
 
 .plus-sign,
 .arrow-big {
-  color: var(--yellow);
-  font-family: "Bricolage Grotesque", sans-serif;
-  font-size: 25px;
+  color: var(--green);
+  font-size: 28px;
   font-weight: 800;
 }
 
 .answer-circle {
-  width: 75px;
-  height: 75px;
+  width: 78px;
+  height: 78px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: var(--yellow);
   border-radius: 50%;
-  color: var(--green-dark);
+  background: var(--yellow);
+  color: var(--green-deep);
 }
 
 .answer-circle strong {
-  font-family: "Bricolage Grotesque", sans-serif;
-  font-size: 27px;
-  line-height: 1;
+  font-size: 25px;
 }
 
 .answer-circle small {
-  margin-top: 2px;
-  font-size: 8px;
+  font-size: 9px;
   font-weight: 700;
 }
 
 .practice-equation {
-  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
   text-align: center;
-  font-family: "Bricolage Grotesque", sans-serif;
-  font-size: 27px;
+  color: var(--green-deep);
+  font-size: 22px;
 }
 
 .practice-equation strong {
-  color: var(--yellow);
-  font-size: 32px;
+  color: var(--orange);
 }
 
-
-/* =========================
-   SUMMARY
-   ========================= */
+/* SUMMARY */
 
 .summary-section {
   margin-top: 90px;
 }
 
-.summary-section > .lesson-label {
-  margin-bottom: 9px;
+.summary-section > h2 {
+  margin-bottom: 30px;
 }
 
 .summary-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  margin-top: 23px;
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  overflow: hidden;
+  gap: 12px;
 }
 
 .summary-item {
-  min-height: 125px;
-  padding: 22px;
   display: flex;
   align-items: center;
-  gap: 15px;
-  border-right: 1px solid var(--border);
-}
-
-.summary-item:last-child {
-  border-right: none;
+  gap: 12px;
+  padding: 18px;
+  border-radius: 15px;
+  background: var(--white);
+  border: 1px solid var(--border);
 }
 
 .summary-symbol {
-  width: 46px;
-  height: 46px;
+  width: 42px;
+  height: 42px;
   display: grid;
   place-items: center;
   flex-shrink: 0;
+  border-radius: 11px;
   background: var(--yellow-soft);
-  border-radius: 10px;
-  color: var(--green-dark);
-  font-family: "Bricolage Grotesque", sans-serif;
-  font-size: 22px;
+  color: var(--green);
+  font-size: 20px;
   font-weight: 800;
+}
+
+.summary-item strong,
+.summary-item small {
+  display: block;
 }
 
 .summary-item strong {
-  display: block;
   color: var(--green-deep);
-  font-size: 12px;
-  font-weight: 800;
+  font-size: 13px;
 }
 
 .summary-item small {
-  display: block;
-  margin-top: 4px;
+  margin-top: 3px;
   color: var(--muted);
   font-size: 10px;
 }
 
-
-/* =========================
-   NEXT SECTION
-   ========================= */
+/* NEXT */
 
 .lesson-next {
-  margin-top: 55px;
-  padding: 28px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 30px;
-  background: #073d28;
-  border-radius: 16px;
+  margin-top: 90px;
+  padding: 38px;
+  border-radius: 22px;
+  background: var(--green-deep);
+  color: var(--white);
 }
 
 .next-content {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 22px;
 }
 
 .next-icon {
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   display: grid;
   place-items: center;
   flex-shrink: 0;
+  border-radius: 14px;
   background: var(--yellow);
-  border-radius: 11px;
-  color: var(--green-dark);
-  font-size: 20px;
-  font-weight: 800;
+  color: var(--green-deep);
+  font-size: 22px;
+  font-weight: 900;
 }
 
 .lesson-next .lesson-label {
@@ -632,372 +449,96 @@
 }
 
 .lesson-next h2 {
-  font-family: "Bricolage Grotesque", sans-serif;
-  font-size: 25px;
-  line-height: 1.1;
-  color: var(--white);
+  color: var(--cream);
+  font-size: 30px;
 }
 
 .lesson-next p:not(.lesson-label) {
-  max-width: 450px;
-  margin-top: 6px;
-  color: rgba(255, 255, 255, .65);
-  font-size: 11px;
-  line-height: 1.5;
+  max-width: 500px;
+  margin-top: 7px;
+  color: rgba(255,255,255,.68);
+  font-size: 13px;
+  line-height: 1.6;
 }
 
-.lesson-button {
+.next-button {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
+  gap: 15px;
   flex-shrink: 0;
-  padding: 13px 18px;
+  padding: 14px 19px;
+  border-radius: 11px;
   background: var(--yellow);
-  border-radius: 8px;
-  color: var(--green-dark);
-  font-size: 12px;
+  color: var(--green-deep);
+  font-size: 13px;
   font-weight: 800;
-  box-shadow: 4px 4px 0 rgba(0, 0, 0, .18);
   transition: .2s ease;
 }
 
-.lesson-button:hover {
+.next-button:hover {
   transform: translateY(-2px);
+  background: #ffd84c;
 }
 
-.lesson-button span {
-  font-size: 16px;
+.next-button span {
+  font-size: 19px;
 }
 
+/* MOBILE */
 
-/* =========================
-   MOBILE
-   ========================= */
-
-@media (max-width: 850px) {
-
-  .lesson-top {
-    align-items: flex-start;
-  }
-
-  .lesson-intro {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
-  .summary-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .summary-item:nth-child(2) {
-    border-right: none;
-  }
-
-  .summary-item:nth-child(-n + 2) {
-    border-bottom: 1px solid var(--border);
-  }
-
-  .lesson-next {
-    align-items: flex-start;
-  }
-
-}
-
-
-@media (max-width: 650px) {
-
+@media (max-width: 750px) {
   .lesson-header {
-    padding: 40px 20px 50px;
+    padding: 50px 20px 60px;
   }
 
-  .lesson-header-inner {
-    width: 100%;
-  }
-
-  .back-link {
-    margin-bottom: 32px;
-  }
-
-  .lesson-top {
-    display: block;
-  }
-
-  .lesson-header h1 {
-    font-size: 49px;
-    letter-spacing: -2.8px;
-  }
-
-  .lesson-description {
-    font-size: 13px;
-  }
-
-  .lesson-number {
-    width: fit-content;
-    margin-top: 25px;
-  }
-
-  .lesson-content {
-    padding: 58px 20px 75px;
-  }
-
+  .lesson-header-inner,
   .lesson-container {
     width: 100%;
   }
 
-  .lesson-intro h2 {
-    font-size: 31px;
+  .lesson-intro {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .operation-grid {
     grid-template-columns: 1fr;
   }
 
-  .operation-card {
-    min-height: auto;
-    padding: 22px;
-  }
-
-  .objects-row {
-    gap: 8px;
-  }
-
-  .object-group {
-    padding: 7px 8px;
-  }
-
-  .object-group span {
-    font-size: 16px;
-  }
-
-  .multiply-groups {
-    gap: 5px;
-  }
-
-  .mini-group {
-    padding: 8px 9px;
-  }
-
-  .mini-group span {
-    font-size: 15px;
-  }
-
-  .division-groups {
-    gap: 7px;
-  }
-
-  .division-box {
-    padding: 8px 9px;
-  }
-
-  .division-box span {
-    font-size: 15px;
-  }
-
-  .practice-section,
-  .summary-section {
-    margin-top: 65px;
-  }
-
-  .practice-heading {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .practice-heading h2,
-  .summary-section h2 {
-    font-size: 30px;
-  }
-
-  .practice-card {
-    padding: 22px;
-  }
-
-  .apple-visual {
-    gap: 8px;
-    padding: 17px 10px;
-  }
-
-  .apple-group {
-    max-width: 80px;
-    font-size: 21px;
-  }
-
-  .plus-sign,
-  .arrow-big {
-    font-size: 19px;
-  }
-
-  .answer-circle {
-    width: 62px;
-    height: 62px;
-  }
-
-  .answer-circle strong {
-    font-size: 23px;
-  }
-
   .summary-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .summary-item {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .summary-item:last-child {
-    border-bottom: none;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .lesson-next {
-    padding: 22px;
-    flex-direction: column;
-    gap: 22px;
-  }
-
-  .next-content {
-    align-items: flex-start;
-  }
-
-  .lesson-button {
-    width: 100%;
-  }
-
-}
-
-
-@media (max-width: 380px) {
-
-  .lesson-header h1 {
-    font-size: 43px;
-  }
-
-  .operation-card {
-    padding: 19px;
-  }
-
-  .visual-box {
-    padding: 13px;
-  }
-
-  .objects-row {
-    gap: 5px;
-  }
-
-  .object-group {
-    padding: 6px;
-  }
-
-  .object-group span {
-    font-size: 14px;
-  }
-
-  .objects-row > strong {
-    font-size: 16px;
-  }
-
-  .arrow {
-    font-size: 15px !important;
-  }
-
-}
-/* =========================================================
-   NEXT — LANJUT KE LATIHAN
-   ========================================================= */
-
-.lesson-next {
-  width: min(1000px, 92%);
-  margin: 80px auto 100px;
-  padding: 32px 35px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
-
-  background: var(--green-dark);
-  border-radius: 14px;
-}
-
-.lesson-next .section-label {
-  margin-bottom: 9px;
-
-  color: var(--yellow);
-  font-size: 8px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-}
-
-.lesson-next h2 {
-  margin: 0;
-
-  font-family: "Bricolage Grotesque", sans-serif;
-  font-size: clamp(25px, 4vw, 36px);
-  line-height: 1.05;
-  letter-spacing: -1px;
-
-  color: white;
-}
-
-.lesson-next p:not(.section-label) {
-  margin-top: 10px;
-
-  color: rgba(255, 255, 255, .72);
-  font-size: 13px;
-  line-height: 1.6;
-}
-
-.next-button {
-  flex-shrink: 0;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
-
-  padding: 14px 20px;
-
-  background: var(--yellow);
-  border-radius: 8px;
-
-  color: var(--green-dark);
-  font-size: 12px;
-  font-weight: 800;
-
-  text-decoration: none;
-
-  transition:
-    transform .2s ease,
-    background .2s ease;
-}
-
-.next-button:hover {
-  transform: translateY(-2px);
-  background: #ffd43d;
-}
-
-.next-button span {
-  font-size: 17px;
-}
-
-
-/* MOBILE */
-
-@media (max-width: 650px) {
-
-  .lesson-next {
-    width: calc(100% - 40px);
-    margin: 60px auto 70px;
-    padding: 28px 23px;
-
     flex-direction: column;
     align-items: flex-start;
   }
 
   .next-button {
     width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .lesson-content {
+    padding: 60px 18px;
   }
 
+  .practice-heading {
+    display: block;
+  }
+
+  .practice-badge {
+    display: inline-block;
+    margin-top: 15px;
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .practice-card {
+    padding: 23px;
+  }
 }

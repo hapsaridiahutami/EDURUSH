@@ -1,1319 +1,1430 @@
-/* =========================================================
-   EDURUSH — QUIZ RUSH
-   ========================================================= */
-
-
-/* =========================================================
-   SETTINGS
-   ========================================================= */
-
-const MAX_TIME = 20;
-const MAX_LIVES = 3;
-
-
-/* =========================================================
-   SOAL
-   ========================================================= */
-
-const quizQuestions = [
+document.addEventListener("DOMContentLoaded", () => {
 
   /* =====================================================
-     1. PENJUMLAHAN
-     ===================================================== */
+     MATERI
+  ===================================================== */
 
-  {
-    type: "operation",
+  const params = new URLSearchParams(window.location.search);
 
-    tag: "⚡ HITUNG CEPAT",
-
-    visual: `
-      <div class="math-visual-equation">
-        <strong>4</strong>
-        <span>+</span>
-        <strong>2</strong>
-        <span>=</span>
-        <b>?</b>
-      </div>
-    `,
-
-    label: "PENJUMLAHAN",
-
-    question:
-      "Berapakah hasil dari 4 + 2?",
-
-    options: [
-      "5",
-      "6",
-      "7",
-      "8"
-    ],
-
-    answer: "6",
-
-    correctFeedback:
-      "4 + 2 berarti menggabungkan 4 dengan 2. Jadi hasilnya 6.",
-
-    wrongFeedback:
-      "Coba hitung mulai dari 4, lalu tambah 2. Urutannya 5, lalu 6."
-  },
+  const materi =
+    params.get("materi") ||
+    document.body.dataset.materi ||
+    "operasi";
 
 
   /* =====================================================
-     2. PENGURANGAN
-     ===================================================== */
+     HELPER VISUAL
+  ===================================================== */
 
-  {
-    type: "operation",
-
-    tag: "🎯 HITUNG CEPAT",
-
-    visual: `
-      <div class="math-visual-equation">
-        <strong>15</strong>
-        <span>−</span>
-        <strong>6</strong>
-        <span>=</span>
-        <b>?</b>
-      </div>
-    `,
-
-    label: "PENGURANGAN",
-
-    question:
-      "Berapakah hasil dari 15 − 6?",
-
-    options: [
-      "7",
-      "8",
-      "9",
-      "10"
-    ],
-
-    answer: "9",
-
-    correctFeedback:
-      "15 dikurangi 6. Dari 15 mundur 6 langkah: 14, 13, 12, 11, 10, 9.",
-
-    wrongFeedback:
-      "Coba hitung mundur dari 15 sebanyak 6 langkah sampai mendapatkan hasilnya."
-  },
-
-
-  /* =====================================================
-     3. PERKALIAN
-     ===================================================== */
-
-  {
-    type: "operation",
-
-    tag: "🔥 TANTANGAN",
-
-    visual: `
-      <div class="math-visual-equation">
-        <strong>4</strong>
-        <span>×</span>
-        <strong>3</strong>
-        <span>=</span>
-        <b>?</b>
-      </div>
-    `,
-
-    label: "PERKALIAN",
-
-    question:
-      "Berapakah hasil dari 4 × 3?",
-
-    options: [
-      "10",
-      "11",
-      "12",
-      "13"
-    ],
-
-    answer: "12",
-
-    correctFeedback:
-      "4 × 3 artinya 4 kelompok yang masing-masing berisi 3. Jadi 3 + 3 + 3 + 3 = 12.",
-
-    wrongFeedback:
-      "Ingat, 4 × 3 sama dengan menjumlahkan angka 3 sebanyak 4 kali."
-  },
-
-
-  /* =====================================================
-     4. PEMBAGIAN
-     ===================================================== */
-
-  {
-    type: "operation",
-
-    tag: "⚡ HITUNG CEPAT",
-
-    visual: `
-      <div class="math-visual-equation">
-        <strong>12</strong>
-        <span>÷</span>
-        <strong>3</strong>
-        <span>=</span>
-        <b>?</b>
-      </div>
-    `,
-
-    label: "PEMBAGIAN",
-
-    question:
-      "Berapakah hasil dari 12 ÷ 3?",
-
-    options: [
-      "3",
-      "4",
-      "5",
-      "6"
-    ],
-
-    answer: "4",
-
-    correctFeedback:
-      "12 ÷ 3 berarti 12 dibagi menjadi 3 kelompok yang sama. Setiap kelompok berisi 4.",
-
-    wrongFeedback:
-      "Coba pikirkan: angka berapa yang jika dikalikan 3 hasilnya 12?"
+  function dots(count, className = "") {
+    return Array.from(
+      { length: count },
+      () => `<span class="visual-dot ${className}"></span>`
+    ).join("");
   }
 
-];
+  function tensBlocks(count) {
+    return Array.from(
+      { length: count },
+      () => `<span class="ten-block"></span>`
+    ).join("");
+  }
+
+  function onesBlocks(count) {
+    return Array.from(
+      { length: count },
+      () => `<span class="one-block"></span>`
+    ).join("");
+  }
+
+  function multiplicationArray(rows, cols) {
+    let html = "";
+
+    for (let i = 0; i < rows * cols; i++) {
+      html += `<span></span>`;
+    }
+
+    return `
+      <div
+        class="array-grid"
+        style="--cols:${cols}"
+        aria-label="${rows} baris dan ${cols} kolom"
+      >
+        ${html}
+      </div>
+    `;
+  }
+
+
+  /* =====================================================
+     VISUAL OPERASI HITUNG
+  ===================================================== */
+
+  function additionVisual() {
+    return `
+      <div class="operation-visual">
+
+        <div class="number-card">
+          <strong>24</strong>
+
+          <div class="place-label">
+            2 puluhan + 4 satuan
+          </div>
+
+          <div class="block-row">
+            <div class="ten-group">
+              ${tensBlocks(2)}
+            </div>
+
+            <div class="ones-group">
+              ${onesBlocks(4)}
+            </div>
+          </div>
+        </div>
+
+        <div class="big-operator plus">+</div>
+
+        <div class="number-card">
+          <strong>15</strong>
+
+          <div class="place-label">
+            1 puluhan + 5 satuan
+          </div>
+
+          <div class="block-row">
+            <div class="ten-group">
+              ${tensBlocks(1)}
+            </div>
+
+            <div class="ones-group">
+              ${onesBlocks(5)}
+            </div>
+          </div>
+        </div>
+
+        <div class="visual-question">
+          <span>=</span>
+          <strong>?</strong>
+        </div>
+
+      </div>
+    `;
+  }
+
+
+  function subtractionVisual() {
+    return `
+      <div class="operation-visual subtraction-visual">
 
+        <div class="number-card">
+          <strong>56</strong>
 
-/* =========================================================
-   STATE
-   ========================================================= */
+          <div class="place-label">
+            jumlah awal
+          </div>
 
-let currentQuestion = 0;
+          <div class="block-row">
+            <div class="ten-group">
+              ${tensBlocks(5)}
+            </div>
 
-let xp = 0;
-let streak = 0;
-let bestStreak = 0;
+            <div class="ones-group">
+              ${onesBlocks(6)}
+            </div>
+          </div>
+        </div>
 
-let correctAnswers = 0;
-let wrongAnswers = 0;
+        <div class="big-operator minus">−</div>
 
-let lives = MAX_LIVES;
+        <div class="number-card remove-card">
+          <strong>28</strong>
 
-let timer = MAX_TIME;
+          <div class="place-label">
+            yang dikurangi
+          </div>
 
-let timerInterval = null;
+          <div class="mini-remove">
+            ${dots(8, "remove-dot")}
+          </div>
+        </div>
 
-let answered = false;
+        <div class="visual-question">
+          <span>=</span>
+          <strong>?</strong>
+        </div>
 
-let soundEnabled = true;
+      </div>
+    `;
+  }
 
-let audioContext = null;
 
+  function multiplicationVisual() {
+    return `
+      <div class="multiplication-visual">
 
-/* =========================================================
-   ELEMENT
-   ========================================================= */
+        <div class="array-title">
+          <strong>7 kelompok</strong>
 
-const startScreen =
-  document.getElementById("rush-start");
+          <span>×</span>
 
-const gameScreen =
-  document.getElementById("rush-game");
+          <strong>8 tiap kelompok</strong>
+        </div>
 
-const resultScreen =
-  document.getElementById("rush-result");
+        ${multiplicationArray(7, 8)}
 
+        <div class="array-equation">
+          <span>7</span>
+          <b>×</b>
+          <span>8</span>
+          <b>=</b>
+          <strong>?</strong>
+        </div>
 
-const startButton =
-  document.getElementById("start-button");
+      </div>
+    `;
+  }
 
-const retryButton =
-  document.getElementById("retry-button");
 
+  function divisionVisual() {
+    return `
+      <div class="division-visual">
 
-const questionNumber =
-  document.getElementById("question-number");
+        <div class="division-total">
+          <strong>72</strong>
+          <span>benda</span>
+        </div>
 
-const questionTotal =
-  document.getElementById("question-total");
+        <div class="division-arrow">
+          <span>dibagi rata menjadi</span>
+          <strong>9 kelompok</strong>
+        </div>
 
-const progressFill =
-  document.getElementById("progress-fill");
+        <div class="division-groups">
 
+          ${Array.from(
+            { length: 9 },
+            (_, index) => `
+              <div class="division-group">
 
-const streakElement =
-  document.getElementById("streak");
+                <small>Kelompok ${index + 1}</small>
 
-const xpElement =
-  document.getElementById("xp");
+                <div class="group-dots">
+                  ${dots(8)}
+                </div>
 
+                <strong>?</strong>
 
-const lifeDisplay =
-  document.getElementById("life-display");
+              </div>
+            `
+          ).join("")}
 
+        </div>
 
-const timerElement =
-  document.getElementById("timer");
+        <div class="division-equation">
+          72 ÷ 9 = <strong>?</strong>
+        </div>
 
-const timerProgress =
-  document.getElementById("timer-progress");
+      </div>
+    `;
+  }
 
-const timerCircle =
-  document.getElementById("timer-circle");
 
+  /* =====================================================
+     VISUAL PECAHAN
+  ===================================================== */
 
-const challengeType =
-  document.getElementById("challenge-type");
+  function fractionPie(parts, filled) {
 
-const challengeVisual =
-  document.getElementById("challenge-visual");
+    const degrees = 360 / parts;
+    const stops = [];
 
+    for (let i = 0; i < parts; i++) {
 
-const questionLabel =
-  document.getElementById("question-label");
+      const start = i * degrees;
+      const end = (i + 1) * degrees;
 
-const questionText =
-  document.getElementById("question-text");
+      const color =
+        i < filled
+          ? "var(--green)"
+          : "#e8eee9";
 
+      stops.push(
+        `${color} ${start}deg ${end}deg`
+      );
+    }
 
-const answerGrid =
-  document.getElementById("answer-grid");
+    return `
+      <div
+        class="fraction-pie"
+        style="background: conic-gradient(${stops.join(",")})"
+      >
+        <div class="pie-inner"></div>
+      </div>
+    `;
+  }
 
 
-const feedback =
-  document.getElementById("answer-feedback");
+  function halfVisual() {
+    return `
+      <div class="fraction-board">
 
-const feedbackIcon =
-  document.getElementById("feedback-icon");
+        <div class="fraction-card">
 
-const feedbackTitle =
-  document.getElementById("feedback-title");
+          ${fractionPie(2, 1)}
 
-const feedbackText =
-  document.getElementById("feedback-text");
+          <strong>1/2</strong>
 
+          <span>1 dari 2 bagian</span>
 
-const nextButton =
-  document.getElementById("next-button");
+        </div>
 
-const nextText =
-  document.getElementById("next-text");
+        <div class="fraction-meaning">
 
+          <span>1</span>
+          <i>bagian diwarnai</i>
+          <span>dari</span>
+          <strong>2</strong>
+          <i>bagian sama besar</i>
 
-const soundToggle =
-  document.getElementById("sound-toggle");
+        </div>
 
+      </div>
+    `;
+  }
 
-const finalXP =
-  document.getElementById("final-xp");
 
-const finalCorrect =
-  document.getElementById("final-correct");
+  function compareFractionVisual() {
+    return `
+      <div class="fraction-compare">
 
-const finalWrong =
-  document.getElementById("final-wrong");
+        <div class="fraction-card">
 
-const finalStreak =
-  document.getElementById("final-streak");
+          ${fractionPie(4, 1)}
 
+          <strong>1/4</strong>
 
-/* =========================================================
-   INITIAL
-   ========================================================= */
+          <span>1 dari 4 bagian</span>
 
-questionTotal.textContent =
-  quizQuestions.length;
+        </div>
 
-gameScreen.style.display =
-  "none";
+        <div class="compare-symbol">?</div>
 
-resultScreen.classList.remove(
-  "show"
-);
+        <div class="fraction-card">
 
-updateStats();
+          ${fractionPie(2, 1)}
 
+          <strong>1/2</strong>
 
-/* =========================================================
-   START
-   ========================================================= */
+          <span>1 dari 2 bagian</span>
 
-startButton.addEventListener(
-  "click",
-  startGame
-);
+        </div>
 
+      </div>
+    `;
+  }
 
-function startGame() {
 
-  currentQuestion = 0;
+  function addFractionVisual() {
+    return `
+      <div class="fraction-add">
 
-  xp = 0;
+        <div class="fraction-card small">
+          ${fractionPie(4, 1)}
+          <strong>1/4</strong>
+        </div>
 
-  streak = 0;
+        <div class="fraction-operator">+</div>
 
-  bestStreak = 0;
+        <div class="fraction-card small">
+          ${fractionPie(4, 1)}
+          <strong>1/4</strong>
+        </div>
 
-  correctAnswers = 0;
+        <div class="fraction-operator">=</div>
 
-  wrongAnswers = 0;
+        <div class="fraction-result">?</div>
 
-  lives = MAX_LIVES;
+      </div>
+    `;
+  }
+
+
+  function threeQuarterVisual() {
+    return `
+      <div class="fraction-board">
+
+        <div class="fraction-card">
+
+          ${fractionPie(4, 3)}
+
+          <strong>3/4</strong>
+
+          <span>3 dari 4 bagian</span>
+
+        </div>
+
+        <div class="fraction-meaning">
+
+          <span>3</span>
+          <i>bagian diwarnai</i>
+          <span>dari</span>
+          <strong>4</strong>
+          <i>bagian sama besar</i>
+
+        </div>
+
+      </div>
+    `;
+  }
+
+
+  /* =====================================================
+     VISUAL BANGUN DATAR
+  ===================================================== */
+
+  function squareVisual() {
+    return `
+      <div class="shape-stage">
+
+        <div class="shape-card">
+
+          <svg
+            class="shape-svg"
+            viewBox="0 0 240 190"
+            role="img"
+            aria-label="Persegi dengan empat sisi sama panjang"
+          >
+
+            <rect
+              x="65"
+              y="25"
+              width="110"
+              height="110"
+              rx="5"
+              class="svg-square"
+            />
+
+            <text x="120" y="18" text-anchor="middle">
+              4 sisi
+            </text>
+
+            <text x="120" y="160" text-anchor="middle">
+              sama panjang
+            </text>
+
+          </svg>
+
+          <strong>PERSEGI</strong>
+
+        </div>
+
+      </div>
+    `;
+  }
+
+
+  function circleVisual() {
+    return `
+      <div class="shape-stage">
+
+        <div class="shape-card">
+
+          <svg
+            class="shape-svg"
+            viewBox="0 0 240 190"
+            role="img"
+            aria-label="Lingkaran tanpa sudut"
+          >
+
+            <circle
+              cx="120"
+              cy="85"
+              r="60"
+              class="svg-circle"
+            />
+
+            <text x="120" y="170" text-anchor="middle">
+              0 sudut
+            </text>
+
+          </svg>
+
+          <strong>LINGKARAN</strong>
+
+        </div>
+
+      </div>
+    `;
+  }
+
+
+  function triangleVisual() {
+    return `
+      <div class="shape-stage">
+
+        <div class="shape-card">
+
+          <svg
+            class="shape-svg"
+            viewBox="0 0 240 190"
+            role="img"
+            aria-label="Segitiga dengan tiga sisi"
+          >
+
+            <polygon
+              points="120,20 55,140 185,140"
+              class="svg-triangle"
+            />
+
+            <text x="120" y="165" text-anchor="middle">
+              3 sisi
+            </text>
+
+          </svg>
+
+          <strong>SEGITIGA</strong>
+
+        </div>
+
+      </div>
+    `;
+  }
+
+
+  function rectangleVisual() {
+    return `
+      <div class="shape-stage">
+
+        <div class="shape-card">
+
+          <svg
+            class="shape-svg"
+            viewBox="0 0 240 190"
+            role="img"
+            aria-label="Persegi panjang dengan empat sisi"
+          >
+
+            <rect
+              x="40"
+              y="50"
+              width="160"
+              height="75"
+              rx="5"
+              class="svg-rectangle"
+            />
+
+            <text x="120" y="155" text-anchor="middle">
+              4 sisi
+            </text>
+
+          </svg>
+
+          <strong>PERSEGI PANJANG</strong>
+
+        </div>
+
+      </div>
+    `;
+  }
+
+
+  /* =====================================================
+     SOAL QUIZ
+  ===================================================== */
+
+  const questionSets = {
+
+    /* ================= OPERASI ================= */
+
+    operasi: [
+
+      {
+        question: "Berapakah hasil dari 24 + 15?",
+        answers: ["39", "38", "40", "41"],
+        correct: 0,
+        type: "➕ PENJUMLAHAN",
+        helper: "Gabungkan puluhan dan satuan.",
+        visual: additionVisual()
+      },
+
+      {
+        question: "Berapakah hasil dari 56 − 28?",
+        answers: ["26", "28", "30", "32"],
+        correct: 1,
+        type: "➖ PENGURANGAN",
+        helper: "Kurangkan bagian yang diambil dari jumlah awal.",
+        visual: subtractionVisual()
+      },
+
+      {
+        question: "Berapakah hasil dari 7 × 8?",
+        answers: ["48", "54", "56", "64"],
+        correct: 2,
+        type: "✖️ PERKALIAN",
+        helper: "Hitung 7 kelompok dengan 8 benda tiap kelompok.",
+        visual: multiplicationVisual()
+      },
+
+      {
+        question: "Berapakah hasil dari 72 ÷ 9?",
+        answers: ["6", "7", "8", "9"],
+        correct: 2,
+        type: "➗ PEMBAGIAN",
+        helper: "Bagikan 72 benda secara rata ke 9 kelompok.",
+        visual: divisionVisual()
+      }
+
+    ],
+
+
+    /* ================= PECAHAN ================= */
+
+    pecahan: [
+
+      {
+        question: "Pecahan yang menunjukkan setengah adalah ...",
+        answers: ["1/2", "1/3", "1/4", "2/3"],
+        correct: 0,
+        type: "🍕 MENGENAL PECAHAN",
+        helper: "Lihat 1 bagian dari 2 bagian yang sama besar.",
+        visual: halfVisual()
+      },
+
+      {
+        question: "Pecahan manakah yang lebih besar?",
+        answers: ["1/4", "1/2", "1/3", "1/5"],
+        correct: 1,
+        type: "🍕 MEMBANDINGKAN PECAHAN",
+        helper: "Bandingkan bagian yang diwarnai.",
+        visual: compareFractionVisual()
+      },
+
+      {
+        question: "Berapakah hasil dari 1/4 + 1/4?",
+        answers: ["1/2", "1/3", "2/3", "1"],
+        correct: 0,
+        type: "➕ PENJUMLAHAN PECAHAN",
+        helper: "Gabungkan dua bagian seperempat.",
+        visual: addFractionVisual()
+      },
+
+      {
+        question: "Pecahan 3/4 dibaca ...",
+        answers: [
+          "Tiga per empat",
+          "Empat per tiga",
+          "Tiga per tiga",
+          "Satu per empat"
+        ],
+        correct: 0,
+        type: "🍕 MEMBACA PECAHAN",
+        helper: "Ada 3 bagian dari 4 bagian yang sama besar.",
+        visual: threeQuarterVisual()
+      }
+
+    ],
+
+
+    /* ================= BANGUN DATAR ================= */
+
+    bangun: [
+
+      {
+        question: "Bangun datar yang memiliki 4 sisi sama panjang adalah ...",
+        answers: [
+          "Persegi",
+          "Segitiga",
+          "Lingkaran",
+          "Persegi panjang"
+        ],
+        correct: 0,
+        type: "▣ PERSEGI",
+        helper: "Perhatikan jumlah sisi dan panjang sisinya.",
+        visual: squareVisual()
+      },
+
+      {
+        question: "Bangun datar yang tidak memiliki sudut adalah ...",
+        answers: [
+          "Persegi",
+          "Segitiga",
+          "Lingkaran",
+          "Persegi panjang"
+        ],
+        correct: 2,
+        type: "○ LINGKARAN",
+        helper: "Cari bentuk yang tidak mempunyai titik sudut.",
+        visual: circleVisual()
+      },
+
+      {
+        question: "Bangun datar yang memiliki 3 sisi adalah ...",
+        answers: [
+          "Lingkaran",
+          "Segitiga",
+          "Persegi",
+          "Persegi panjang"
+        ],
+        correct: 1,
+        type: "△ SEGITIGA",
+        helper: "Hitung jumlah sisi pada gambar.",
+        visual: triangleVisual()
+      },
+
+      {
+        question: "Persegi panjang memiliki ... sisi.",
+        answers: ["2", "3", "4", "5"],
+        correct: 2,
+        type: "▭ PERSEGI PANJANG",
+        helper: "Hitung semua sisi pada bentuk.",
+        visual: rectangleVisual()
+      }
+
+    ]
+
+  };
+
+
+  /* =====================================================
+     SETUP
+  ===================================================== */
+
+  const questions =
+    questionSets[materi] ||
+    questionSets.operasi;
+
+  const MAX_TIME = 20;
+  const MAX_LIVES = 3;
+
+  let currentQuestion = 0;
+  let lives = MAX_LIVES;
+  let xp = 0;
+  let streak = 0;
+  let bestStreak = 0;
+  let correct = 0;
+  let wrong = 0;
+  let timeLeft = MAX_TIME;
+  let timer = null;
+  let answered = false;
+
+
+  /* =====================================================
+     ELEMENT
+  ===================================================== */
+
+  const quizStart =
+    document.getElementById("quiz-start");
+
+  const rushGame =
+    document.getElementById("rush-game");
+
+  const rushResult =
+    document.getElementById("rush-result");
+
+  const startButton =
+    document.getElementById("start-button");
+
+  const retryButton =
+    document.getElementById("retry-button");
+
+  const questionNumber =
+    document.getElementById("question-number");
+
+  const questionTotal =
+    document.getElementById("question-total");
+
+  const startTotal =
+    document.getElementById("start-total");
+
+  const lifeDisplay =
+    document.getElementById("life-display");
+
+  const streakDisplay =
+    document.getElementById("streak");
+
+  const xpDisplay =
+    document.getElementById("xp");
+
+  const progressFill =
+    document.getElementById("progress-fill");
+
+  const progressBar =
+    document.querySelector(".rush-progress");
+
+  const timerDisplay =
+    document.getElementById("timer");
+
+  const timerProgress =
+    document.getElementById("timer-progress");
+
+  const timerCircle =
+    document.getElementById("timer-circle");
+
+  const challengeType =
+    document.getElementById("challenge-type");
+
+  const visualHelper =
+    document.getElementById("visual-helper");
+
+  const challengeVisual =
+    document.getElementById("challenge-visual");
+
+  const questionText =
+    document.getElementById("question-text");
+
+  const answerGrid =
+    document.getElementById("answer-grid");
+
+  const answerFeedback =
+    document.getElementById("answer-feedback");
+
+  const feedbackIcon =
+    document.getElementById("feedback-icon");
+
+  const feedbackTitle =
+    document.getElementById("feedback-title");
+
+  const feedbackText =
+    document.getElementById("feedback-text");
+
+  const nextButton =
+    document.getElementById("next-button");
+
+  const nextText =
+    document.getElementById("next-text");
+
+  const finalXp =
+    document.getElementById("final-xp");
+
+  const finalCorrect =
+    document.getElementById("final-correct");
+
+  const finalWrong =
+    document.getElementById("final-wrong");
+
+  const finalStreak =
+    document.getElementById("final-streak");
+
+
+  /* =====================================================
+     JUMLAH SOAL
+  ===================================================== */
 
   questionTotal.textContent =
-    quizQuestions.length;
+    String(questions.length).padStart(2, "0");
 
-  startScreen.style.display =
-    "none";
-
-  resultScreen.classList.remove(
-    "show"
-  );
-
-  gameScreen.style.display =
-    "block";
-
-  updateStats();
-
-  loadQuestion();
-
-  playClick();
-}
+  startTotal.textContent =
+    String(questions.length).padStart(2, "0");
 
 
-/* =========================================================
-   LOAD QUESTION
-   ========================================================= */
+  /* =====================================================
+     UPDATE NYAWA
+  ===================================================== */
 
-function loadQuestion() {
+  function updateLives() {
 
-  clearInterval(
-    timerInterval
-  );
+    const heartCount =
+      "♥".repeat(lives) +
+      "♡".repeat(MAX_LIVES - lives);
 
-  answered = false;
+    lifeDisplay.textContent =
+      `${heartCount} ${lives} nyawa`;
 
-  const question =
-    quizQuestions[currentQuestion];
-
-
-  questionNumber.textContent =
-    String(currentQuestion + 1)
-      .padStart(2, "0");
-
-
-  progressFill.style.width =
-    `${((currentQuestion + 1) / quizQuestions.length) * 100}%`;
-
-
-  challengeType.textContent =
-    question.tag;
-
-  challengeVisual.innerHTML =
-    question.visual;
-
-  questionLabel.textContent =
-    question.label;
-
-  questionText.textContent =
-    question.question;
-
-
-  feedback.classList.remove(
-    "show"
-  );
-
-
-  nextButton.disabled = true;
-
-
-  if (
-    currentQuestion ===
-    quizQuestions.length - 1
-  ) {
-
-    nextText.textContent =
-      "Lihat Hasil";
-
-  } else {
-
-    nextText.textContent =
-      "Tantangan Berikutnya";
-
+    lifeDisplay.setAttribute(
+      "aria-label",
+      `${lives} dari ${MAX_LIVES} nyawa tersisa`
+    );
   }
 
 
-  createAnswerButtons(
-    question
-  );
+  /* =====================================================
+     UPDATE STATISTIK
+  ===================================================== */
 
+  function updateStats() {
 
-  startTimer();
-
-}
-
-
-/* =========================================================
-   CREATE ANSWERS
-   ========================================================= */
-
-function createAnswerButtons(question) {
-
-  answerGrid.innerHTML = "";
-
-  question.options.forEach(
-    (option, index) => {
-
-      const button =
-        document.createElement("button");
-
-      button.type =
-        "button";
-
-      button.textContent =
-        option;
-
-      button.dataset.answer =
-        option;
-
-      button.addEventListener(
-        "click",
-        () => {
-
-          chooseAnswer(
-            option,
-            button
-          );
-
-        }
-      );
-
-
-      answerGrid.appendChild(
-        button
-      );
-
-
-      button.animate(
-        [
-          {
-            opacity: 0,
-            transform:
-              "translateY(10px)"
-          },
-
-          {
-            opacity: 1,
-            transform:
-              "translateY(0)"
-          }
-        ],
-        {
-          duration: 250,
-          delay: index * 60,
-          fill: "both"
-        }
-      );
-
-    }
-  );
-
-}
-
-
-/* =========================================================
-   CHOOSE ANSWER
-   ========================================================= */
-
-function chooseAnswer(
-  selectedAnswer,
-  selectedButton
-) {
-
-  if (answered) return;
-
-  answered = true;
-
-  clearInterval(
-    timerInterval
-  );
-
-
-  const question =
-    quizQuestions[currentQuestion];
-
-
-  const buttons =
-    answerGrid.querySelectorAll(
-      "button"
-    );
-
-
-  buttons.forEach(
-    button => {
-
-      button.disabled = true;
-
-    }
-  );
-
-
-  if (
-    selectedAnswer ===
-    question.answer
-  ) {
-
-    selectedButton.classList.add(
-      "correct"
-    );
-
-    showCorrect(
-      question
-    );
-
-  } else {
-
-    selectedButton.classList.add(
-      "wrong"
-    );
-
-    buttons.forEach(
-      button => {
-
-        if (
-          button.dataset.answer ===
-          question.answer
-        ) {
-
-          button.classList.add(
-            "correct"
-          );
-
-        }
-
-      }
-    );
-
-    showWrong(
-      question
-    );
-
-  }
-
-
-  nextButton.disabled = false;
-
-}
-
-
-/* =========================================================
-   CORRECT
-   ========================================================= */
-
-function showCorrect(question) {
-
-  correctAnswers++;
-
-  streak++;
-
-
-  if (
-    streak >
-    bestStreak
-  ) {
-
-    bestStreak =
+    streakDisplay.textContent =
       streak;
 
+    xpDisplay.textContent =
+      xp;
+
+    updateLives();
   }
 
 
-  const bonus =
-    Math.min(
-      (streak - 1) * 2,
-      10
-    );
+  /* =====================================================
+     TIMER
+  ===================================================== */
 
+  function updateTimerVisual() {
 
-  const gainedXP =
-    10 + bonus;
+    timerDisplay.textContent =
+      timeLeft;
 
+    const percentage =
+      Math.max(
+        0,
+        timeLeft / MAX_TIME
+      );
 
-  xp += gainedXP;
+    const circumference = 132;
 
+    const offset =
+      circumference *
+      (1 - percentage);
 
-  playCorrect();
+    timerProgress.style.strokeDashoffset =
+      offset;
 
+    if (timeLeft <= 5) {
 
-  feedback.classList.add(
-    "show"
-  );
+      timerCircle.classList.add(
+        "timer-danger"
+      );
 
+    } else {
 
-  feedbackIcon.textContent =
-    "✓";
+      timerCircle.classList.remove(
+        "timer-danger"
+      );
 
-  feedbackTitle.textContent =
-    streak >= 3
-      ? "🔥 Streak mantap!"
-      : "Mantap!";
-
-
-  feedbackText.textContent =
-    `${question.correctFeedback} +${gainedXP} XP`;
-
-
-  updateStats();
-
-
-  xpElement.animate(
-    [
-      {
-        transform:
-          "scale(1)"
-      },
-
-      {
-        transform:
-          "scale(1.35)"
-      },
-
-      {
-        transform:
-          "scale(1)"
-      }
-    ],
-    {
-      duration: 400
     }
-  );
-
-}
-
-
-/* =========================================================
-   WRONG
-   ========================================================= */
-
-function showWrong(question) {
-
-  wrongAnswers++;
-
-  streak = 0;
-
-  lives--;
-
-
-  if (
-    lives < 0
-  ) {
-
-    lives = 0;
-
   }
 
 
-  playWrong();
+  function startTimer() {
+
+    clearInterval(timer);
+
+    timer =
+      setInterval(() => {
+
+        timeLeft--;
+
+        updateTimerVisual();
+
+        if (timeLeft <= 0) {
+
+          clearInterval(timer);
+
+          handleTimeout();
+
+        }
+
+      }, 1000);
+  }
 
 
-  feedback.classList.add(
-    "show"
-  );
+  /* =====================================================
+     MULAI QUIZ
+  ===================================================== */
+
+  function startQuiz() {
+
+    clearInterval(timer);
+
+    currentQuestion = 0;
+    lives = MAX_LIVES;
+    xp = 0;
+    streak = 0;
+    bestStreak = 0;
+    correct = 0;
+    wrong = 0;
+
+    quizStart.style.display = "none";
+    rushResult.style.display = "none";
+    rushGame.style.display = "block";
+
+    updateStats();
+
+    showQuestion();
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
 
 
-  feedbackIcon.textContent =
-    "!";
+  /* =====================================================
+     TAMPILKAN SOAL
+  ===================================================== */
 
-  feedbackTitle.textContent =
-    "Belum tepat";
+  function showQuestion() {
+
+    clearInterval(timer);
+
+    answered = false;
+    timeLeft = MAX_TIME;
+
+    const question =
+      questions[currentQuestion];
 
 
-  feedbackText.textContent =
-    `${question.wrongFeedback} Jawaban yang benar: ${question.answer}.`;
+    questionNumber.textContent =
+      String(currentQuestion + 1)
+        .padStart(2, "0");
 
 
-  updateStats();
+    questionText.textContent =
+      question.question;
 
 
-  const card =
-    document.querySelector(
-      ".game-card"
+    challengeType.textContent =
+      question.type;
+
+
+    visualHelper.textContent =
+      `👀 ${question.helper}`;
+
+
+    challengeVisual.innerHTML =
+      question.visual;
+
+
+    answerGrid.innerHTML =
+      "";
+
+
+    answerFeedback.style.display =
+      "none";
+
+
+    answerFeedback.classList.remove(
+      "feedback-correct",
+      "feedback-wrong"
     );
 
 
-  if (card) {
+    nextButton.style.display =
+      "none";
 
-    card.animate(
-      [
-        {
-          transform:
-            "translateX(0)"
-        },
 
-        {
-          transform:
-            "translateX(-6px)"
-        },
+    const progress =
+      ((currentQuestion + 1) /
+        questions.length) * 100;
 
-        {
-          transform:
-            "translateX(6px)"
-        },
 
-        {
-          transform:
-            "translateX(0)"
-        }
-      ],
-      {
-        duration: 300
+    progressFill.style.width =
+      `${progress}%`;
+
+
+    progressBar.setAttribute(
+      "aria-valuenow",
+      Math.round(progress)
+    );
+
+
+    updateTimerVisual();
+
+
+    question.answers.forEach(
+      (answer, index) => {
+
+        const button =
+          document.createElement("button");
+
+        button.type =
+          "button";
+
+        button.className =
+          "answer-button";
+
+        button.textContent =
+          `${String.fromCharCode(65 + index)}. ${answer}`;
+
+        button.setAttribute(
+          "aria-label",
+          `Pilihan ${String.fromCharCode(65 + index)}: ${answer}`
+        );
+
+        button.addEventListener(
+          "click",
+          () => {
+            checkAnswer(
+              index,
+              button
+            );
+          }
+        );
+
+        answerGrid.appendChild(
+          button
+        );
+
       }
     );
 
+
+    startTimer();
   }
 
-}
 
+  /* =====================================================
+     CEK JAWABAN
+  ===================================================== */
 
-/* =========================================================
-   STATS
-   ========================================================= */
-
-function updateStats() {
-
-  xpElement.textContent =
-    xp;
-
-  streakElement.textContent =
-    streak;
-
-
-  lifeDisplay.innerHTML =
-    "♥".repeat(lives) +
-    `<span class="lost-lives">${
-      "♡".repeat(
-        MAX_LIVES - lives
-      )
-    }</span>`;
-
-}
-
-
-/* =========================================================
-   TIMER
-   ========================================================= */
-
-function startTimer() {
-
-  timer =
-    MAX_TIME;
-
-  updateTimer();
-
-
-  timerInterval =
-    setInterval(
-      () => {
-
-        timer--;
-
-        updateTimer();
-
-
-        if (
-          timer <= 5 &&
-          timer > 0
-        ) {
-
-          playTick();
-
-        }
-
-
-        if (
-          timer <= 0
-        ) {
-
-          clearInterval(
-            timerInterval
-          );
-
-          timeUp();
-
-        }
-
-      },
-      1000
-    );
-
-}
-
-
-/* =========================================================
-   UPDATE TIMER
-   ========================================================= */
-
-function updateTimer() {
-
-  timerElement.textContent =
-    timer;
-
-
-  const circumference =
-    132;
-
-
-  const offset =
-    circumference -
-    (
-      timer /
-      MAX_TIME
-    ) *
-    circumference;
-
-
-  timerProgress.style.strokeDashoffset =
-    offset;
-
-
-  if (
-    timer <= 5
+  function checkAnswer(
+    selectedIndex,
+    selectedButton
   ) {
 
-    timerElement.style.color =
-      "var(--orange)";
+    if (answered) return;
 
-  } else {
+    answered = true;
 
-    timerElement.style.color =
-      "var(--green-dark)";
+    clearInterval(timer);
 
-  }
+    const question =
+      questions[currentQuestion];
 
-}
-
-
-/* =========================================================
-   TIME UP
-   ========================================================= */
-
-function timeUp() {
-
-  if (answered) return;
-
-  answered = true;
-
-  wrongAnswers++;
-
-  streak = 0;
+    const buttons =
+      document.querySelectorAll(
+        ".answer-button"
+      );
 
 
-  playWrong();
-
-
-  const question =
-    quizQuestions[currentQuestion];
-
-
-  const buttons =
-    answerGrid.querySelectorAll(
-      "button"
-    );
-
-
-  buttons.forEach(
-    button => {
-
+    buttons.forEach(button => {
       button.disabled = true;
+    });
+
+
+    /* BENAR */
+
+    if (
+      selectedIndex ===
+      question.correct
+    ) {
+
+      selectedButton.classList.add(
+        "correct"
+      );
+
+      correct++;
+
+      streak++;
 
 
       if (
-        button.dataset.answer ===
-        question.answer
+        streak > bestStreak
+      ) {
+        bestStreak = streak;
+      }
+
+
+      const baseXP = 10;
+
+
+      const speedBonus =
+        timeLeft >= 15
+          ? 5
+          : 0;
+
+
+      const streakBonus =
+        Math.min(
+          streak * 2,
+          10
+        );
+
+
+      const gainedXP =
+        baseXP +
+        speedBonus +
+        streakBonus;
+
+
+      xp += gainedXP;
+
+
+      showFeedback(
+        "✓",
+        "Jawaban benar!",
+        `Kamu mendapat +${gainedXP} XP. Streak: ${streak}.`,
+        "correct"
+      );
+
+    }
+
+
+    /* SALAH */
+
+    else {
+
+      selectedButton.classList.add(
+        "wrong"
+      );
+
+
+      if (
+        buttons[question.correct]
       ) {
 
-        button.classList.add(
+        buttons[
+          question.correct
+        ].classList.add(
           "correct"
         );
 
       }
 
-    }
-  );
+
+      wrong++;
 
 
-  feedback.classList.add(
-    "show"
-  );
+      lives =
+        Math.max(
+          0,
+          lives - 1
+        );
 
 
-  feedbackIcon.textContent =
-    "⏱";
-
-  feedbackTitle.textContent =
-    "Waktunya habis!";
+      streak = 0;
 
 
-  feedbackText.textContent =
-    `${question.correctFeedback} Jawaban yang benar: ${question.answer}.`;
-
-
-  updateStats();
-
-
-  nextButton.disabled = false;
-
-}
-
-
-/* =========================================================
-   NEXT BUTTON
-   ========================================================= */
-
-nextButton.addEventListener(
-  "click",
-  goToNext
-);
-
-
-function goToNext() {
-
-  if (!answered) return;
-
-
-  playClick();
-
-
-  if (
-    currentQuestion <
-    quizQuestions.length - 1
-  ) {
-
-    currentQuestion++;
-
-    loadQuestion();
-
-  } else {
-
-    finishGame();
-
-  }
-
-}
-
-
-/* =========================================================
-   FINISH
-   ========================================================= */
-
-function finishGame() {
-
-  clearInterval(
-    timerInterval
-  );
-
-
-  currentQuestion =
-    quizQuestions.length;
-
-
-  gameScreen.style.display =
-    "none";
-
-
-  resultScreen.classList.add(
-    "show"
-  );
-
-
-  finalXP.textContent =
-    xp;
-
-  finalCorrect.textContent =
-    correctAnswers;
-
-  finalWrong.textContent =
-    wrongAnswers;
-
-  finalStreak.textContent =
-    bestStreak;
-
-
-  playFinish();
-
-
-  localStorage.setItem(
-    "edurush_last_quiz",
-    JSON.stringify({
-      xp,
-      correct:
-        correctAnswers,
-      wrong:
-        wrongAnswers,
-      streak:
-        bestStreak,
-      date:
-        new Date().toISOString()
-    })
-  );
-
-
-  resultScreen.scrollIntoView({
-    behavior:
-      "smooth"
-  });
-
-}
-
-
-/* =========================================================
-   RETRY
-   ========================================================= */
-
-retryButton.addEventListener(
-  "click",
-  startGame
-);
-
-
-/* =========================================================
-   SOUND
-   ========================================================= */
-
-function getAudio() {
-
-  if (!audioContext) {
-
-    const AudioContext =
-      window.AudioContext ||
-      window.webkitAudioContext;
-
-
-    if (AudioContext) {
-
-      audioContext =
-        new AudioContext();
+      showFeedback(
+        "✕",
+        "Belum tepat.",
+        `Jawaban yang benar adalah "${question.answers[question.correct]}".`,
+        "wrong"
+      );
 
     }
 
-  }
 
-  return audioContext;
+    updateStats();
 
-}
-
-
-function tone(
-  frequency,
-  duration,
-  type = "sine",
-  volume = 0.05
-) {
-
-  if (!soundEnabled) return;
-
-
-  const ctx =
-    getAudio();
-
-
-  if (!ctx) return;
-
-
-  if (
-    ctx.state ===
-    "suspended"
-  ) {
-
-    ctx.resume();
-
+    prepareNextButton();
   }
 
 
-  const oscillator =
-    ctx.createOscillator();
+  /* =====================================================
+     WAKTU HABIS
+  ===================================================== */
 
-  const gain =
-    ctx.createGain();
+  function handleTimeout() {
 
+    if (answered) return;
 
-  oscillator.type =
-    type;
+    answered = true;
 
-  oscillator.frequency.value =
-    frequency;
-
-
-  gain.gain.setValueAtTime(
-    volume,
-    ctx.currentTime
-  );
+    const question =
+      questions[currentQuestion];
 
 
-  gain.gain.exponentialRampToValueAtTime(
-    0.001,
-    ctx.currentTime +
-    duration
-  );
+    wrong++;
 
-
-  oscillator.connect(
-    gain
-  );
-
-  gain.connect(
-    ctx.destination
-  );
-
-
-  oscillator.start();
-
-
-  oscillator.stop(
-    ctx.currentTime +
-    duration
-  );
-
-}
-
-
-function playClick() {
-
-  tone(
-    520,
-    0.07,
-    "sine",
-    0.04
-  );
-
-}
-
-
-function playCorrect() {
-
-  tone(
-    660,
-    0.1,
-    "sine",
-    0.06
-  );
-
-
-  setTimeout(
-    () => {
-
-      tone(
-        880,
-        0.15,
-        "sine",
-        0.06
+    lives =
+      Math.max(
+        0,
+        lives - 1
       );
 
-    },
-    90
-  );
-
-}
+    streak = 0;
 
 
-function playWrong() {
-
-  tone(
-    180,
-    0.18,
-    "sawtooth",
-    0.045
-  );
-
-}
-
-
-function playTick() {
-
-  tone(
-    430,
-    0.05,
-    "square",
-    0.025
-  );
-
-}
-
-
-function playFinish() {
-
-  tone(
-    523,
-    0.12,
-    "sine",
-    0.06
-  );
-
-
-  setTimeout(
-    () => {
-
-      tone(
-        659,
-        0.12,
-        "sine",
-        0.06
+    const buttons =
+      document.querySelectorAll(
+        ".answer-button"
       );
 
-    },
-    120
-  );
 
-
-  setTimeout(
-    () => {
-
-      tone(
-        784,
-        0.2,
-        "sine",
-        0.07
-      );
-
-    },
-    240
-  );
-
-}
-
-
-/* =========================================================
-   SOUND TOGGLE
-   ========================================================= */
-
-soundToggle.addEventListener(
-  "click",
-  () => {
-
-    soundEnabled =
-      !soundEnabled;
-
-
-    soundToggle.textContent =
-      soundEnabled
-        ? "🔊"
-        : "🔇";
-
-
-    soundToggle.setAttribute(
-      "aria-label",
-      soundEnabled
-        ? "Matikan suara"
-        : "Nyalakan suara"
-    );
+    buttons.forEach(button => {
+      button.disabled = true;
+    });
 
 
     if (
-      soundEnabled
+      buttons[question.correct]
     ) {
 
-      playClick();
+      buttons[
+        question.correct
+      ].classList.add(
+        "correct"
+      );
 
     }
 
+
+    showFeedback(
+      "!",
+      "Waktu habis.",
+      `Jawaban yang benar adalah "${question.answers[question.correct]}".`,
+      "wrong"
+    );
+
+
+    updateStats();
+
+    prepareNextButton();
   }
-);
+
+
+  /* =====================================================
+     FEEDBACK
+  ===================================================== */
+
+  function showFeedback(
+    icon,
+    title,
+    text,
+    type
+  ) {
+
+    feedbackIcon.textContent =
+      icon;
+
+    feedbackTitle.textContent =
+      title;
+
+    feedbackText.textContent =
+      text;
+
+
+    answerFeedback.classList.remove(
+      "feedback-correct",
+      "feedback-wrong"
+    );
+
+
+    answerFeedback.classList.add(
+      type === "correct"
+        ? "feedback-correct"
+        : "feedback-wrong"
+    );
+
+
+    answerFeedback.style.display =
+      "flex";
+  }
+
+
+  /* =====================================================
+     TOMBOL SELANJUTNYA
+  ===================================================== */
+
+  function prepareNextButton() {
+
+    nextButton.style.display =
+      "flex";
+
+
+    if (
+      currentQuestion ===
+      questions.length - 1
+    ) {
+
+      nextText.textContent =
+        "Lihat Hasil";
+
+    } else {
+
+      nextText.textContent =
+        "Soal Berikutnya";
+
+    }
+  }
+
+
+  /* =====================================================
+     SOAL BERIKUTNYA
+  ===================================================== */
+
+  function nextQuestion() {
+
+    if (!answered) return;
+
+
+    if (
+      currentQuestion <
+      questions.length - 1
+    ) {
+
+      currentQuestion++;
+
+      showQuestion();
+
+    } else {
+
+      finishQuiz();
+
+    }
+  }
+
+
+  /* =====================================================
+     HASIL
+  ===================================================== */
+
+  function finishQuiz() {
+
+    clearInterval(timer);
+
+    rushGame.style.display =
+      "none";
+
+    rushResult.style.display =
+      "flex";
+
+
+    finalXp.textContent =
+      xp;
+
+    finalCorrect.textContent =
+      correct;
+
+    finalWrong.textContent =
+      wrong;
+
+    finalStreak.textContent =
+      bestStreak;
+
+
+    const storageKey =
+      `edurush_quiz_${materi}`;
+
+
+    localStorage.setItem(
+      storageKey,
+      JSON.stringify({
+        xp,
+        correct,
+        wrong,
+        bestStreak,
+        totalQuestions:
+          questions.length,
+        date:
+          new Date().toISOString()
+      })
+    );
+
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
+
+  /* =====================================================
+     EVENT
+  ===================================================== */
+
+  startButton.addEventListener(
+    "click",
+    startQuiz
+  );
+
+  retryButton.addEventListener(
+    "click",
+    startQuiz
+  );
+
+  nextButton.addEventListener(
+    "click",
+    nextQuestion
+  );
+
+});

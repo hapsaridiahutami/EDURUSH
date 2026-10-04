@@ -80,13 +80,27 @@ a {
 }
 
 .nav-container {
-  width: min(1120px, 90%);
-  height: 100%;
-   margin: auto;
+  width: min(1100px, 90%);
+  margin: auto;
+  min-height: 72px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
- }
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-menu a {
+  color: var(--green-dark);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+}
 
 
 /* LOGO */
@@ -95,34 +109,18 @@ a {
   display: flex;
   align-items: center;
   gap: 9px;
-
   font-family: "Bricolage Grotesque", sans-serif;
   font-size: 22px;
   font-weight: 800;
-
   color: var(--green-dark);
 }
 
-.logo-mark {
-  width: 31px;
-  height: 31px;
-
-  display: grid;
-  place-items: center;
-
-  background: var(--yellow);
-
-  border-radius: 8px;
-
+.logo > span {
   color: var(--green-dark);
-
-  font-size: 17px;
-
-  box-shadow: 3px 3px 0 var(--green-dark);
 }
 
 .logo > span span {
-  color: var(--orange);
+  color: var(--green-dark);
 }
 
 

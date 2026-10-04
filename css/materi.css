@@ -249,3 +249,21 @@
   }
 
 }
+/* =====================================================
+   LOGO MATERI
+===================================================== */
+
+.practice-logo {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--green-dark);
+}
+
+.practice-logo span {
+  color: var(--green-dark);
+}
+
+.practice-logo:hover {
+  color: var(--green);
+}
