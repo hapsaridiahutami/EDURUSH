@@ -1,0 +1,1242 @@
+
+/* =====================================================
+   BANGUN DATAR — EDURUSH
+   STYLE DISESUAIKAN DENGAN PECAHAN
+===================================================== */
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.shape-header {
+  padding: 70px 24px 75px;
+  background: var(--green-deep);
+  color: var(--white);
+}
+
+.shape-header-inner {
+  width: min(1100px, 90%);
+  margin: auto;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 45px;
+  color: rgba(255,255,255,.72);
+  font-size: 13px;
+  font-weight: 600;
+  transition: .2s ease;
+}
+
+.back-link:hover {
+  color: var(--yellow);
+  transform: translateX(-3px);
+}
+
+.lesson-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+}
+
+.lesson-top span:first-child {
+  color: var(--orange);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.lesson-top span:last-child {
+  color: rgba(255,255,255,.55);
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.shape-header h1 {
+  margin-top: 13px;
+  color: var(--cream);
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: clamp(50px, 7vw, 80px);
+  line-height: .95;
+  letter-spacing: -3px;
+}
+
+.shape-header h1 span {
+  color: var(--yellow);
+}
+
+.shape-header p {
+  max-width: 600px;
+  margin-top: 22px;
+  color: rgba(255,255,255,.72);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.shape-intro {
+  padding: 80px 24px;
+  background: var(--cream);
+}
+
+.shape-intro-inner {
+  width: min(1100px, 90%);
+  margin: auto;
+}
+
+.intro-label {
+  color: var(--orange);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.shape-intro h2 {
+  margin-top: 10px;
+  color: var(--green-deep);
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.05;
+  letter-spacing: -1.8px;
+}
+
+.shape-intro p {
+  max-width: 600px;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+
+/* =====================================================
+   SHAPES
+===================================================== */
+
+.shapes-section {
+  margin-top: 90px;
+}
+
+.section-heading {
+  width: min(1100px, 90%);
+  margin: 0 auto 30px;
+}
+
+.section-label {
+  color: var(--orange);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.section-heading h2 {
+  margin-top: 10px;
+  color: var(--green-deep);
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.05;
+  letter-spacing: -1.8px;
+}
+
+.section-heading > p {
+  max-width: 600px;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.shapes-grid {
+  width: min(1100px, 90%);
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.shape-card {
+  position: relative;
+  padding: 30px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  transition: .2s ease;
+}
+
+.shape-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(7,61,40,.07);
+}
+
+.shape-number {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.shape-visual {
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shape-square {
+  width: 135px;
+  height: 135px;
+  border-radius: 10px;
+  background: var(--green);
+}
+
+.shape-rectangle {
+  width: 175px;
+  height: 115px;
+  border-radius: 10px;
+  background: var(--green);
+}
+
+.shape-triangle {
+  width: 0;
+  height: 0;
+  border-left: 78px solid transparent;
+  border-right: 78px solid transparent;
+  border-bottom: 140px solid var(--orange);
+}
+
+.shape-circle {
+  width: 145px;
+  height: 145px;
+  border-radius: 50%;
+  background: var(--yellow);
+}
+
+.shape-content {
+  padding-top: 10px;
+}
+
+.shape-tag {
+  display: inline-block;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: var(--yellow-soft);
+  color: var(--green-deep);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.shape-content h3 {
+  margin-top: 12px;
+  color: var(--green-deep);
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 25px;
+}
+
+.shape-content p {
+  max-width: 450px;
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+
+/* =====================================================
+   BAGIAN BANGUN DATAR
+===================================================== */
+
+.parts-section {
+  width: min(1100px, 90%);
+  margin: 100px auto 0;
+}
+
+.parts-header {
+  margin-bottom: 30px;
+}
+
+.parts-header h2 {
+  margin-top: 10px;
+  color: var(--green-deep);
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.05;
+  letter-spacing: -1.8px;
+}
+
+.parts-header p {
+  max-width: 600px;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.parts-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  align-items: stretch;
+}
+
+.parts-diagram,
+.parts-info {
+  border-radius: 24px;
+}
+
+.parts-diagram {
+  min-height: 380px;
+  padding: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3f7f4;
+  border: 1px solid rgba(8,116,67,.08);
+}
+
+.diagram-square {
+  position: relative;
+  width: 210px;
+  height: 210px;
+  border: 7px solid var(--green);
+  background: var(--yellow-soft);
+}
+
+.side-label,
+.corner-label {
+  position: absolute;
+  padding: 7px 10px;
+  border-radius: 8px;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.side-label {
+  background: var(--green);
+  color: var(--white);
+}
+
+.top-label {
+  top: -38px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.right-label {
+  right: -48px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.corner-label {
+  left: -55px;
+  bottom: -38px;
+  background: var(--orange);
+  color: var(--white);
+}
+
+.parts-info {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.part-item {
+  display: grid;
+  grid-template-columns: 55px 1fr;
+  gap: 18px;
+  padding: 25px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+}
+
+.part-icon {
+  width: 45px;
+  height: 45px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--yellow-soft);
+  color: var(--green-deep);
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.part-item h3 {
+  margin: 0;
+  color: var(--green-deep);
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 20px;
+}
+
+.part-item p {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+
+/* =====================================================
+   CONTOH
+===================================================== */
+
+.example-section {
+  width: min(1100px, 90%);
+  margin: 100px auto 0;
+}
+
+.example-heading {
+  margin-bottom: 30px;
+}
+
+.example-heading h2 {
+  margin-top: 10px;
+  color: var(--green-deep);
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.05;
+  letter-spacing: -1.8px;
+}
+
+.example-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.example-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 25px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  transition: .2s ease;
+}
+
+.example-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(7,61,40,.07);
+}
+
+.example-shape {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: #f3f7f4;
+}
+
+.mini-square {
+  width: 42px;
+  height: 42px;
+  border-radius: 5px;
+  background: var(--green);
+}
+
+.mini-rectangle {
+  width: 52px;
+  height: 35px;
+  border-radius: 5px;
+  background: var(--green);
+}
+
+.mini-triangle {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 43px solid var(--orange);
+}
+
+.mini-circle {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: var(--yellow);
+}
+
+.example-card span {
+  color: var(--green);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.example-card h3 {
+  margin-top: 7px;
+  color: var(--green-deep);
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 20px;
+}
+
+
+/* =====================================================
+   KELILING
+===================================================== */
+
+.measurement-section {
+  width: min(1100px, 90%);
+  margin: 100px auto 0;
+}
+
+.measurement-heading {
+  margin-bottom: 30px;
+}
+
+.measurement-heading h2 {
+  margin-top: 10px;
+  color: var(--green-deep);
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.05;
+  letter-spacing: -1.8px;
+}
+
+.measurement-heading p {
+  max-width: 600px;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.formula-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.formula-card {
+  padding: 25px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  transition: .2s ease;
+}
+
+.formula-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(7,61,40,.07);
+}
+
+.formula-shape {
+  height: 170px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: #f3f7f4;
+}
+
+.formula-square {
+  width: 100px;
+  height: 100px;
+  border: 6px solid var(--green);
+  background: var(--yellow-soft);
+}
+
+.formula-rectangle {
+  width: 145px;
+  height: 85px;
+  border: 6px solid var(--green);
+  background: var(--yellow-soft);
+}
+
+.formula-triangle {
+  width: 0;
+  height: 0;
+  border-left: 60px solid transparent;
+  border-right: 60px solid transparent;
+  border-bottom: 105px solid var(--orange);
+}
+
+.formula-card > span {
+  display: block;
+  margin-top: 18px;
+  color: var(--green);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.formula-card h3 {
+  margin-top: 8px;
+  color: var(--green-deep);
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 22px;
+}
+
+.formula-card p {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+
+/* =====================================================
+   LUAS
+===================================================== */
+
+.area-section {
+  width: min(1100px, 90%);
+  margin: 100px auto 0;
+}
+
+.area-heading {
+  margin-bottom: 30px;
+}
+
+.area-heading h2 {
+  margin-top: 10px;
+  color: var(--green-deep);
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.05;
+  letter-spacing: -1.8px;
+}
+
+.area-heading p {
+  max-width: 600px;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.area-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.area-card {
+  padding: 25px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  transition: .2s ease;
+}
+
+.area-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(7,61,40,.07);
+}
+
+.area-number {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.area-visual {
+  height: 150px;
+  margin-top: 15px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: #f3f7f4;
+}
+
+.area-square {
+  width: 90px;
+  height: 90px;
+  background: var(--green);
+}
+
+.area-rectangle {
+  width: 130px;
+  height: 75px;
+  background: var(--green);
+}
+
+.area-triangle {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 88px solid var(--orange);
+}
+
+.area-card span {
+  display: block;
+  margin-top: 18px;
+  color: var(--green);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.area-card h3 {
+  margin-top: 8px;
+  color: var(--green-deep);
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 20px;
+}
+
+
+/* =====================================================
+   MINI LATIHAN
+===================================================== */
+
+.practice-section {
+  width: min(1100px, 90%);
+  margin: 100px auto 0;
+}
+
+.practice-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 35px;
+  background: var(--green-deep);
+  border-radius: 25px;
+  color: var(--white);
+}
+
+.practice-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.practice-label {
+  color: var(--yellow);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.practice-copy h2 {
+  margin-top: 12px;
+  color: var(--cream);
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+.practice-copy p {
+  max-width: 400px;
+  margin-top: 12px;
+  color: rgba(255,255,255,.68);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.practice-question {
+  min-height: 310px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  border-radius: 20px;
+  background: rgba(255,255,255,.08);
+}
+
+.practice-shape {
+  width: 100%;
+  min-height: 220px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: rgba(255,255,255,.06);
+}
+
+.practice-triangle {
+  width: 0;
+  height: 0;
+  border-left: 65px solid transparent;
+  border-right: 65px solid transparent;
+  border-bottom: 115px solid var(--orange);
+}
+
+.answer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 11px 15px;
+  border-radius: 999px;
+  background: var(--yellow);
+  color: var(--green-deep);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.answer span {
+  width: 25px;
+  height: 25px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--green-deep);
+  color: var(--yellow);
+}
+
+
+/* =====================================================
+   AKTIVITAS
+===================================================== */
+
+.activity-section {
+  width: min(1100px, 90%);
+  margin: 100px auto 0;
+}
+
+.activity-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  align-items: stretch;
+}
+
+.activity-copy {
+  padding: 40px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+}
+
+.activity-copy h2 {
+  margin-top: 10px;
+  color: var(--green-deep);
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.05;
+  letter-spacing: -1.8px;
+}
+
+.activity-copy p {
+  max-width: 450px;
+  margin-top: 15px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.activity-visual {
+  padding: 35px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+  border-radius: 24px;
+  background: #f3f7f4;
+  border: 1px solid rgba(8,116,67,.08);
+}
+
+.activity-shape {
+  min-height: 220px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: var(--white);
+}
+
+.activity-square {
+  width: 125px;
+  height: 125px;
+  border-radius: 8px;
+  background: var(--green);
+}
+
+.activity-info span {
+  color: var(--orange);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.activity-info strong {
+  display: block;
+  margin-top: 8px;
+  color: var(--green-deep);
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 20px;
+}
+
+.activity-result {
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--green);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   SUMMARY
+===================================================== */
+
+.summary-section {
+  width: min(1100px, 90%);
+  margin: 100px auto 0;
+  padding-bottom: 20px;
+}
+
+.summary-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 50px;
+  align-items: start;
+}
+
+.summary-title h2 {
+  margin-top: 10px;
+  color: var(--green-deep);
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.05;
+  letter-spacing: -1.8px;
+}
+
+.summary-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.summary-item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 18px;
+  border-radius: 15px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  transition: .2s ease;
+}
+
+.summary-item:hover {
+  transform: translateY(-3px);
+  border-color: rgba(8,116,67,.18);
+}
+
+.summary-item strong {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 11px;
+  background: var(--yellow-soft);
+  color: var(--green);
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.summary-item span {
+  color: var(--green-deep);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   NEXT
+===================================================== */
+
+.lesson-next {
+
+  margin-top: 90px;
+
+  padding: 55px 5%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 35px;
+
+  background: var(--green-deep);
+
+  color: var(--white);
+
+}
+
+.next-content {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+}
+
+.next-icon {
+
+  width: 58px;
+
+  height: 58px;
+
+  display: grid;
+
+  place-items: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--yellow);
+
+  color: var(--green-deep);
+
+  font-size: 22px;
+
+  font-weight: 900;
+
+}
+
+.lesson-next .lesson-label {
+
+  color: var(--yellow);
+
+}
+
+.lesson-next h2 {
+
+  margin-top: 10px;
+
+  color: var(--cream);
+
+  font-family: "Bricolage Grotesque", sans-serif;
+
+  font-size: clamp(30px, 4vw, 46px);
+
+  letter-spacing: -1.8px;
+
+}
+
+.lesson-next p:last-child {
+
+  max-width: 520px;
+
+  margin-top: 10px;
+
+  color: rgba(255,255,255,.68);
+
+  font-size: 14px;
+
+  line-height: 1.7;
+
+}
+
+.next-button {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 13px 20px;
+
+  flex-shrink: 0;
+
+  border-radius: 12px;
+
+  background: var(--yellow);
+
+  color: var(--green-deep);
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  transition: .2s ease;
+
+}
+
+.next-button:hover {
+
+  transform: translateY(-3px);
+
+}
+
+.next-button span {
+
+  font-size: 18px;
+
+}
+
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+  padding: 25px 20px;
+  background: var(--green-deep);
+  color: rgba(255,255,255,.55);
+  text-align: center;
+  font-size: 12px;
+}
+
+.footer p {
+  margin: 0;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .parts-content {
+    grid-template-columns: 1fr;
+  }
+
+  .formula-grid,
+  .area-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .activity-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .practice-card {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .shape-header {
+    padding: 55px 20px 60px;
+  }
+
+  .shape-header-inner,
+  .shape-intro-inner,
+  .section-heading,
+  .shapes-grid,
+  .parts-section,
+  .example-section,
+  .measurement-section,
+  .area-section,
+  .practice-section,
+  .activity-section,
+  .summary-section {
+    width: 100%;
+  }
+
+  .shape-header h1 {
+    font-size: 52px;
+  }
+
+  .shape-intro {
+    padding: 60px 20px;
+  }
+
+  .shapes-grid,
+  .example-list {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading,
+  .parts-header,
+  .example-heading,
+  .measurement-heading,
+  .area-heading {
+    padding: 0 20px;
+  }
+
+  .shape-card,
+  .formula-card,
+  .area-card,
+  .example-card {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .parts-content {
+    padding: 0 20px;
+  }
+
+  .diagram-square {
+    width: 175px;
+    height: 175px;
+  }
+
+  .practice-section,
+  .activity-section,
+  .summary-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .practice-card {
+    padding: 25px;
+  }
+
+  .activity-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .activity-visual {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-items {
+    grid-template-columns: 1fr;
+  }
+
+  .lesson-next {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 55px 20px;
+  }
+
+  .next-content {
+    width: 100%;
+    gap: 18px;
+    align-items: flex-start;
+  }
+
+  .next-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+  }
+
+  .lesson-next .next-button {
+    width: 100%;
+    margin: 0;
+    justify-content: center;
+  }
+
+}

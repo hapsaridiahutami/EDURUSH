@@ -267,3 +267,75 @@
 .practice-logo:hover {
   color: var(--green);
 }
+/* =====================================================
+   MATERI — RESPONSIVE HP TAMBAHAN
+   Tidak mengubah desain desktop
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .materials-header,
+  .materials {
+    overflow-x: hidden;
+  }
+
+  .materials-header-inner {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .materials-header h1 {
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  .materials-header p:not(.section-label) {
+    max-width: 100%;
+  }
+
+  .materials {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .materials-grid {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .material-card {
+    width: 100%;
+    min-width: 0;
+    padding: 24px;
+    overflow: hidden;
+  }
+
+  .material-content h2 {
+    overflow-wrap: break-word;
+  }
+
+  .material-content p:not(.material-label) {
+    max-width: 100%;
+  }
+
+  .material-link {
+    max-width: 100%;
+  }
+
+}
+
+@media (max-width: 380px) {
+
+  .materials-header h1 {
+    font-size: 38px;
+  }
+
+  .material-card {
+    padding: 20px;
+  }
+
+  .material-content h2 {
+    font-size: 26px;
+  }
+
+}

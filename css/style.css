@@ -500,3 +500,56 @@ a {
   }
 
 }
+/* =====================================================
+   EDURUSH — RESPONSIVE HP
+   Tambahan saja, tidak mengubah desain desktop
+===================================================== */
+
+@media (max-width: 700px) {
+
+  .nav-container {
+    width: calc(100% - 28px);
+  }
+
+  .logo {
+    font-size: 21px;
+  }
+
+  .hero {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .hero-inner {
+    width: 100%;
+  }
+
+  .hero h1 {
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  .hero-description {
+    max-width: 100%;
+  }
+
+  .about {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .about-inner {
+    width: 100%;
+  }
+
+  .about h2 {
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  .footer {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+}

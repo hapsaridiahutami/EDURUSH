@@ -1,7 +1,3 @@
-/* =====================================================
-   PECAHAN — EDURUSH
-===================================================== */
-
 .lesson-header {
   padding: 70px 24px 75px;
   background: var(--green-deep);
@@ -80,7 +76,10 @@
   letter-spacing: 1px;
 }
 
-/* CONTENT */
+
+/* =====================================================
+   CONTENT
+===================================================== */
 
 .lesson-content {
   padding: 80px 24px;
@@ -92,7 +91,10 @@
   margin: auto;
 }
 
-/* INTRO */
+
+/* =====================================================
+   INTRO
+===================================================== */
 
 .lesson-intro {
   display: grid;
@@ -109,7 +111,9 @@
   letter-spacing: 1.5px;
 }
 
-.lesson-intro h2 {
+.lesson-intro h2,
+.section-heading h2,
+.practice-heading h2 {
   margin-top: 10px;
   color: var(--green-deep);
   font-family: "Bricolage Grotesque", sans-serif;
@@ -118,160 +122,138 @@
   letter-spacing: -1.8px;
 }
 
-.lesson-intro > p {
+.lesson-intro > p,
+.section-heading > p {
   color: var(--muted);
   font-size: 15px;
   line-height: 1.8;
 }
 
-/* MATERIAL CARDS */
 
-.operation-grid {
+/* =====================================================
+   MAIN VISUAL
+===================================================== */
+
+.fraction-main {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  align-items: stretch;
+  margin-bottom: 90px;
 }
 
-.operation-card {
-  padding: 28px;
-  border: 1px solid var(--border);
-  border-radius: 20px;
+.fraction-main-text,
+.fraction-main-visual {
+  border-radius: 24px;
+}
+
+.fraction-main-text {
+  padding: 40px;
   background: var(--white);
-  box-shadow: 0 8px 25px rgba(7,61,40,.045);
-  transition: .2s ease;
+  border: 1px solid var(--border);
 }
 
-.operation-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 15px 35px rgba(7,61,40,.08);
-}
-
-.fraction-card-wide {
-  grid-column: 1 / -1;
-}
-
-.card-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 15px;
-}
-
-.operation-tag {
-  color: var(--muted);
-  font-size: 10px;
-  font-weight: 800;
-}
-
-.operation-symbol {
-  width: 50px;
-  height: 50px;
-  display: grid;
-  place-items: center;
-  border-radius: 14px;
-  background: var(--yellow-soft);
-  color: var(--green);
-  font-family: "Bricolage Grotesque", sans-serif;
-  font-size: 25px;
-  font-weight: 900;
-}
-
-.fraction-symbol {
-  font-size: 17px;
-}
-
-.operation-info {
-  margin-top: 22px;
-}
-
-.operation-info h3 {
+.fraction-main-text h2 {
+  margin-top: 10px;
   color: var(--green-deep);
   font-family: "Bricolage Grotesque", sans-serif;
-  font-size: 24px;
+  font-size: 34px;
+  line-height: 1.1;
 }
 
-.operation-info p {
-  margin-top: 8px;
+.fraction-main-text > p {
+  max-width: 470px;
+  margin-top: 18px;
   color: var(--muted);
-  font-size: 13px;
-  line-height: 1.65;
+  font-size: 14px;
+  line-height: 1.7;
 }
 
-/* VISUAL BOX */
+.fraction-main-text > p strong {
+  color: var(--green);
+}
 
-.visual-box {
-  margin-top: 25px;
-  padding: 22px;
-  border-radius: 16px;
+.fraction-main-visual {
+  min-height: 380px;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background: #f3f7f4;
+  border: 1px solid rgba(8,116,67,.08);
 }
 
 .visual-title {
-  margin-bottom: 18px;
+  align-self: flex-start;
+  margin-bottom: 25px;
   color: var(--orange);
   font-size: 9px;
   font-weight: 800;
   letter-spacing: 1.3px;
 }
 
-/* PIZZA */
-
-.pizza-area {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 25px;
+.visual-hint {
+  margin-top: 22px;
+  color: var(--muted);
+  font-size: 11px;
+  text-align: center;
 }
 
-.pizza {
-  position: relative;
-  width: 125px;
-  height: 125px;
-  flex-shrink: 0;
+
+/* =====================================================
+   FRACTION CIRCLE
+===================================================== */
+
+.fraction-circle,
+.practice-fraction-circle {
+  width: 210px;
+  height: 210px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   overflow: hidden;
   border-radius: 50%;
-  border: 6px solid var(--white);
-  background: #e4ebe6;
-  box-shadow: 0 6px 20px rgba(7,61,40,.1);
+  border: 8px solid var(--white);
+  background: #dfe9e2;
+  box-shadow: 0 12px 30px rgba(7,61,40,.12);
 }
 
-.pizza-piece {
-  display: block;
-  background: #e4ebe6;
-  border: 1px solid rgba(255,255,255,.8);
+.fraction-part,
+.practice-part {
+  border: 1px solid rgba(255,255,255,.85);
+  background: #dfe9e2;
+  cursor: pointer;
+  transition: .18s ease;
 }
 
-.pizza-piece.active {
+.fraction-part:hover,
+.practice-part:hover {
+  background: #c9d9ce;
+}
+
+.fraction-part.active,
+.practice-part.active {
   background: var(--green);
 }
 
-.pizza-text {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+.fraction-part.active:hover,
+.practice-part.active:hover {
+  background: var(--green-dark);
 }
 
-.pizza-text strong {
-  color: var(--green-deep);
-  font-family: "Bricolage Grotesque", sans-serif;
-  font-size: 30px;
-}
 
-.pizza-text span {
-  color: var(--muted);
-  font-size: 11px;
-}
+/* =====================================================
+   FRACTION RESULT
+===================================================== */
 
-/* FRACTION DISPLAY */
-
-.fraction-display {
+.fraction-result {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 40px;
+  gap: 25px;
+  margin-top: 35px;
+  padding-top: 25px;
+  border-top: 1px solid var(--border);
 }
 
 .fraction-big {
@@ -280,199 +262,491 @@
   align-items: center;
   color: var(--green-deep);
   font-family: "Bricolage Grotesque", sans-serif;
-  font-size: 42px;
+  font-size: 38px;
   font-weight: 900;
   line-height: 1;
 }
 
 .fraction-big i {
-  width: 55px;
+  width: 48px;
   height: 4px;
   margin: 6px 0;
   border-radius: 5px;
   background: var(--green);
 }
 
-.fraction-notes {
-  display: grid;
-  gap: 12px;
+.fraction-result strong {
+  display: block;
+  color: var(--green-deep);
+  font-size: 14px;
 }
 
-.fraction-notes div {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.fraction-notes strong {
-  width: 32px;
-  height: 32px;
-  display: grid;
-  place-items: center;
-  border-radius: 9px;
-  background: var(--yellow-soft);
-  color: var(--green);
-  font-size: 15px;
-}
-
-.fraction-notes span {
+.fraction-result small {
+  display: block;
+  margin-top: 5px;
   color: var(--muted);
   font-size: 11px;
 }
 
-/* EXAMPLES */
 
-.fraction-examples {
+/* =====================================================
+   SECTION
+===================================================== */
+
+.concept-section {
+  margin-top: 90px;
+}
+
+.section-heading {
+  margin-bottom: 30px;
+}
+
+.section-heading > p {
+  max-width: 600px;
+  margin-top: 10px;
+}
+
+
+/* =====================================================
+   PEMBILANG & PENYEBUT
+===================================================== */
+
+.fraction-number-card {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-}
-
-.example-fraction {
-  padding: 17px 10px;
-  border-radius: 13px;
+  grid-template-columns: 260px 1fr;
+  gap: 40px;
+  align-items: center;
+  padding: 40px;
   background: var(--white);
-  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: 24px;
 }
 
-.example-fraction strong {
-  display: block;
+.big-fraction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: var(--green-deep);
   font-family: "Bricolage Grotesque", sans-serif;
-  font-size: 23px;
+  font-size: 65px;
+  font-weight: 900;
+  line-height: .9;
 }
 
-.example-fraction span {
+.fraction-line {
+  width: 90px;
+  height: 5px;
+  margin: 10px 0;
+  border-radius: 10px;
+  background: var(--green);
+}
+
+.number-explanation {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.number-row {
+  padding: 22px;
+  border-radius: 18px;
+  background: #f3f7f4;
+}
+
+.number-badge {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--yellow-soft);
+  color: var(--green-deep);
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.number-row strong {
   display: block;
+  margin-top: 15px;
+  color: var(--green-deep);
+  font-size: 15px;
+}
+
+.number-row p {
   margin-top: 5px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.numerator-row {
+  border-top: 4px solid var(--green);
+}
+
+.denominator-row {
+  border-top: 4px solid var(--orange);
+}
+
+
+/* =====================================================
+   EXAMPLES
+===================================================== */
+
+.example-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.fraction-example-card {
+  padding: 25px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  transition: .2s ease;
+}
+
+.fraction-example-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(7,61,40,.07);
+}
+
+.example-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.example-top span {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.example-top strong {
+  color: var(--green-deep);
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 28px;
+}
+
+.fraction-bar {
+  display: grid;
+  gap: 4px;
+  height: 60px;
+  margin-top: 25px;
+}
+
+.fraction-bar span,
+.compare-bar span,
+.mini-bar span {
+  display: block;
+  border-radius: 7px;
+  background: #dfe9e2;
+}
+
+.fraction-bar span.selected,
+.compare-bar span.selected,
+.mini-bar span.selected {
+  background: var(--green);
+}
+
+.two-parts {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.three-parts {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.four-parts {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* TAMBAHAN UNTUK 6 BAGIAN */
+.six-parts {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.example-description {
+  margin-top: 18px;
+}
+
+.example-description strong {
+  display: block;
+  color: var(--green-deep);
+  font-size: 13px;
+}
+
+.example-description small {
+  display: block;
+  margin-top: 4px;
   color: var(--muted);
   font-size: 10px;
 }
 
-/* COMPARISON */
 
-.compare-fraction {
-  display: flex;
+/* =====================================================
+   COMPARISON
+===================================================== */
+
+.comparison-card {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: center;
-  gap: 25px;
+  gap: 30px;
+  padding: 40px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+}
+
+.compare-item {
+  text-align: center;
+}
+
+.compare-item > strong {
+  display: block;
   color: var(--green-deep);
   font-family: "Bricolage Grotesque", sans-serif;
-  font-size: 32px;
+  font-size: 34px;
 }
 
-.compare-fraction span {
+.compare-bar {
+  display: grid;
+  gap: 4px;
+  height: 55px;
+  margin-top: 18px;
+}
+
+.compare-symbol {
   color: var(--orange);
-  font-size: 30px;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 42px;
+  font-weight: 900;
 }
 
-.visual-caption {
-  margin-top: 15px;
+.comparison-note {
+  grid-column: 1 / -1;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
   color: var(--muted);
+  font-size: 12px;
   text-align: center;
-  font-size: 11px;
 }
 
-/* EQUATION */
 
-.fraction-equation {
+/* =====================================================
+   OPERASI PECAHAN
+===================================================== */
+
+.addition-card {
+  padding: 40px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  transition: .2s ease;
+}
+
+.addition-card:hover {
+  border-color: rgba(8,116,67,.18);
+  box-shadow: 0 14px 30px rgba(7,61,40,.06);
+}
+
+.addition-visual {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 18px;
+}
+
+.addition-fraction {
+  min-width: 130px;
+  padding: 20px 15px;
+  text-align: center;
+}
+
+.addition-fraction strong {
   color: var(--green-deep);
   font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 25px;
+}
+
+.mini-bar {
+  display: grid;
+  gap: 3px;
+  height: 42px;
+  margin-top: 12px;
+}
+
+.addition-symbol {
+  color: var(--orange);
+  font-family: "Bricolage Grotesque", sans-serif;
   font-size: 30px;
-  font-weight: 800;
+  font-weight: 900;
 }
 
-.answer-fraction {
-  padding: 8px 13px;
-  border-radius: 10px;
+.result-fraction {
+  padding: 20px;
+  border-radius: 16px;
   background: var(--yellow-soft);
-  color: var(--green);
 }
 
-/* PRACTICE */
+.addition-explanation {
+  margin-top: 30px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.addition-explanation span {
+  color: var(--green);
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.addition-explanation p {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+
+/* =====================================================
+   VARIASI OPERASI
+===================================================== */
+
+/* Pengurangan */
+.concept-section:nth-of-type(6) .addition-card {
+  border-top: 4px solid var(--orange);
+}
+
+/* Perkalian */
+.concept-section:nth-of-type(7) .addition-card {
+  border-top: 4px solid var(--yellow);
+}
+
+/* Pembagian */
+.concept-section:nth-of-type(8) .addition-card {
+  border-top: 4px solid var(--green);
+}
+
+
+/* =====================================================
+   PRACTICE
+===================================================== */
 
 .practice-section {
-  margin-top: 90px;
+  margin-top: 100px;
 }
 
 .practice-heading {
   margin-bottom: 25px;
 }
 
-.practice-heading h2 {
+.practice-heading p {
   margin-top: 8px;
-  color: var(--green-deep);
-  font-family: "Bricolage Grotesque", sans-serif;
-  font-size: clamp(30px, 4vw, 42px);
-  letter-spacing: -1.5px;
+  color: var(--muted);
+  font-size: 13px;
 }
 
-.practice-card {
+.interactive-practice {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: center;
+  gap: 30px;
   padding: 35px;
-  border-radius: 22px;
-  background: var(--white);
-  border: 1px solid var(--border);
+  background: var(--green-deep);
+  border-radius: 25px;
+  color: var(--white);
+}
+
+.practice-question {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .question-label {
-  color: var(--green);
+  color: var(--yellow);
   font-size: 9px;
   font-weight: 800;
   letter-spacing: 1.3px;
 }
 
 .practice-question h3 {
+  max-width: 450px;
   margin-top: 12px;
-  color: var(--green-deep);
+  color: var(--cream);
   font-family: "Bricolage Grotesque", sans-serif;
-  font-size: 25px;
-  line-height: 1.25;
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+.practice-question h3 strong {
+  color: var(--yellow);
 }
 
 .practice-question p {
-  margin-top: 10px;
-  color: var(--muted);
+  max-width: 400px;
+  margin-top: 12px;
+  color: rgba(255,255,255,.68);
   font-size: 13px;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
-.practice-fraction-visual {
-  min-height: 230px;
+.practice-status {
+  width: fit-content;
+  margin-top: 25px;
+  padding: 10px 15px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.1);
+  color: rgba(255,255,255,.8);
+  font-size: 11px;
+}
+
+.practice-status strong {
+  color: var(--yellow);
+}
+
+.practice-visual {
+  min-height: 310px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 18px;
-  border-radius: 18px;
-  background: #f3f7f4;
+  gap: 20px;
+  border-radius: 20px;
+  background: rgba(255,255,255,.08);
 }
 
-.pizza-practice {
-  width: 135px;
-  height: 135px;
+.practice-fraction-circle {
+  width: 180px;
+  height: 180px;
+  border-width: 6px;
 }
 
-.practice-answer {
-  padding: 9px 18px;
+.practice-result {
+  padding: 9px 17px;
   border-radius: 999px;
+  background: rgba(255,255,255,.1);
+  color: rgba(255,255,255,.78);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.practice-result.correct {
   background: var(--yellow);
   color: var(--green-deep);
-  font-size: 14px;
-  font-weight: 900;
 }
 
-/* SUMMARY */
+
+/* =====================================================
+   SUMMARY
+===================================================== */
 
 .summary-section {
-  margin-top: 90px;
+  margin-top: 100px;
   padding-bottom: 20px;
 }
 
@@ -491,6 +765,12 @@
   border-radius: 15px;
   background: var(--white);
   border: 1px solid var(--border);
+  transition: .2s ease;
+}
+
+.summary-item:hover {
+  transform: translateY(-3px);
+  border-color: rgba(8,116,67,.18);
 }
 
 .summary-symbol {
@@ -521,73 +801,212 @@
   line-height: 1.4;
 }
 
-/* NEXT */
+
+/* =====================================================
+   NEXT
+===================================================== */
 
 .lesson-next {
+
   margin-top: 90px;
+
   padding: 55px 5%;
+
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
+
   gap: 35px;
+
   background: var(--green-deep);
+
   color: var(--white);
+
 }
 
-.lesson-next > div {
-  width: min(700px, 100%);
-  margin-left: auto;
+.next-content {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+
 }
 
-.lesson-next > div .section-label {
+.next-icon {
+
+  width: 58px;
+
+  height: 58px;
+
+  display: grid;
+
+  place-items: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--yellow);
+
+  color: var(--green-deep);
+
+  font-size: 22px;
+
+  font-weight: 900;
+
+}
+
+.lesson-next .lesson-label {
+
   color: var(--yellow);
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
+
 }
 
 .lesson-next h2 {
+
   margin-top: 10px;
+
   color: var(--cream);
+
   font-family: "Bricolage Grotesque", sans-serif;
+
   font-size: clamp(30px, 4vw, 46px);
+
   letter-spacing: -1.8px;
+
 }
 
-.lesson-next p {
+.lesson-next p:last-child {
+
   max-width: 520px;
+
   margin-top: 10px;
+
   color: rgba(255,255,255,.68);
+
   font-size: 14px;
+
   line-height: 1.7;
+
 }
 
-.lesson-next .next-button {
-  margin-right: auto;
+.next-button {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 13px 20px;
+
   flex-shrink: 0;
+
+  border-radius: 12px;
+
+  background: var(--yellow);
+
+  color: var(--green-deep);
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  transition: .2s ease;
+
 }
 
-/* MOBILE */
+.next-button:hover {
 
-@media (max-width: 800px) {
-  .lesson-top {
+  transform: translateY(-3px);
+
+}
+
+.next-button span {
+
+  font-size: 18px;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+
+  padding: 25px 20px;
+
+  background: var(--green-deep);
+
+  color: rgba(255,255,255,.55);
+
+  font-size: 12px;
+
+}
+
+.footer-left {
+
+  text-align: center;
+
+}
+
+.copyright {
+
+  margin-top: 5px;
+
+  text-align: center;
+
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .lesson-next {
+    flex-direction: column;
     align-items: flex-start;
+    padding: 55px 20px;
   }
 
-  .lesson-intro {
+  .lesson-next > div {
+    width: 100%;
+    margin: 0;
+  }
+
+  .lesson-next .next-button {
+    width: 100%;
+    margin: 0;
+    justify-content: center;
+  }
+
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .fraction-main {
     grid-template-columns: 1fr;
-    gap: 20px;
   }
 
-  .operation-grid {
+  .fraction-number-card {
     grid-template-columns: 1fr;
   }
 
-  .fraction-card-wide {
-    grid-column: auto;
+  .big-fraction {
+    margin-bottom: 10px;
   }
 
-  .practice-card {
+  .example-grid {
     grid-template-columns: 1fr;
   }
 
@@ -595,22 +1014,23 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .lesson-next {
-    flex-direction: column;
-    align-items: flex-start;
+  .interactive-practice {
+    grid-template-columns: 1fr;
   }
 
-  .lesson-next > div {
-    width: min(1100px, 90%);
-    margin: 0 auto;
+  .practice-visual {
+    min-height: 280px;
   }
 
-  .lesson-next .next-button {
-    margin: 0 auto;
-  }
 }
 
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
 @media (max-width: 600px) {
+
   .lesson-header {
     padding: 55px 20px 60px;
   }
@@ -622,6 +1042,7 @@
 
   .lesson-top {
     flex-direction: column;
+    align-items: flex-start;
     gap: 20px;
   }
 
@@ -637,36 +1058,71 @@
     padding: 60px 20px;
   }
 
-  .operation-card {
-    padding: 20px;
+  .lesson-intro {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
-  .pizza-area {
-    flex-direction: column;
+  .fraction-main-text,
+  .fraction-main-visual {
+    padding: 25px;
   }
 
-  .fraction-display {
-    flex-direction: column;
-    gap: 25px;
+  .fraction-circle {
+    width: 175px;
+    height: 175px;
   }
 
-  .fraction-examples {
+  .fraction-result {
+    gap: 15px;
+  }
+
+  .fraction-number-card {
+    padding: 25px;
+  }
+
+  .number-explanation {
     grid-template-columns: 1fr;
   }
 
-  .compare-fraction {
+  .comparison-card {
+    grid-template-columns: 1fr;
     gap: 15px;
-    font-size: 27px;
+    padding: 25px;
   }
 
-  .fraction-equation {
-    gap: 10px;
-    font-size: 24px;
+  .comparison-note {
+    grid-column: auto;
+  }
+
+  .addition-card {
+    padding: 25px 15px;
+  }
+
+  .addition-visual {
     flex-wrap: wrap;
+    gap: 5px;
   }
 
-  .practice-card {
-    padding: 22px;
+  .addition-fraction {
+    min-width: 100px;
+  }
+
+  .addition-symbol {
+    font-size: 24px;
+  }
+
+  .interactive-practice {
+    padding: 25px;
+  }
+
+  .practice-question h3 {
+    font-size: 25px;
+  }
+
+  .practice-fraction-circle {
+    width: 155px;
+    height: 155px;
   }
 
   .summary-grid {
@@ -674,15 +1130,173 @@
   }
 
   .lesson-next {
+    flex-direction: column;
+    align-items: flex-start;
     padding: 55px 20px;
   }
 
   .lesson-next > div {
     width: 100%;
+    margin: 0;
   }
 
   .lesson-next .next-button {
     width: 100%;
+    margin: 0;
     justify-content: center;
   }
+
+}
+/* =====================================================
+   PECAHAN — RESPONSIVE HP
+   Tambahan saja, tidak mengubah desain desktop
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .lesson-header,
+  .lesson-content,
+  .concept-section,
+  .practice-section {
+    overflow-x: hidden;
+  }
+
+  .lesson-header-inner,
+  .lesson-container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .lesson-header {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .lesson-header h1 {
+    max-width: 100%;
+    font-size: 44px;
+    overflow-wrap: break-word;
+  }
+
+  .lesson-description {
+    max-width: 100%;
+  }
+
+  .fraction-main {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .fraction-main-text,
+  .fraction-main-visual {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .fraction-circle {
+    max-width: 100%;
+  }
+
+  .fraction-number-card {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .big-fraction {
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  .number-explanation {
+    width: 100%;
+  }
+
+  .example-grid {
+    width: 100%;
+  }
+
+  .example-card {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .comparison-card {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .addition-card {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .addition-visual {
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .addition-fraction {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .interactive-practice {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .practice-question,
+  .practice-visual {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .practice-fraction-circle {
+    max-width: 100%;
+  }
+
+  .summary-grid {
+    width: 100%;
+  }
+
+  .lesson-next {
+    overflow: hidden;
+  }
+
+  .next-content {
+    width: 100%;
+  }
+
+  .next-button {
+    width: 100%;
+    max-width: 100%;
+  }
+
+}
+
+@media (max-width: 380px) {
+
+  .lesson-header h1 {
+    font-size: 40px;
+  }
+
+  .fraction-main-text,
+  .fraction-main-visual,
+  .fraction-number-card,
+  .addition-card,
+  .interactive-practice {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .fraction-circle {
+    transform: scale(.92);
+  }
+
 }

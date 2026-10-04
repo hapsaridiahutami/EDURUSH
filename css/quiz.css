@@ -7,19 +7,14 @@
   --green: #087443;
   --green-dark: #055b35;
   --green-deep: #073d28;
-
   --yellow: #ffc928;
   --yellow-soft: #fff4bd;
-
   --orange: #f58220;
   --orange-soft: #fff0df;
-
   --cream: #f7f8f3;
   --white: #ffffff;
-
   --text: #18382c;
   --muted: #718078;
-
   --border: #dfe8e1;
 
   --shadow:
@@ -96,7 +91,6 @@ main {
 .nav-menu a {
   text-decoration: none;
   color: var(--text);
-
   font-size: 15px;
   font-weight: 600;
 
@@ -141,7 +135,6 @@ main {
 
 .start-content {
   width: min(720px, 100%);
-
   position: relative;
   z-index: 2;
 }
@@ -166,7 +159,6 @@ main {
   margin: 22px 0 14px;
 
   font-family: "Bricolage Grotesque", sans-serif;
-
   font-size: clamp(42px, 7vw, 72px);
   line-height: .98;
   letter-spacing: -3px;
@@ -181,7 +173,6 @@ main {
   margin: 0;
 
   color: var(--muted);
-
   font-size: 18px;
   line-height: 1.65;
 }
@@ -202,7 +193,6 @@ main {
   gap: 14px;
 
   background: white;
-
   border: 1px solid var(--border);
   border-radius: 16px;
 
@@ -218,7 +208,6 @@ main {
   place-items: center;
 
   border-radius: 13px;
-
   background: var(--yellow-soft);
 
   font-size: 21px;
@@ -228,7 +217,6 @@ main {
   display: block;
 
   color: var(--green-dark);
-
   font-size: 15px;
 }
 
@@ -238,7 +226,6 @@ main {
   margin-top: 3px;
 
   color: var(--muted);
-
   font-size: 13px;
 }
 
@@ -260,7 +247,6 @@ main {
   padding: 14px 17px;
 
   background: white;
-
   border: 1px solid var(--border);
   border-radius: 15px;
 }
@@ -280,7 +266,6 @@ main {
   margin-top: 3px;
 
   color: var(--muted);
-
   font-size: 12px;
 }
 
@@ -403,7 +388,6 @@ main {
 }
 
 @keyframes floatingShape {
-
   0%,
   100% {
     transform: translateY(0);
@@ -412,7 +396,6 @@ main {
   50% {
     transform: translateY(-8px);
   }
-
 }
 
 
@@ -470,13 +453,11 @@ main {
 
   font-size: 11px;
   font-weight: 800;
-
   letter-spacing: .1em;
 }
 
 .challenge-counter strong {
   font-family: "Bricolage Grotesque", sans-serif;
-
   font-size: 34px;
 
   color: var(--green-dark);
@@ -484,7 +465,6 @@ main {
 
 .challenge-counter > span {
   color: var(--muted);
-
   font-weight: 700;
 }
 
@@ -500,7 +480,6 @@ main {
 
   display: flex;
   align-items: center;
-
   gap: 9px;
 
   padding: 8px 13px;
@@ -508,13 +487,11 @@ main {
   border-radius: 14px;
 
   background: #f5f8f5;
-
   border: 1px solid var(--border);
 }
 
 .life-display {
   color: var(--green);
-
   font-weight: 800;
 }
 
@@ -626,7 +603,6 @@ main {
 
 .timer-progress {
   stroke: var(--green);
-
   stroke-linecap: round;
 
   stroke-dasharray: 132;
@@ -653,7 +629,6 @@ main {
 
   font-size: 11px;
   font-weight: 900;
-
   letter-spacing: .08em;
 }
 
@@ -661,7 +636,6 @@ main {
   margin: 3px 0 0;
 
   color: var(--muted);
-
   font-size: 13px;
 }
 
@@ -679,11 +653,9 @@ main {
 }
 
 @keyframes timerPulse {
-
   50% {
     transform: scale(1.06);
   }
-
 }
 
 
@@ -693,7 +665,6 @@ main {
 
 .challenge {
   margin-top: 15px;
-
   padding: 20px;
 
   background:
@@ -722,7 +693,6 @@ main {
 
   font-size: 11px;
   font-weight: 900;
-
   letter-spacing: .05em;
 }
 
@@ -731,13 +701,11 @@ main {
   max-width: 100%;
 
   margin: 12px auto 0;
-
   padding: 9px 13px;
 
   background: #edf7f1;
 
   border-left: 4px solid var(--green);
-
   border-radius: 8px;
 
   color: var(--green-dark);
@@ -762,9 +730,9 @@ main {
 }
 
 @keyframes visualAppear {
-
   from {
     opacity: 0;
+
     transform:
       translateY(10px)
       scale(.98);
@@ -772,11 +740,11 @@ main {
 
   to {
     opacity: 1;
+
     transform:
       translateY(0)
       scale(1);
   }
-
 }
 
 
@@ -786,7 +754,6 @@ main {
 
 .question-box {
   margin-top: 20px;
-
   padding: 20px 22px;
 
   background: white;
@@ -802,7 +769,6 @@ main {
 
   font-size: 10px;
   font-weight: 900;
-
   letter-spacing: .12em;
 }
 
@@ -812,7 +778,6 @@ main {
   color: var(--text);
 
   font-family: "Bricolage Grotesque", sans-serif;
-
   font-size: clamp(21px, 3vw, 28px);
 
   line-height: 1.25;
@@ -829,53 +794,120 @@ main {
   grid-template-columns:
     1fr 1fr;
 
-  gap: 12px;
+  gap: 14px;
 
-  margin-top: 16px;
+  margin-top: 18px;
 }
 
 .answer-button {
-  min-height: 58px;
+  position: relative;
 
-  padding: 12px 18px;
+  min-height: 64px;
+
+  padding: 13px 18px 13px 58px;
+
+  display: flex;
+  align-items: center;
 
   background: white;
 
   border: 2px solid var(--border);
-  border-radius: 15px;
+  border-radius: 17px;
 
   color: var(--text);
 
   font-size: 16px;
   font-weight: 700;
-
   text-align: left;
 
   cursor: pointer;
 
-  transition:
-    transform .18s ease,
-    border-color .18s ease,
-    background .18s ease,
-    box-shadow .18s ease;
+  box-shadow:
+    0 5px 14px rgba(7, 61, 40, .04);
+
+ transition:
+  background .2s ease,
+  transform .2s ease,
+  border-color .2s ease,
+  box-shadow .2s ease;
 }
 
+
+/* HURUF A B C D */
+
+.answer-button::before {
+  content: "";
+
+  position: absolute;
+  left: 15px;
+
+  width: 32px;
+  height: 32px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 10px;
+
+  background: var(--yellow-soft);
+  color: var(--green-dark);
+
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.answer-button:nth-child(1)::before {
+  content: "A";
+}
+
+.answer-button:nth-child(2)::before {
+  content: "B";
+}
+
+.answer-button:nth-child(3)::before {
+  content: "C";
+}
+
+.answer-button:nth-child(4)::before {
+  content: "D";
+}
+
+
+/* HOVER */
+
 .answer-button:hover:not(:disabled) {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 
   border-color: var(--green);
 
+  background: #fbfdfb;
+
   box-shadow:
-    0 8px 20px rgba(8, 116, 67, .09);
+    0 10px 24px rgba(8, 116, 67, .12);
 }
 
-.answer-button:active:not(:disabled) {
-  transform: scale(.98);
+.answer-button:hover:not(:disabled)::before {
+  background: var(--green);
+  color: white;
 }
+
+
+/* ACTIVE */
+
+.answer-button:active:not(:disabled) {
+  transform: scale(.97);
+}
+
+
+/* DISABLED */
 
 .answer-button:disabled {
   cursor: default;
 }
+
+
+/* BENAR */
 
 .answer-button.correct {
   background: #e9f8ef;
@@ -884,9 +916,22 @@ main {
 
   color: var(--green-dark);
 
+  box-shadow:
+    0 8px 22px rgba(8, 116, 67, .12);
+
   animation:
     correctAnswer .45s ease;
 }
+
+.answer-button.correct::before {
+  content: "✓";
+
+  background: var(--green);
+  color: white;
+}
+
+
+/* SALAH */
 
 .answer-button.wrong {
   background: #fff0e7;
@@ -895,17 +940,37 @@ main {
 
   color: #b8500d;
 
+  box-shadow:
+    0 8px 22px rgba(245, 130, 32, .10);
+
   animation:
     wrongAnswer .4s ease;
 }
 
+.answer-button.wrong::before {
+  content: "✕";
+
+  background: var(--orange);
+  color: white;
+}
+
+
 @keyframes correctAnswer {
 
-  50% {
+  0% {
+    transform: scale(.96);
+  }
+
+  60% {
     transform: scale(1.025);
   }
 
+  100% {
+    transform: scale(1);
+  }
+
 }
+
 
 @keyframes wrongAnswer {
 
@@ -921,6 +986,10 @@ main {
     transform: translateX(-3px);
   }
 
+  100% {
+    transform: translateX(0);
+  }
+
 }
 
 
@@ -932,11 +1001,9 @@ main {
   display: none;
 
   align-items: center;
-
   gap: 14px;
 
   margin-top: 16px;
-
   padding: 15px 18px;
 
   border-radius: 16px;
@@ -946,19 +1013,20 @@ main {
 }
 
 .feedback-icon {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
 
   display: grid;
   place-items: center;
 
   flex: 0 0 auto;
 
-  border-radius: 12px;
+  border-radius: 13px;
 
   background: white;
 
-  font-size: 20px;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 21px;
   font-weight: 900;
 }
 
@@ -966,13 +1034,18 @@ main {
   display: block;
 
   font-size: 15px;
+  font-weight: 900;
 }
 
 .answer-feedback p {
   margin: 3px 0 0;
 
   font-size: 13px;
+  line-height: 1.5;
 }
+
+
+/* BENAR */
 
 .feedback-correct {
   background: #e8f7ed;
@@ -982,6 +1055,14 @@ main {
   color: var(--green-dark);
 }
 
+.feedback-correct .feedback-icon {
+  background: var(--green);
+  color: white;
+}
+
+
+/* SALAH */
+
 .feedback-wrong {
   background: #fff0e7;
 
@@ -990,16 +1071,26 @@ main {
   color: #a64a0c;
 }
 
+.feedback-wrong .feedback-icon {
+  background: var(--orange);
+  color: white;
+}
+
+
 @keyframes feedbackIn {
 
   from {
     opacity: 0;
-    transform: translateY(8px);
+
+    transform:
+      translateY(8px);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
+
+    transform:
+      translateY(0);
   }
 
 }
@@ -1011,15 +1102,12 @@ main {
 
 .next-button {
   width: 100%;
-
   min-height: 55px;
 
   margin-top: 14px;
-
   padding: 0 18px;
 
   display: none;
-
   align-items: center;
   justify-content: space-between;
 
@@ -1034,14 +1122,13 @@ main {
 
   cursor: pointer;
 
-  transition:
-    background .2s ease,
-    transform .2s ease;
+ transition:
+  background .2s ease,
+  transform .2s ease;
 }
 
 .next-button:hover {
   background: var(--green-dark);
-
   transform: translateY(-2px);
 }
 
@@ -1188,7 +1275,6 @@ main {
 
 .visual-question strong {
   color: var(--orange);
-
   font-size: 40px;
 }
 
@@ -1221,12 +1307,16 @@ main {
 
   from {
     opacity: 0;
-    transform: scale(.9);
+
+    transform:
+      scale(.9);
   }
 
   to {
     opacity: 1;
-    transform: scale(1);
+
+    transform:
+      scale(1);
   }
 
 }
@@ -1278,7 +1368,6 @@ main {
   gap: 6px;
 
   margin-top: 17px;
-
   padding: 18px;
 
   background: white;
@@ -1310,12 +1399,16 @@ main {
 
   from {
     opacity: 0;
-    transform: scale(.5);
+
+    transform:
+      scale(.5);
   }
 
   to {
     opacity: 1;
-    transform: scale(1);
+
+    transform:
+      scale(1);
   }
 
 }
@@ -1336,7 +1429,6 @@ main {
 
 .array-equation strong {
   color: var(--orange);
-
   font-size: 30px;
 }
 
@@ -1561,13 +1653,11 @@ main {
   color: var(--green-dark);
 
   font-family: "Bricolage Grotesque", sans-serif;
-
   font-size: 26px;
 }
 
 .fraction-meaning i {
   font-size: 10px;
-
   font-style: normal;
 }
 
@@ -1581,11 +1671,9 @@ main {
   border-radius: 50%;
 
   background: var(--yellow-soft);
-
   color: var(--orange);
 
   font-family: "Bricolage Grotesque", sans-serif;
-
   font-size: 25px;
   font-weight: 900;
 }
@@ -1594,7 +1682,6 @@ main {
   color: var(--green-dark);
 
   font-family: "Bricolage Grotesque", sans-serif;
-
   font-size: 30px;
   font-weight: 900;
 }
@@ -1614,7 +1701,6 @@ main {
   color: var(--orange);
 
   font-family: "Bricolage Grotesque", sans-serif;
-
   font-size: 38px;
   font-weight: 900;
 }
@@ -1650,7 +1736,6 @@ main {
 
   width: 270px;
   max-width: 100%;
-
   height: 175px;
 
   overflow: visible;
@@ -1660,7 +1745,6 @@ main {
   fill: var(--muted);
 
   font-family: "Outfit", sans-serif;
-
   font-size: 13px;
   font-weight: 700;
 }
@@ -1698,7 +1782,6 @@ main {
   color: var(--green-dark);
 
   font-family: "Bricolage Grotesque", sans-serif;
-
   font-size: 17px;
 
   letter-spacing: .03em;
@@ -1745,7 +1828,6 @@ main {
 
 .result-decoration {
   color: var(--yellow);
-
   font-size: 35px;
 }
 
@@ -1769,11 +1851,13 @@ main {
   }
 
   70% {
-    transform: scale(1.1);
+    transform:
+      scale(1.1);
   }
 
   100% {
-    transform: scale(1);
+    transform:
+      scale(1);
 
     opacity: 1;
   }
@@ -1799,7 +1883,6 @@ main {
   color: var(--green-dark);
 
   font-family: "Bricolage Grotesque", sans-serif;
-
   font-size: 35px;
 }
 
@@ -1813,6 +1896,7 @@ main {
   width: 190px;
 
   margin: 25px auto;
+
   padding: 18px;
 
   background: var(--green);
@@ -1837,7 +1921,6 @@ main {
   margin-top: 3px;
 
   font-family: "Bricolage Grotesque", sans-serif;
-
   font-size: 43px;
 }
 
@@ -1860,7 +1943,6 @@ main {
   background: #f6f9f6;
 
   border: 1px solid var(--border);
-
   border-radius: 14px;
 }
 
@@ -1870,7 +1952,6 @@ main {
   color: var(--green-dark);
 
   font-family: "Bricolage Grotesque", sans-serif;
-
   font-size: 25px;
 }
 
@@ -1921,7 +2002,6 @@ main {
   border: 0;
 
   background: var(--green);
-
   color: white;
 }
 
@@ -1929,7 +2009,6 @@ main {
   border: 2px solid var(--green);
 
   background: white;
-
   color: var(--green);
 }
 
@@ -1947,7 +2026,6 @@ main {
   padding: 25px 20px;
 
   background: var(--green-deep);
-
   color: rgba(255,255,255,.75);
 
   text-align: center;
@@ -2046,6 +2124,8 @@ main {
   }
 
 
+  /* START */
+
   .quiz-start {
     min-height:
       calc(100vh - 64px);
@@ -2055,7 +2135,6 @@ main {
 
   .start-content h1 {
     font-size: 45px;
-
     letter-spacing: -2px;
   }
 
@@ -2069,7 +2148,6 @@ main {
 
   .start-info > div {
     min-width: 0;
-
     flex: 1;
   }
 
@@ -2082,6 +2160,8 @@ main {
   }
 
 
+  /* GAME */
+
   .rush-game {
     padding:
       25px 12px 50px;
@@ -2093,6 +2173,8 @@ main {
     border-radius: 20px;
   }
 
+
+  /* STATS */
 
   .game-stats {
     gap: 6px;
@@ -2112,10 +2194,14 @@ main {
   }
 
 
+  /* TIMER */
+
   .timer-box {
     margin-top: 20px;
   }
 
+
+  /* CHALLENGE */
 
   .challenge {
     padding: 13px;
@@ -2126,12 +2212,18 @@ main {
   }
 
 
+  /* ANSWERS */
+
   .answer-grid {
     grid-template-columns: 1fr;
   }
 
   .answer-button {
-    min-height: 54px;
+    min-height: 58px;
+
+    padding-left: 55px;
+
+    font-size: 15px;
   }
 
 
@@ -2315,6 +2407,635 @@ main {
 
   .result-buttons {
     flex-direction: column;
+  }
+
+}
+/* =====================================================
+   QUIZ RUSH — GAME VISUAL ENHANCEMENT
+   Tambahkan di PALING BAWAH quiz.css
+===================================================== */
+
+/* AREA QUIZ */
+.rush-game {
+  position: relative;
+}
+
+/* Kartu quiz lebih terasa seperti arena */
+.game-card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Garis dekorasi kecil di bagian atas */
+.game-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(
+    90deg,
+    var(--green),
+    var(--yellow),
+    var(--orange)
+  );
+}
+
+/* =====================================================
+   TOP GAME
+===================================================== */
+
+.game-top {
+  padding-top: 5px;
+}
+
+.challenge-counter strong {
+  font-size: 38px;
+}
+
+/* Nyawa lebih menonjol */
+.life-display {
+  background: #fff8e2;
+  border-color: #f4df9b;
+}
+
+/* =====================================================
+   PROGRESS
+===================================================== */
+
+.rush-progress {
+  height: 10px;
+  margin-top: 20px;
+  background: #edf1ed;
+  border-radius: 999px;
+}
+
+.progress-fill,
+#progress-fill {
+  background: linear-gradient(
+    90deg,
+    var(--green),
+    var(--yellow)
+  );
+  box-shadow: 0 2px 8px rgba(8, 116, 67, .18);
+}
+
+/* =====================================================
+   TIMER
+===================================================== */
+
+.timer-box {
+  margin: 24px auto 18px;
+}
+
+.timer-circle {
+  width: 78px;
+  height: 78px;
+  padding: 4px;
+  background: white;
+  border-radius: 50%;
+  box-shadow:
+    0 8px 22px rgba(7, 61, 40, .10);
+}
+
+.timer-circle strong {
+  font-size: 25px;
+}
+
+/* =====================================================
+   CHALLENGE AREA
+===================================================== */
+
+.challenge {
+  position: relative;
+  padding: 24px 20px 22px;
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(255, 201, 40, .16),
+      transparent 38%
+    ),
+    #f8fbf8;
+}
+
+/* Badge lebih seperti label game */
+.challenge-type {
+  padding: 8px 15px;
+  box-shadow:
+    0 5px 12px rgba(8, 116, 67, .15);
+}
+
+/* Petunjuk visual */
+.visual-helper {
+  border-left: 0;
+  border-bottom: 3px solid var(--yellow);
+  background: var(--yellow-soft);
+  color: var(--green-dark);
+  border-radius: 12px;
+  padding: 10px 15px;
+}
+
+/* Area gambar dibuat lebih lega */
+.challenge-visual {
+  min-height: 260px;
+  margin-top: 20px;
+}
+
+/* =====================================================
+   QUESTION
+===================================================== */
+
+.question-box {
+  position: relative;
+  margin-top: 22px;
+  padding: 22px;
+  border: 2px solid var(--border);
+  background: #ffffff;
+}
+
+.question-box > span {
+  display: inline-flex;
+  padding: 5px 9px;
+  border-radius: 7px;
+  background: #edf7f1;
+}
+
+.question-box h2 {
+  margin-top: 11px;
+}
+
+/* =====================================================
+   ANSWERS
+===================================================== */
+
+.answer-grid {
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.answer-button {
+  min-height: 68px;
+  border-width: 2px;
+  border-radius: 18px;
+  transition:
+    transform .18s ease,
+    border-color .18s ease,
+    background .18s ease,
+    box-shadow .18s ease;
+}
+
+/* Saat mouse diarahkan */
+.answer-button:hover:not(:disabled) {
+  transform: translateY(-4px);
+}
+
+/* =====================================================
+   FEEDBACK
+===================================================== */
+
+.answer-feedback {
+  border-radius: 17px;
+  box-shadow:
+    0 8px 20px rgba(7, 61, 40, .06);
+}
+
+/* =====================================================
+   NEXT BUTTON
+===================================================== */
+
+.next-button {
+  min-height: 58px;
+  margin-top: 14px;
+  border-radius: 16px;
+  box-shadow:
+    0 8px 18px rgba(8, 116, 67, .16);
+}
+
+.next-button:hover {
+  transform: translateY(-3px);
+}
+
+/* =====================================================
+   VISUAL SOAL OPERASI
+===================================================== */
+
+.number-card {
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.number-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 12px 25px rgba(7, 61, 40, .10);
+}
+
+.big-operator {
+  box-shadow:
+    0 7px 15px rgba(8, 116, 67, .15);
+}
+
+/* =====================================================
+   VISUAL PERKALIAN
+===================================================== */
+
+.array-grid {
+  box-shadow:
+    0 10px 25px rgba(7, 61, 40, .09);
+}
+
+.array-grid span {
+  transition: transform .15s ease;
+}
+
+/* =====================================================
+   VISUAL PECAHAN
+===================================================== */
+
+.fraction-card {
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.fraction-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 12px 25px rgba(7, 61, 40, .10);
+}
+
+.fraction-pie {
+  box-shadow:
+    0 6px 15px rgba(7, 61, 40, .10);
+}
+
+/* =====================================================
+   VISUAL BANGUN DATAR
+===================================================== */
+
+.shape-card {
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.shape-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 14px 28px rgba(7, 61, 40, .10);
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .game-card {
+    padding-top: 18px;
+  }
+
+  .challenge {
+    padding: 18px 12px;
+  }
+
+  .challenge-visual {
+    min-height: 225px;
+  }
+
+  .question-box {
+    padding: 18px 15px;
+  }
+
+  .answer-button {
+    min-height: 62px;
+    border-radius: 16px;
+  }
+
+  .timer-circle {
+    width: 70px;
+    height: 70px;
+  }
+}
+/* =====================================================
+   QUIZ RUSH — RESPONSIVE HP
+   Tambahan saja, tidak mengubah desain desktop
+===================================================== */
+
+@media (max-width: 420px) {
+
+  .nav-container {
+    width: calc(100% - 24px);
+  }
+
+  .quiz-start {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .start-content h1 {
+    font-size: 40px;
+  }
+
+  .start-content > p {
+    font-size: 14px;
+  }
+
+  .visual-note {
+    width: 100%;
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .visual-note-icon {
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
+  }
+
+  .visual-note small {
+    font-size: 11px;
+  }
+
+  .start-info {
+    width: 100%;
+    gap: 7px;
+  }
+
+  .start-info > div {
+    min-width: 0;
+    padding: 12px 8px;
+  }
+
+  .start-info strong {
+    font-size: 21px;
+  }
+
+  .start-info span {
+    font-size: 10px;
+  }
+
+  .start-button {
+    width: 100%;
+    justify-content: space-between;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+
+  /* GAME */
+
+  .rush-game {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .game-card {
+    width: 100%;
+    padding: 12px;
+    border-radius: 18px;
+  }
+
+  .challenge-counter strong {
+    font-size: 32px;
+  }
+
+  .game-stats {
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .life-display,
+  .mini-stat {
+    min-width: 0;
+    padding: 6px 4px;
+    gap: 4px;
+  }
+
+  .life-display {
+    font-size: 10px;
+  }
+
+  .mini-stat > span {
+    font-size: 14px;
+  }
+
+  .mini-stat strong {
+    font-size: 14px;
+  }
+
+  .mini-stat small {
+    font-size: 8px;
+  }
+
+
+  /* TIMER */
+
+  .timer-box {
+    gap: 10px;
+  }
+
+  .timer-circle {
+    width: 64px;
+    height: 64px;
+  }
+
+  .timer-circle strong {
+    font-size: 21px;
+  }
+
+
+  /* CHALLENGE */
+
+  .challenge {
+    width: 100%;
+    padding: 16px 8px;
+  }
+
+  .visual-helper {
+    max-width: 100%;
+    font-size: 11px;
+    padding: 8px 10px;
+  }
+
+  .challenge-visual {
+    min-height: 205px;
+    max-width: 100%;
+  }
+
+
+  /* QUESTION */
+
+  .question-box {
+    padding: 16px 10px;
+  }
+
+  .question-box h2 {
+    font-size: 21px;
+    overflow-wrap: break-word;
+  }
+
+
+  /* ANSWERS */
+
+  .answer-grid {
+    gap: 9px;
+  }
+
+  .answer-button {
+    min-height: 58px;
+    padding: 10px 12px 10px 52px;
+    font-size: 14px;
+  }
+
+  .answer-button::before {
+    left: 12px;
+    width: 30px;
+    height: 30px;
+  }
+
+
+  /* OPERASI */
+
+  .operation-visual {
+    gap: 5px;
+  }
+
+  .number-card {
+    width: 120px;
+    min-height: 135px;
+  }
+
+  .number-card > strong {
+    font-size: 25px;
+  }
+
+  .big-operator {
+    width: 27px;
+    height: 27px;
+    font-size: 17px;
+  }
+
+
+  /* PERKALIAN */
+
+  .array-grid {
+    max-width: 100%;
+  }
+
+
+  /* PEMBAGIAN */
+
+  .division-groups {
+    max-width: 100%;
+    gap: 5px;
+  }
+
+  .division-group {
+    min-width: 0;
+  }
+
+
+  /* PECAHAN */
+
+  .fraction-board,
+  .fraction-compare,
+  .fraction-add {
+    max-width: 100%;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .fraction-card {
+    min-width: 105px;
+  }
+
+  .fraction-card.small {
+    min-width: 78px;
+  }
+
+  .fraction-pie {
+    width: 72px;
+    height: 72px;
+  }
+
+  .fraction-card.small .fraction-pie {
+    width: 54px;
+    height: 54px;
+  }
+
+  .fraction-result {
+    width: 62px;
+    height: 62px;
+    font-size: 25px;
+  }
+
+
+  /* BANGUN DATAR */
+
+  .shape-card {
+    width: 100%;
+    min-width: 0;
+    max-width: 280px;
+  }
+
+  .shape-svg {
+    width: 100%;
+    max-width: 230px;
+  }
+
+
+  /* FEEDBACK */
+
+  .answer-feedback {
+    align-items: flex-start;
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .feedback-icon {
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+  }
+
+  .answer-feedback p {
+    font-size: 11px;
+  }
+
+
+  /* HASIL */
+
+  .rush-result {
+    padding: 35px 12px;
+  }
+
+  .result-card {
+    width: 100%;
+    padding: 28px 14px;
+    border-radius: 22px;
+  }
+
+  .trophy {
+    font-size: 55px;
+  }
+
+  .result-card h2 {
+    font-size: 26px;
+  }
+
+  .total-xp {
+    width: 170px;
+  }
+
+  .result-grid strong {
+    font-size: 19px;
+  }
+
+  .result-grid span {
+    font-size: 9px;
   }
 
 }

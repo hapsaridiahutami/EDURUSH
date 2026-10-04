@@ -13,6 +13,7 @@
 
 <body>
 
+  <!-- NAVBAR -->
   <header class="navbar">
     <div class="nav-container">
 
@@ -29,7 +30,7 @@
   </header>
 
 
-  <!-- HEADER -->
+  <!-- HEADER MATERI -->
   <header class="lesson-header">
 
     <div class="lesson-header-inner">
@@ -48,13 +49,13 @@
           <h1>Pecahan</h1>
 
           <p class="lesson-description">
-            Belajar mengenal pecahan dengan contoh yang sederhana dan mudah dipahami.
+            Kenali pecahan melalui gambar, angka, dan contoh sederhana.
           </p>
         </div>
 
         <div class="lesson-number">
-          <span>05</span>
-          <small>bagian</small>
+          <span>02</span>
+          <small>materi</small>
         </div>
 
       </div>
@@ -69,6 +70,7 @@
 
     <div class="lesson-container">
 
+
       <!-- INTRO -->
       <section class="lesson-intro">
 
@@ -81,339 +83,696 @@
         </div>
 
         <p>
-          Pecahan menunjukkan sebagian dari sesuatu.
-          Yuk lihat contoh sederhana supaya lebih mudah memahaminya.
+          Pecahan menunjukkan sebagian dari satu benda atau keseluruhan
+          yang dibagi menjadi beberapa bagian sama besar.
         </p>
 
       </section>
 
 
-      <!-- MATERIAL CARDS -->
-      <section class="operation-grid">
+      <!-- KONSEP UTAMA -->
+      <section class="fraction-main">
 
-        <!-- 01 -->
-        <article class="operation-card">
+        <div class="fraction-main-text">
 
-          <div class="card-top">
+          <div class="lesson-label">
+            01 — KONSEP DASAR
+          </div>
 
-            <div class="operation-tag">
-              01
+          <h2>Bagian dari keseluruhan</h2>
+
+          <p>
+            Perhatikan gambar di samping.
+            Satu bentuk dibagi menjadi <strong>4 bagian sama besar</strong>.
+            Dua bagian diberi tanda.
+          </p>
+
+          <div class="fraction-result">
+
+            <div class="fraction-big">
+              <span id="mainNumerator">2</span>
+              <i></i>
+              <span id="mainDenominator">4</span>
             </div>
 
-            <div class="operation-symbol">
-              ½
+            <div>
+              <strong>2 dari 4 bagian</strong>
+              <small>Jadi, pecahannya adalah 2/4.</small>
             </div>
 
           </div>
 
-          <div class="operation-info">
+        </div>
 
-            <h3>Pecahan itu apa?</h3>
 
-            <p>
-              Pecahan menunjukkan sebagian dari sesuatu yang dibagi
-              menjadi beberapa bagian yang sama besar.
-            </p>
+        <div class="fraction-main-visual">
+
+          <div class="visual-title">
+            LIHAT BAGIANNYA
+          </div>
+
+          <div class="fraction-circle" id="mainFraction">
+
+            <button class="fraction-part active" data-index="1" aria-label="Bagian 1"></button>
+            <button class="fraction-part active" data-index="2" aria-label="Bagian 2"></button>
+            <button class="fraction-part" data-index="3" aria-label="Bagian 3"></button>
+            <button class="fraction-part" data-index="4" aria-label="Bagian 4"></button>
 
           </div>
 
-          <div class="visual-box">
-
-            <div class="visual-title">
-              CONTOH PIZZA
-            </div>
-
-            <div class="pizza-area">
-
-              <div class="pizza pizza-fourths">
-                <span class="pizza-piece active"></span>
-                <span class="pizza-piece active"></span>
-                <span class="pizza-piece"></span>
-                <span class="pizza-piece"></span>
-              </div>
-
-              <div class="pizza-text">
-                <strong>2/4</strong>
-                <span>2 dari 4 bagian</span>
-              </div>
-
-            </div>
-
+          <div class="visual-hint">
+            Tekan bagian untuk memilih atau menghapus bagian.
           </div>
 
-        </article>
-
-
-        <!-- 02 -->
-        <article class="operation-card">
-
-          <div class="card-top">
-
-            <div class="operation-tag">
-              02
-            </div>
-
-            <div class="operation-symbol fraction-symbol">
-              2/4
-            </div>
-
-          </div>
-
-          <div class="operation-info">
-
-            <h3>Mengenal 2/4</h3>
-
-            <p>
-              Angka atas menunjukkan bagian yang diambil.
-              Angka bawah menunjukkan jumlah semua bagian.
-            </p>
-
-          </div>
-
-          <div class="visual-box">
-
-            <div class="visual-title">
-              BAGIAN PECAHAN
-            </div>
-
-            <div class="fraction-display">
-
-              <div class="fraction-big">
-                <span>2</span>
-                <i></i>
-                <span>4</span>
-              </div>
-
-              <div class="fraction-notes">
-
-                <div>
-                  <strong>2</strong>
-                  <span>yang diambil</span>
-                </div>
-
-                <div>
-                  <strong>4</strong>
-                  <span>jumlah semuanya</span>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </article>
-
-
-        <!-- 03 -->
-        <article class="operation-card">
-
-          <div class="card-top">
-
-            <div class="operation-tag">
-              03
-            </div>
-
-            <div class="operation-symbol">
-              ⅓
-            </div>
-
-          </div>
-
-          <div class="operation-info">
-
-            <h3>Contoh Pecahan</h3>
-
-            <p>
-              Pecahan bisa memiliki bagian yang berbeda.
-              Contohnya 1/2, 1/3, dan 3/4.
-            </p>
-
-          </div>
-
-          <div class="visual-box">
-
-            <div class="visual-title">
-              BEBERAPA CONTOH
-            </div>
-
-            <div class="fraction-examples">
-
-              <div class="example-fraction">
-                <strong>1/2</strong>
-                <span>1 dari 2</span>
-              </div>
-
-              <div class="example-fraction">
-                <strong>1/3</strong>
-                <span>1 dari 3</span>
-              </div>
-
-              <div class="example-fraction">
-                <strong>3/4</strong>
-                <span>3 dari 4</span>
-              </div>
-
-            </div>
-
-          </div>
-
-        </article>
-
-
-        <!-- 04 -->
-        <article class="operation-card">
-
-          <div class="card-top">
-
-            <div class="operation-tag">
-              04
-            </div>
-
-            <div class="operation-symbol">
-              &lt;
-            </div>
-
-          </div>
-
-          <div class="operation-info">
-
-            <h3>Membandingkan Pecahan</h3>
-
-            <p>
-              Jika angka bawah sama, pecahan dengan angka atas
-              yang lebih besar nilainya juga lebih besar.
-            </p>
-
-          </div>
-
-          <div class="visual-box">
-
-            <div class="visual-title">
-              CONTOH
-            </div>
-
-            <div class="compare-fraction">
-
-              <strong>2/5</strong>
-
-              <span>&lt;</span>
-
-              <strong>4/5</strong>
-
-            </div>
-
-            <p class="visual-caption">
-              Karena 2 lebih kecil dari 4.
-            </p>
-
-          </div>
-
-        </article>
-
-
-        <!-- 05 -->
-        <article class="operation-card fraction-card-wide">
-
-          <div class="card-top">
-
-            <div class="operation-tag">
-              05
-            </div>
-
-            <div class="operation-symbol">
-              +
-            </div>
-
-          </div>
-
-          <div class="operation-info">
-
-            <h3>Menjumlahkan Pecahan</h3>
-
-            <p>
-              Jika angka bawahnya sama, kita cukup menjumlahkan
-              angka atasnya.
-            </p>
-
-          </div>
-
-          <div class="visual-box">
-
-            <div class="visual-title">
-              CONTOH PERHITUNGAN
-            </div>
-
-            <div class="fraction-equation">
-
-              <strong>1/4</strong>
-
-              <span>+</span>
-
-              <strong>2/4</strong>
-
-              <span>=</span>
-
-              <strong class="answer-fraction">3/4</strong>
-
-            </div>
-
-          </div>
-
-        </article>
+        </div>
 
       </section>
 
 
-      <!-- PRACTICE -->
+      <!-- PEMBILANG PENYEBUT -->
+      <section class="concept-section">
+
+        <div class="section-heading">
+
+          <div class="lesson-label">
+            02 — KENALI ANGKANYA
+          </div>
+
+          <h2>Pembilang dan penyebut</h2>
+
+          <p>
+            Setiap angka pada pecahan memiliki arti yang berbeda.
+          </p>
+
+        </div>
+
+
+        <div class="fraction-number-card">
+
+          <div class="big-fraction">
+
+            <span class="numerator">2</span>
+            <span class="fraction-line"></span>
+            <span class="denominator">4</span>
+
+          </div>
+
+
+          <div class="number-explanation">
+
+            <div class="number-row numerator-row">
+
+              <span class="number-badge">2</span>
+
+              <div>
+                <strong>Pembilang</strong>
+                <p>Menunjukkan bagian yang dipilih.</p>
+              </div>
+
+            </div>
+
+
+            <div class="number-row denominator-row">
+
+              <span class="number-badge">4</span>
+
+              <div>
+                <strong>Penyebut</strong>
+                <p>Menunjukkan jumlah seluruh bagian.</p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- CONTOH PECAHAN -->
+      <section class="concept-section">
+
+        <div class="section-heading">
+
+          <div class="lesson-label">
+            03 — CONTOH
+          </div>
+
+          <h2>Gambar dan angka</h2>
+
+          <p>
+            Lihat hubungan antara bentuk dan angka pecahan.
+          </p>
+
+        </div>
+
+
+        <div class="example-grid">
+
+
+          <!-- 1/2 -->
+          <article class="fraction-example-card">
+
+            <div class="example-top">
+              <span>01</span>
+              <strong>1/2</strong>
+            </div>
+
+            <div class="fraction-bar two-parts">
+
+              <span class="selected"></span>
+              <span></span>
+
+            </div>
+
+            <div class="example-description">
+              <strong>1 dari 2 bagian</strong>
+              <small>Satu bagian dipilih.</small>
+            </div>
+
+          </article>
+
+
+          <!-- 1/3 -->
+          <article class="fraction-example-card">
+
+            <div class="example-top">
+              <span>02</span>
+              <strong>1/3</strong>
+            </div>
+
+            <div class="fraction-bar three-parts">
+
+              <span class="selected"></span>
+              <span></span>
+              <span></span>
+
+            </div>
+
+            <div class="example-description">
+              <strong>1 dari 3 bagian</strong>
+              <small>Satu bagian dipilih.</small>
+            </div>
+
+          </article>
+
+
+          <!-- 3/4 -->
+          <article class="fraction-example-card">
+
+            <div class="example-top">
+              <span>03</span>
+              <strong>3/4</strong>
+            </div>
+
+            <div class="fraction-bar four-parts">
+
+              <span class="selected"></span>
+              <span class="selected"></span>
+              <span class="selected"></span>
+              <span></span>
+
+            </div>
+
+            <div class="example-description">
+              <strong>3 dari 4 bagian</strong>
+              <small>Tiga bagian dipilih.</small>
+            </div>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- PERBANDINGAN -->
+      <section class="concept-section">
+
+        <div class="section-heading">
+
+          <div class="lesson-label">
+            04 — MEMBANDINGKAN
+          </div>
+
+          <h2>Mana yang lebih besar?</h2>
+
+          <p>
+            Jika penyebutnya sama, lihat pembilangnya.
+          </p>
+
+        </div>
+
+
+        <div class="comparison-card">
+
+          <div class="compare-item">
+
+            <strong>2/5</strong>
+
+            <div class="compare-bar five-parts">
+
+              <span class="selected"></span>
+              <span class="selected"></span>
+              <span></span>
+              <span></span>
+              <span></span>
+
+            </div>
+
+          </div>
+
+
+          <div class="compare-symbol">
+            &lt;
+          </div>
+
+
+          <div class="compare-item">
+
+            <strong>4/5</strong>
+
+            <div class="compare-bar five-parts">
+
+              <span class="selected"></span>
+              <span class="selected"></span>
+              <span class="selected"></span>
+              <span class="selected"></span>
+              <span></span>
+
+            </div>
+
+          </div>
+
+          <div class="comparison-note">
+            4 bagian lebih banyak daripada 2 bagian.
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- PENJUMLAHAN -->
+      <section class="concept-section">
+
+        <div class="section-heading">
+
+          <div class="lesson-label">
+            05 — PENJUMLAHAN
+          </div>
+
+          <h2>Menjumlahkan pecahan</h2>
+
+          <p>
+            Jika penyebutnya sama, jumlahkan pembilangnya.
+          </p>
+
+        </div>
+
+
+        <div class="addition-card">
+
+          <div class="addition-visual">
+
+            <div class="addition-fraction">
+
+              <strong>1/4</strong>
+
+              <div class="mini-bar four-parts">
+                <span class="selected"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+            </div>
+
+
+            <span class="addition-symbol">+</span>
+
+
+            <div class="addition-fraction">
+
+              <strong>2/4</strong>
+
+              <div class="mini-bar four-parts">
+                <span class="selected"></span>
+                <span class="selected"></span>
+                <span></span>
+                <span></span>
+              </div>
+
+            </div>
+
+
+            <span class="addition-symbol">=</span>
+
+
+            <div class="addition-fraction result-fraction">
+
+              <strong>3/4</strong>
+
+              <div class="mini-bar four-parts">
+                <span class="selected"></span>
+                <span class="selected"></span>
+                <span class="selected"></span>
+                <span></span>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="addition-explanation">
+
+            <span>1 + 2 = 3</span>
+
+            <p>
+              Penyebut tetap 4, pembilang dijumlahkan.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- PENGURANGAN -->
+      <section class="concept-section">
+
+        <div class="section-heading">
+
+          <div class="lesson-label">
+            06 — PENGURANGAN
+          </div>
+
+          <h2>Mengurangi pecahan</h2>
+
+          <p>
+            Jika penyebutnya sama, kurangkan pembilangnya.
+          </p>
+
+        </div>
+
+
+        <div class="addition-card">
+
+          <div class="addition-visual">
+
+            <div class="addition-fraction">
+
+              <strong>3/4</strong>
+
+              <div class="mini-bar four-parts">
+                <span class="selected"></span>
+                <span class="selected"></span>
+                <span class="selected"></span>
+                <span></span>
+              </div>
+
+            </div>
+
+
+            <span class="addition-symbol">−</span>
+
+
+            <div class="addition-fraction">
+
+              <strong>1/4</strong>
+
+              <div class="mini-bar four-parts">
+                <span class="selected"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+            </div>
+
+
+            <span class="addition-symbol">=</span>
+
+
+            <div class="addition-fraction result-fraction">
+
+              <strong>2/4</strong>
+
+              <div class="mini-bar four-parts">
+                <span class="selected"></span>
+                <span class="selected"></span>
+                <span></span>
+                <span></span>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="addition-explanation">
+
+            <span>3 − 1 = 2</span>
+
+            <p>
+              Penyebut tetap 4, pembilang dikurangkan.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- PERKALIAN -->
+      <section class="concept-section">
+
+        <div class="section-heading">
+
+          <div class="lesson-label">
+            07 — PERKALIAN
+          </div>
+
+          <h2>Mengalikan pecahan</h2>
+
+          <p>
+            Kalikan pembilang dengan pembilang dan penyebut dengan penyebut.
+          </p>
+
+        </div>
+
+
+        <div class="addition-card">
+
+          <div class="addition-visual">
+
+            <div class="addition-fraction">
+
+              <strong>1/2</strong>
+
+              <div class="mini-bar two-parts">
+                <span class="selected"></span>
+                <span></span>
+              </div>
+
+            </div>
+
+
+            <span class="addition-symbol">×</span>
+
+
+            <div class="addition-fraction">
+
+              <strong>2/3</strong>
+
+              <div class="mini-bar three-parts">
+                <span class="selected"></span>
+                <span class="selected"></span>
+                <span></span>
+              </div>
+
+            </div>
+
+
+            <span class="addition-symbol">=</span>
+
+
+            <div class="addition-fraction result-fraction">
+
+              <strong>2/6</strong>
+
+              <div class="mini-bar six-parts">
+                <span class="selected"></span>
+                <span class="selected"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="addition-explanation">
+
+            <span>1 × 2 = 2</span>
+
+            <p>
+              Pembilang dikalikan dengan pembilang dan penyebut dengan penyebut.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- PEMBAGIAN -->
+      <section class="concept-section">
+
+        <div class="section-heading">
+
+          <div class="lesson-label">
+            08 — PEMBAGIAN
+          </div>
+
+          <h2>Membagi pecahan</h2>
+
+          <p>
+            Untuk membagi pecahan, balik pecahan kedua lalu kalikan.
+          </p>
+
+        </div>
+
+
+        <div class="addition-card">
+
+          <div class="addition-visual">
+
+            <div class="addition-fraction">
+
+              <strong>1/2</strong>
+
+              <div class="mini-bar two-parts">
+                <span class="selected"></span>
+                <span></span>
+              </div>
+
+            </div>
+
+
+            <span class="addition-symbol">÷</span>
+
+
+            <div class="addition-fraction">
+
+              <strong>1/4</strong>
+
+              <div class="mini-bar four-parts">
+                <span class="selected"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+            </div>
+
+
+            <span class="addition-symbol">=</span>
+
+
+            <div class="addition-fraction result-fraction">
+
+              <strong>2</strong>
+
+              <div class="mini-bar two-parts">
+                <span class="selected"></span>
+                <span class="selected"></span>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="addition-explanation">
+
+            <span>1/2 ÷ 1/4 = 2</span>
+
+            <p>
+              1/2 terdiri dari dua bagian 1/4.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- AKTIVITAS INTERAKTIF -->
       <section class="practice-section">
 
         <div class="practice-heading">
 
           <div>
             <div class="lesson-label">
-              LATIHAN SINGKAT
+              COBA SENDIRI
             </div>
 
-            <h2>Coba dulu</h2>
+            <h2>Pilih bagian pecahan</h2>
           </div>
+
+          <p>
+            Pilih jumlah bagian yang ditunjukkan.
+          </p>
 
         </div>
 
 
-        <div class="practice-card">
+        <div class="interactive-practice">
 
           <div class="practice-question">
 
-            <div class="question-label">
-              PERTANYAAN
-            </div>
+            <span class="question-label">
+              TANTANGAN
+            </span>
 
             <h3>
-              Ada 4 bagian pizza. Jika 2 bagian diambil,
-              berapa pecahannya?
+              Pilih <strong>3 dari 4 bagian</strong>.
             </h3>
 
             <p>
-              Perhatikan gambar lalu tentukan pecahannya.
+              Tekan bagian pada gambar sampai menjadi 3/4.
             </p>
+
+            <div class="practice-status" id="practiceStatus">
+              Pilihanmu: <strong>0/4</strong>
+            </div>
 
           </div>
 
 
-          <div class="practice-fraction-visual">
+          <div class="practice-visual">
 
-            <div class="pizza pizza-practice">
+            <div class="practice-fraction-circle" id="practiceFraction">
 
-              <span class="pizza-piece active"></span>
-              <span class="pizza-piece active"></span>
-              <span class="pizza-piece"></span>
-              <span class="pizza-piece"></span>
+              <button class="practice-part" data-index="1"></button>
+              <button class="practice-part" data-index="2"></button>
+              <button class="practice-part" data-index="3"></button>
+              <button class="practice-part" data-index="4"></button>
 
             </div>
 
-            <div class="practice-answer">
-              2/4
+            <div class="practice-result" id="practiceResult">
+              Pilih 3 bagian
             </div>
 
           </div>
@@ -423,7 +782,7 @@
       </section>
 
 
-      <!-- SUMMARY -->
+      <!-- RINGKASAN -->
       <section class="summary-section">
 
         <div class="practice-heading">
@@ -449,7 +808,7 @@
 
             <div>
               <strong>Pecahan</strong>
-              <small>sebagian dari sesuatu</small>
+              <small>bagian dari keseluruhan</small>
             </div>
 
           </div>
@@ -458,12 +817,12 @@
           <div class="summary-item">
 
             <div class="summary-symbol">
-              ↑
+              2
             </div>
 
             <div>
-              <strong>Angka atas</strong>
-              <small>bagian yang diambil</small>
+              <strong>Pembilang</strong>
+              <small>bagian yang dipilih</small>
             </div>
 
           </div>
@@ -472,12 +831,12 @@
           <div class="summary-item">
 
             <div class="summary-symbol">
-              ↓
+              4
             </div>
 
             <div>
-              <strong>Angka bawah</strong>
-              <small>jumlah semuanya</small>
+              <strong>Penyebut</strong>
+              <small>jumlah seluruh bagian</small>
             </div>
 
           </div>
@@ -491,7 +850,49 @@
 
             <div>
               <strong>Penjumlahan</strong>
-              <small>jumlahkan angka atas</small>
+              <small>jumlahkan pembilang</small>
+            </div>
+
+          </div>
+
+
+          <div class="summary-item">
+
+            <div class="summary-symbol">
+              −
+            </div>
+
+            <div>
+              <strong>Pengurangan</strong>
+              <small>kurangkan pembilang</small>
+            </div>
+
+          </div>
+
+
+          <div class="summary-item">
+
+            <div class="summary-symbol">
+              ×
+            </div>
+
+            <div>
+              <strong>Perkalian</strong>
+              <small>kalikan pembilang dan penyebut</small>
+            </div>
+
+          </div>
+
+
+          <div class="summary-item">
+
+            <div class="summary-symbol">
+              ÷
+            </div>
+
+            <div>
+              <strong>Pembagian</strong>
+              <small>balik pecahan kedua lalu kalikan</small>
             </div>
 
           </div>
@@ -505,31 +906,131 @@
   </main>
 
 
-  <!-- NEXT -->
-  <section class="lesson-next">
+<!-- NEXT -->
+<section class="lesson-next">
 
-    <div>
+  <div class="next-content">
 
-      <div class="section-label">
-        SELANJUTNYA
-      </div>
-
-      <h2>Yuk coba quiz pecahan</h2>
-
-      <p>
-        Sekarang coba beberapa soal untuk melihat
-        apakah kamu sudah memahami pecahan.
-      </p>
-
+    <div class="next-icon">
+      ✓
     </div>
 
-    <a href="quiz.html?materi=pecahan" class="next-button">
-      Mulai Quiz Rush
-      <span>→</span>
-    </a>
+    <div>
+      <p class="lesson-label">
+        MATERI 02 SELESAI
+      </p>
 
-  </section>
+      <h2>
+        Sudah siap mencoba?
+      </h2>
 
+      <p>
+        Setelah memahami konsep pecahan, kamu bisa lanjut
+        ke materi bangun datar.
+      </p>
+    </div>
+
+  </div>
+
+  <a href="quiz.html?materi=pecahan" class="next-button">
+  Mulai Quiz Rush
+  <span>→</span>
+</a>
+
+</section>
+
+  <!-- INTERAKSI -->
+  <script>
+
+    /* ================================
+       VISUAL PECAHAN UTAMA
+    ================================= */
+
+    const mainParts = document.querySelectorAll(
+      "#mainFraction .fraction-part"
+    );
+
+    const mainNumerator = document.getElementById(
+      "mainNumerator"
+    );
+
+    mainParts.forEach(part => {
+
+      part.addEventListener("click", () => {
+
+        part.classList.toggle("active");
+
+        const selected =
+          document.querySelectorAll(
+            "#mainFraction .fraction-part.active"
+          ).length;
+
+        mainNumerator.textContent = selected;
+
+      });
+
+    });
+
+
+    /* ================================
+       AKTIVITAS PRAKTIK
+    ================================= */
+
+    const practiceParts = document.querySelectorAll(
+      "#practiceFraction .practice-part"
+    );
+
+    const practiceStatus =
+      document.getElementById("practiceStatus");
+
+    const practiceResult =
+      document.getElementById("practiceResult");
+
+
+    practiceParts.forEach(part => {
+
+      part.addEventListener("click", () => {
+
+        part.classList.toggle("active");
+
+        const selected =
+          document.querySelectorAll(
+            "#practiceFraction .practice-part.active"
+          ).length;
+
+        practiceStatus.innerHTML =
+          `Pilihanmu: <strong>${selected}/4</strong>`;
+
+
+        if (selected === 3) {
+
+          practiceResult.textContent =
+            "Benar! Pecahannya adalah 3/4.";
+
+          practiceResult.classList.add("correct");
+
+        } else if (selected > 3) {
+
+          practiceResult.textContent =
+            "Kurangi 1 bagian.";
+
+          practiceResult.classList.remove("correct");
+
+        } else {
+
+          practiceResult.textContent =
+            "Pilih 3 bagian.";
+
+          practiceResult.classList.remove("correct");
+
+        }
+
+      });
+
+    });
+
+  </script>
 
 </body>
+
 </html>
