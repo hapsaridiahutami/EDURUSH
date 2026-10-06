@@ -423,14 +423,14 @@ a {
    MOBILE
 ===================================================== */
 
-@media (max-width: 700px) {
+@media (max-width: 780px) {
 
   .navbar {
     height: 64px;
   }
 
   .nav-menu {
-    display: none;
+    display: flex;
   }
 
 
@@ -505,7 +505,7 @@ a {
    Tambahan saja, tidak mengubah desain desktop
 ===================================================== */
 
-@media (max-width: 700px) {
+@media (max-width: 780px) {
 
   .nav-container {
     width: calc(100% - 28px);

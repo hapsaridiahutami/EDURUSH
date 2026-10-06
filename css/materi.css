@@ -205,7 +205,7 @@
    MOBILE
 ===================================================== */
 
-@media (max-width: 800px) {
+@media (max-width: 780px) {
 
   .materials-grid {
     grid-template-columns: 1fr;
@@ -220,7 +220,7 @@
 }
 
 
-@media (max-width: 700px) {
+@media (max-width: 780px) {
 
   .materials-header {
     padding: 70px 20px 45px;
@@ -272,7 +272,7 @@
    Tidak mengubah desain desktop
 ===================================================== */
 
-@media (max-width: 600px) {
+@media (max-width: 780px) {
 
   .materials-header,
   .materials {
